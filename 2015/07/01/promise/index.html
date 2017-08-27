@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>解决回调地狱（promise） | 爱瞎搞的橙子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="解决回调地狱多重ajax12345678910111213141516171819202122232425262728293031323334353637383940414243--------------------&amp;lt;button&amp;gt;发送一堆ajax&amp;lt;/button&amp;gt;function sendMsg(url, callback) &amp;#123;        //ajax">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决回调地狱（promise）">
+<meta property="og:url" content="http://yoursite.com/2015/07/01/promise/index.html">
+<meta property="og:site_name" content="爱瞎搞的橙子">
+<meta property="og:description" content="解决回调地狱多重ajax12345678910111213141516171819202122232425262728293031323334353637383940414243--------------------&amp;lt;button&amp;gt;发送一堆ajax&amp;lt;/button&amp;gt;function sendMsg(url, callback) &amp;#123;        //ajax">
+<meta property="og:updated_time" content="2017-08-27T07:18:29.857Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="解决回调地狱（promise）">
+<meta name="twitter:description" content="解决回调地狱多重ajax12345678910111213141516171819202122232425262728293031323334353637383940414243--------------------&amp;lt;button&amp;gt;发送一堆ajax&amp;lt;/button&amp;gt;function sendMsg(url, callback) &amp;#123;        //ajax">
+  
+    <link rel="alternate" href="/atom.xml" title="爱瞎搞的橙子" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>15</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>11</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>13</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-promise" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/01/promise/" class="article-date">
+  <time class="post-time" datetime="2015-06-30T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">7月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      解决回调地狱（promise）
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/学习/">学习</a>,<a class="article-category-link" href="/categories/学习/ES6/">ES6</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="解决回调地狱"><a href="#解决回调地狱" class="headerlink" title="解决回调地狱"></a>解决回调地狱</h1><h2 id="多重ajax"><a href="#多重ajax" class="headerlink" title="多重ajax"></a>多重ajax</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">--------------------</div><div class="line">&lt;button&gt;发送一堆ajax&lt;/button&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sendMsg</span>(<span class="params">url, callback</span>) </span>&#123;</div><div class="line">        <span class="comment">//ajax</span></div><div class="line">        <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">        xhr.open(<span class="string">'get'</span>, url);</div><div class="line">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>) &#123;</div><div class="line">                <span class="comment">//响应回来，请求1.json</span></div><div class="line">                alert(xhr.responseText);</div><div class="line">                <span class="comment">//请求2.json</span></div><div class="line">                <span class="comment">//后续操作，2||3||4.json,该事宜会发生改变</span></div><div class="line">                callback(); <span class="comment">//你传递的后续要做的事情</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        xhr.send();</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// sendMsg('./1.json');</span></div><div class="line">        <span class="comment">// sendMsg('./2.json');</span></div><div class="line">        <span class="comment">// sendMsg('./3.json');</span></div><div class="line">        <span class="comment">// sendMsg('./4.json');</span></div><div class="line">        <span class="comment">// sendMsg('./1.json');</span></div><div class="line">        <span class="comment">// sendMsg('./2.json');</span></div><div class="line">        <span class="comment">// sendMsg('./3.json');</span></div><div class="line">        <span class="comment">// sendMsg('./4.json');</span></div><div class="line">        <span class="comment">// 理论上请求挨个出去，但是，响应回来的速度，不一定，此时就会出现响应顺序不一致的情况</span></div><div class="line"><span class="comment">//万恶的回调函数地狱,可维护性差</span></div><div class="line">        sendMsg(<span class="string">'./1.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            sendMsg(<span class="string">'./2.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                sendMsg(<span class="string">'./3.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                    sendMsg(<span class="string">'./1.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                        sendMsg(<span class="string">'./2.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                            sendMsg(<span class="string">'./3.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                                <span class="built_in">console</span>.log(<span class="string">'完成了'</span>);</div><div class="line">                            &#125;);</div><div class="line">                        &#125;);</div><div class="line">                    &#125;)</div><div class="line">                &#125;);</div><div class="line">            &#125;);</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><ul>
+<li>promise是一个容器，用来管理异步流程，执行的过程中，</li>
+<li>通过函数调用，记录住执行成功与否的状态，成功-&gt;then，失败-&gt;catch</li>
+<li>保证顺序执行的then回调函数中，记得return 一个promise对象</li>
+<li>promise三种状态： pendding(待发) 没有调用reject或者resolve的时候</li>
+<li>resolved(fulilled) 已解决已满足 调用了resolve后的状态</li>
+<li>rejected 已拒绝  调用reject函数后的状态</li>
+<li>一经改变，无法回退、也不可以暂停</li>
+</ul>
+<p>每一个new Promise中包含着要么成功，要么失败的后续标识<br>每一个promise对象都可以.then函数来获取成功后的操作<br>每一个promise对象也可以.catch函数来获取失败后的操作</p>
+<p> new Promise接受的参数是一个函数<br> 该函数的参数中，1:成功 2:失败<br> 成功(resolve)和失败(reject)也是函数</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">  &lt;button&gt;发送一堆ajax&lt;/button&gt;</div><div class="line">------------------------------------------------------------------------- </div><div class="line">function sendMsg(url, callback) &#123;</div><div class="line">        var p = new Promise(function(resolve,reject)&#123;</div><div class="line">                //包含整件事的执行</div><div class="line">                var xhr = new XMLHttpRequest();</div><div class="line">                xhr.open('get', url);</div><div class="line">                xhr.onreadystatechange = function() &#123;</div><div class="line">                    if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) &#123;    </div><div class="line">                        //成功后的操作</div><div class="line">                        alert(xhr.responseText);</div><div class="line">                        //调用成功函数，其实就是做一个标记，存储起来，未来该对象.then就能执行</div><div class="line">                        resolve('牛逼了');</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                xhr.send();</div><div class="line">        &#125;);</div><div class="line">        return p;//返回p对象外部then||catch</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    document.querySelector('button').onclick = function() &#123;</div><div class="line">            </div><div class="line">         sendMsg('./1.json')</div><div class="line">         .then(function(data)&#123;</div><div class="line">            //成功后的回调函数</div><div class="line">             // console.log('1.json请求完成，成功!!!',data);</div><div class="line">             return sendMsg('./2.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./3.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./4.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./1.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./2.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./3.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./4.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             console.log('结束了');</div><div class="line">         &#125;)</div><div class="line">         .catch(function()&#123; //一组promise对象，一个catch多个then</div><div class="line">             //失败的回调函数</div><div class="line">         &#125;);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/07/01/promise/" data-id="cj6udiiik0000bcqf9bz7bsd7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/07/01/模块定义/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          模块定义
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/01/first/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">爱喝奶茶的橙子</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">爱瞎搞的橙子</h1>
+    <h2 class="blog-subtitle">喜欢lol，喜欢代码O(∩_∩)O~~</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>15</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>11</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>13</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/ShanaMaid" target="_blank" title="XXX">
+          XXX
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2016 - 2017 小橙子<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/project" title="" class="menuItem">项目</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

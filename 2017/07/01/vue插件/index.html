@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>vue插件 | 爱瞎搞的橙子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="vue插件和框架mint-ui 框架 移动端  构建界面 使用方式 1:下载 npm i mint-ui --save 2:在main.js文件中 引入mint-ui  及css 3:安装插件(Vue.use(mint-ui的对象))  1234567//1：引入对象import MintUi from &apos;mint-ui&apos;;//2：引入其cssimport &apos;mint-ui/lib/style.c">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue插件">
+<meta property="og:url" content="http://yoursite.com/2017/07/01/vue插件/index.html">
+<meta property="og:site_name" content="爱瞎搞的橙子">
+<meta property="og:description" content="vue插件和框架mint-ui 框架 移动端  构建界面 使用方式 1:下载 npm i mint-ui --save 2:在main.js文件中 引入mint-ui  及css 3:安装插件(Vue.use(mint-ui的对象))  1234567//1：引入对象import MintUi from &apos;mint-ui&apos;;//2：引入其cssimport &apos;mint-ui/lib/style.c">
+<meta property="og:updated_time" content="2017-08-27T10:26:13.975Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue插件">
+<meta name="twitter:description" content="vue插件和框架mint-ui 框架 移动端  构建界面 使用方式 1:下载 npm i mint-ui --save 2:在main.js文件中 引入mint-ui  及css 3:安装插件(Vue.use(mint-ui的对象))  1234567//1：引入对象import MintUi from &apos;mint-ui&apos;;//2：引入其cssimport &apos;mint-ui/lib/style.c">
+  
+    <link rel="alternate" href="/atom.xml" title="爱瞎搞的橙子" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>15</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>11</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>13</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-vue插件" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/01/vue插件/" class="article-date">
+  <time class="post-time" datetime="2017-06-30T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">7月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue插件
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/学习/">学习</a>,<a class="article-category-link" href="/categories/学习/ES6/">ES6</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vue插件和框架"><a href="#vue插件和框架" class="headerlink" title="vue插件和框架"></a>vue插件和框架</h1><h2 id="mint-ui-框架"><a href="#mint-ui-框架" class="headerlink" title="mint-ui 框架"></a>mint-ui 框架</h2><blockquote>
+<p>移动端</p>
+</blockquote>
+<p>构建界面</p>
+<h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><ul>
+<li>1:下载 <code>npm i mint-ui --save</code></li>
+<li>2:在main.js文件中 引入mint-ui  及css</li>
+<li>3:安装插件(Vue.use(mint-ui的对象))</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1：引入对象</span></div><div class="line"><span class="keyword">import</span> MintUi <span class="keyword">from</span> <span class="string">'mint-ui'</span>;</div><div class="line"><span class="comment">//2：引入其css</span></div><div class="line"><span class="keyword">import</span> <span class="string">'mint-ui/lib/style.css'</span>;</div><div class="line"></div><div class="line"><span class="comment">//安装插件</span></div><div class="line">Vue.use(MintUi);  <span class="comment">// 执行内部，就是多次注册全局组件</span></div></pre></td></tr></table></figure>
+<ul>
+<li>移动端组件库</li>
+<li><a href="https://mint-ui.github.io/#!/zh-cn" target="_blank" rel="external">https://mint-ui.github.io/#!/zh-cn</a></li>
+<li>DEMO: mint-ui-master\example\pages</li>
+</ul>
+<h2 id="mui-框架"><a href="#mui-框架" class="headerlink" title="mui 框架"></a>mui 框架</h2><blockquote>
+<p>移动端</p>
+</blockquote>
+<p>构建界面</p>
+<ul>
+<li><a href="http://www.dcloud.io/hellomui/" target="_blank" rel="external">http://www.dcloud.io/hellomui/</a></li>
+<li>DEMO: mui-master\examples\hello-mui\examples</li>
+</ul>
+<h2 id="axios-插件"><a href="#axios-插件" class="headerlink" title="axios 插件"></a>axios 插件</h2><ul>
+<li><a href="https://segmentfault.com/a/1190000008470355?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">https://segmentfault.com/a/1190000008470355?utm_source=tuicool&amp;utm_medium=referral</a></li>
+</ul>
+<h2 id="i18n"><a href="#i18n" class="headerlink" title="i18n"></a>i18n</h2><blockquote>
+<p>vue-i18n</p>
+</blockquote>
+<ul>
+<li>internationalization 国际化</li>
+<li>在你项目完善以后，涉及到可能需要给歪果仁使用</li>
+<li>vue中的插件</li>
+<li>vue-i18n<ul>
+<li>1:下载 <code>npm i vue-i18n --save</code></li>
+<li>2:引入对象并安装插件</li>
+<li>3:创建i18n对象、配置:默认语言(locale)、数据(messages)</li>
+<li>4:将实例交给vue</li>
+<li>5:显示(在模板template ) $t</li>
+</ul>
+</li>
+<li>通过下拉列表(动态的)。改变。变更页面中显示的数据</li>
+</ul>
+<p>const messages = {</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&apos;zh-cn&apos;: &#123;</div><div class="line">    name: &apos;vue-i18n&apos;,</div><div class="line">    desc: &apos;基于VueJS的国际化多语言切换组件&apos;,</div><div class="line">    lang: &apos;中&apos;,</div><div class="line">    msg1: &apos;1.支持表单元素属性&apos;,</div><div class="line">    msg2: &apos;2.支持模板参数替换&apos;,</div><div class="line">    msg3: &apos;3.支持多级对象&apos;,</div><div class="line">    msg4: &apos;4.支持刷新后保存语言状态&apos;</div><div class="line">&#125;,</div><div class="line">&apos;en&apos;: &#123;</div><div class="line">    name: &apos;vue-i18n&apos;,</div><div class="line">    desc: &apos;Internationalization plugin of VueJS&apos;,</div><div class="line">    lang: &apos;EN&apos;,</div><div class="line">    msg1: &apos;1.Support Form element properties&apos;,</div><div class="line">    msg2: &apos;2.Support Template parameter substitution&apos;,</div><div class="line">    msg3: &apos;3.Support multi-level objects&apos;,</div><div class="line">    msg4: &apos;4.Support save the language status&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">template&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        显示数据区域:$t transform</div><div class="line"></div><div class="line">        &lt;hr/&gt;</div><div class="line">          &#123;&#123;  $t(&apos;name&apos;)  &#125;&#125; &lt;br/&gt;</div><div class="line">          &#123;&#123;  $t(&apos;desc&apos;)  &#125;&#125; &lt;br/&gt;</div><div class="line">          &#123;&#123;  $t(&apos;lang&apos;)  &#125;&#125; &lt;br/&gt;</div><div class="line">          &#123;&#123;  $t(&apos;msg1&apos;)  &#125;&#125; &lt;br/&gt;</div><div class="line">          &#123;&#123;  $t(&apos;msg2&apos;)  &#125;&#125; &lt;br/&gt;</div><div class="line">          &#123;&#123;  $t(&apos;msg3&apos;)  &#125;&#125; &lt;br/&gt;</div><div class="line">          &#123;&#123;  $t(&apos;msg4&apos;)  &#125;&#125;</div><div class="line"></div><div class="line">          &lt;select @change=&quot;change&quot; v-model=&quot;selected&quot;&gt;</div><div class="line">            &lt;option v-for=&quot;(language,index) in languages&quot; :key=&quot;index&quot; :value=&quot;language.value&quot;&gt;&#123;&#123;language.viewName&#125;&#125;&lt;/option&gt;</div><div class="line">          &lt;/select&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">    export default &#123;</div><div class="line">        data()&#123;</div><div class="line">            return &#123;</div><div class="line">                data:[],//返回的是数组</div><div class="line">                selected:&apos;&apos;, //下拉列表的值</div><div class="line">                languages:[</div><div class="line">                &#123;</div><div class="line">                  viewName:&apos;请选择&apos;,</div><div class="line">                  value:&apos;&apos;</div><div class="line">                &#125;,</div><div class="line">                &#123;</div><div class="line">                  viewName:&apos;中文&apos;,</div><div class="line">                  value:&apos;zh-cn&apos;</div><div class="line">                &#125;,&#123;</div><div class="line">                  viewName:&apos;english&apos;,</div><div class="line">                  value:&apos;en&apos;</div><div class="line">                &#125;]</div><div class="line">            &#125;</div><div class="line">        &#125;,</div><div class="line">        created()&#123;</div><div class="line">           </div><div class="line">        &#125;,</div><div class="line">        methods:&#123;</div><div class="line">          change()&#123;</div><div class="line">              console.log(this.selected);</div><div class="line">              this.$i18n.locale = this.selected;</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h2 id="element-ui-框架"><a href="#element-ui-框架" class="headerlink" title="element-ui 框架"></a>element-ui 框架</h2><blockquote>
+<p>PC端</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/01/vue插件/" data-id="cj6ukz5yd0000p0qfwrt7ie40" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/01/vue组件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue组件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">爱瞎搞的橙子</h1>
+    <h2 class="blog-subtitle">喜欢lol，喜欢代码O(∩_∩)O~~</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>15</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>11</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>13</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="http://github.com/ShanaMaid" target="_blank" title="XXX">
+          XXX
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2016 - 2017 小橙子<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/project" title="" class="menuItem">项目</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

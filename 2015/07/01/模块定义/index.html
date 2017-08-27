@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tags | 爱瞎搞的橙子</title>
+  <title>模块定义 | 爱瞎搞的橙子</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="模块定义commonjsamdumdcmdES6 模块 import 导入  export 导出  import export默认导出导出  入import 变量名 from &amp;#39;./xx.js&amp;#39; 出export default 对象;   声明式 入 import {固定的导出key} from &amp;#39;./xxx.js&amp;#39;; 出 export let 固定的导出key =">
+<meta name="keywords" content="模块化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模块定义">
+<meta property="og:url" content="http://yoursite.com/2015/07/01/模块定义/index.html">
 <meta property="og:site_name" content="爱瞎搞的橙子">
-<meta property="og:description" content="前端">
-<meta property="og:updated_time" content="2017-08-26T17:56:52.123Z">
+<meta property="og:description" content="模块定义commonjsamdumdcmdES6 模块 import 导入  export 导出  import export默认导出导出  入import 变量名 from &amp;#39;./xx.js&amp;#39; 出export default 对象;   声明式 入 import {固定的导出key} from &amp;#39;./xxx.js&amp;#39;; 出 export let 固定的导出key =">
+<meta property="og:updated_time" content="2017-08-27T07:07:05.502Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tags">
-<meta name="twitter:description" content="前端">
+<meta name="twitter:title" content="模块定义">
+<meta name="twitter:description" content="模块定义commonjsamdumdcmdES6 模块 import 导入  export 导出  import export默认导出导出  入import 变量名 from &amp;#39;./xx.js&amp;#39; 出export default 对象;   声明式 入 import {固定的导出key} from &amp;#39;./xxx.js&amp;#39;; 出 export let 固定的导出key =">
   
     <link rel="alternate" href="/atom.xml" title="爱瞎搞的橙子" type="application/atom+xml">
   
@@ -71,16 +72,107 @@
   </div>
 </div>
 
-        <section id="main"><article  class="animated rubberBand article article-type-" >
+        <section id="main"><article id="post-模块定义" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/01/模块定义/" class="article-date">
+  <time class="post-time" datetime="2015-06-30T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">7月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
   <div class="article-inner">
-    <div class="tag-box">
-      <h1>标签</h1>
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      模块定义
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/学习/">学习</a>,<a class="article-category-link" href="/categories/学习/模块/">模块</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
-        <a href="/tags/ES6/" style="font-size: 21px;">ES6</a> <a href="/tags/project/" style="font-size: 14px;">project</a> <a href="/tags/vue/" style="font-size: 28px;">vue</a> <a href="/tags/vue配置/" style="font-size: 14px;">vue配置</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/模块化/" style="font-size: 14px;">模块化</a>
+        <h1 id="模块定义"><a href="#模块定义" class="headerlink" title="模块定义"></a>模块定义</h1><h2 id="commonjs"><a href="#commonjs" class="headerlink" title="commonjs"></a>commonjs</h2><h2 id="amd"><a href="#amd" class="headerlink" title="amd"></a>amd</h2><h2 id="umd"><a href="#umd" class="headerlink" title="umd"></a>umd</h2><h2 id="cmd"><a href="#cmd" class="headerlink" title="cmd"></a>cmd</h2><h2 id="ES6-模块"><a href="#ES6-模块" class="headerlink" title="ES6 模块"></a>ES6 模块</h2><ul>
+<li>import 导入 </li>
+<li>export 导出</li>
+</ul>
+<h3 id="import-export"><a href="#import-export" class="headerlink" title="import export"></a>import export</h3><p>默认导出导出</p>
+<ul>
+<li>入<code>import 变量名 from &#39;./xx.js&#39;</code></li>
+<li>出<code>export default 对象;</code></li>
+</ul>
+<ul>
+<li>声明式<ul>
+<li>入 <code>import {固定的导出key} from &#39;./xxx.js&#39;;</code></li>
+<li>出 <code>export let 固定的导出key = &#39;xxx&#39;;</code></li>
+<li>或者两步导出<ul>
+<li><code>var 固定的导出key = &#39;xxxx&#39;;</code>,</li>
+<li><code>export {固定的导出key};</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>全体导入<ul>
+<li><code>import * as 变量名 from &#39;./xxx.js&#39;;</code></li>
+<li>该对象 具备不同的key + default属性</li>
+</ul>
+</li>
+<li>import 和 export 只能在顶级作用域中使用，不能再{} 块级或者函数中使用</li>
+</ul>
+
       
     </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/07/01/模块定义/" data-id="cj6uedu18000k40qf9n5mj0qo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/07/01/bable/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          js代码转换器（bable）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/01/promise/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">解决回调地狱（promise）</div>
+    </a>
+  
+</nav>
+
+  
 </article>
+
+
 
 </section>
         
