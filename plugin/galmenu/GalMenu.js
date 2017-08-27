@@ -79,7 +79,6 @@
                     } else {
                         $(".circle").addClass("open");
                         $("#overlay,.GalMenu").show();
-                        audio.play()
                     }
                 })
             })
