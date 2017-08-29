@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angular普通指令 | 爱瞎搞的橙子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Angular普通指令ng-app 告诉angular它在页面中所要控制的范围 页面加载完成angular会自动在页面中查找这个指令 如果页面中没有这个指令,angular将不会启动 告诉angular当前页面由哪一个模块来管理  1&amp;lt;body ng-app=&amp;quot;module&amp;quot;&amp;gt; ng-model实现双向数据绑定(获取表单元素中的值) 1&amp;lt;input type=">
+<meta name="keywords" content="Angular">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular普通指令">
+<meta property="og:url" content="http://yoursite.com/2017/06/01/Angular普通指令/index.html">
+<meta property="og:site_name" content="爱瞎搞的橙子">
+<meta property="og:description" content="Angular普通指令ng-app 告诉angular它在页面中所要控制的范围 页面加载完成angular会自动在页面中查找这个指令 如果页面中没有这个指令,angular将不会启动 告诉angular当前页面由哪一个模块来管理  1&amp;lt;body ng-app=&amp;quot;module&amp;quot;&amp;gt; ng-model实现双向数据绑定(获取表单元素中的值) 1&amp;lt;input type=">
+<meta property="og:updated_time" content="2017-08-29T16:33:03.588Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular普通指令">
+<meta name="twitter:description" content="Angular普通指令ng-app 告诉angular它在页面中所要控制的范围 页面加载完成angular会自动在页面中查找这个指令 如果页面中没有这个指令,angular将不会启动 告诉angular当前页面由哪一个模块来管理  1&amp;lt;body ng-app=&amp;quot;module&amp;quot;&amp;gt; ng-model实现双向数据绑定(获取表单元素中的值) 1&amp;lt;input type=">
+  
+    <link rel="alternate" href="/atom.xml" title="爱瞎搞的橙子" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>24</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>43</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>20</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-Angular普通指令" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/01/Angular普通指令/" class="article-date">
+  <time class="post-time" datetime="2017-05-31T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Angular普通指令
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/框架/">框架</a>,<a class="article-category-link" href="/categories/框架/Angular/">Angular</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Angular普通指令"><a href="#Angular普通指令" class="headerlink" title="Angular普通指令"></a>Angular普通指令</h1><h2 id="ng-app"><a href="#ng-app" class="headerlink" title="ng-app"></a>ng-app</h2><ul>
+<li>告诉angular它在页面中所要控制的范围</li>
+<li>页面加载完成angular会自动在页面中查找这个指令</li>
+<li>如果页面中没有这个指令,angular将不会启动</li>
+<li>告诉angular当前页面由哪一个模块来管理</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app=&quot;module&quot;&gt;</div></pre></td></tr></table></figure>
+<h2 id="ng-model"><a href="#ng-model" class="headerlink" title="ng-model"></a>ng-model</h2><p>实现双向数据绑定(获取表单元素中的值)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;&quot; value=&quot;11&quot; ng-model=&quot;val&quot;&gt;</div></pre></td></tr></table></figure>
+<h3 id="双向绑定原理"><a href="#双向绑定原理" class="headerlink" title="双向绑定原理"></a>双向绑定原理</h3><p>脏检查机制</p>
+<p>angular在页面加载完成之后会在页面中查找ng-agg指令，如果找到会在js中创建一个对象来存储页面中的数据，当html页面中文本框的值改变之后，angular会取到文本框的值然后赋给创建出对象里的变量，对象变量发生改变的时候，angular会在页面中找哪一个地方使用到了这个变量，找到之后将变量更新成最新的值，这个过程叫数据双向数据绑定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng-model=&quot;变量&quot;</div></pre></td></tr></table></figure>
+<h3 id="实现双向数据绑定的条件"><a href="#实现双向数据绑定的条件" class="headerlink" title="实现双向数据绑定的条件"></a>实现双向数据绑定的条件</h3><ul>
+<li>必须是表单元素</li>
+<li>在表单元素身上写 ng-model指令</li>
+</ul>
+<h2 id="ng-init"><a href="#ng-init" class="headerlink" title="ng-init"></a>ng-init</h2><p>初始化变量的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng-init=&quot;变量1=值1;变量2=值2&quot;</div></pre></td></tr></table></figure>
+<h2 id="ng-click"><a href="#ng-click" class="headerlink" title="ng-click"></a>ng-click</h2><p>点击事件(和原生JS中的onclick事件作用一样)</p>
+<h2 id="ng-repeat"><a href="#ng-repeat" class="headerlink" title="ng-repeat"></a>ng-repeat</h2><p>遍历数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app=&quot;myApp&quot; ng-controller=&quot;demoCtrl&quot;&gt;</div><div class="line">    &lt;h4&gt;遍历 一维数组&lt;/h4&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;!--</div><div class="line">            ng-repeat 遍历数据 类似于for in 循环</div><div class="line">            in 是固定写法</div><div class="line">            in 后面加上要遍历的数据</div><div class="line">            item 是遍历的当前项(item这个词可以随意写)</div><div class="line">            这个指令可以加在任何标签上</div><div class="line">        --&gt;</div><div class="line">        &lt;li ng-repeat=&quot;item in data&quot;&gt;</div><div class="line">            &#123;&#123;item&#125;&#125;</div><div class="line">        &lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;hr /&gt;</div><div class="line"></div><div class="line">    &lt;h4&gt;遍历 数组中混合对象&lt;/h4&gt;</div><div class="line">    &lt;p ng-repeat=&quot;item in person&quot;&gt;&#123;&#123;item.name&#125;&#125; &#123;&#123;item.age&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;hr /&gt;</div><div class="line"></div><div class="line">    &lt;h4&gt;遍历 对象&lt;/h4&gt;</div><div class="line">    &lt;!--</div><div class="line">        key代表对象的键值</div><div class="line">        val代表对象键值对应的值</div><div class="line">    --&gt;</div><div class="line">    &lt;div ng-repeat=&quot;(key,val) in obj&quot;&gt;</div><div class="line">        &#123;&#123;key&#125;&#125; &#123;&#123;val&#125;&#125;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">    &lt;script src=&quot;node_modules/angular/angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        angular.module(&apos;myApp&apos;,[])</div><div class="line">            .controller(&apos;demoCtrl&apos;,[&apos;$scope&apos;,function($scope)&#123;</div><div class="line"></div><div class="line">                // 一维数组</div><div class="line">                $scope.data = [&apos;小明&apos;,&apos;小红&apos;,&apos;小黑&apos;,&apos;小琴&apos;];</div><div class="line"></div><div class="line">                // 数组中混合对象(最常用的形式)</div><div class="line">                $scope.person = [</div><div class="line">                    &#123;name:&apos;小明&apos;,age:18&#125;,</div><div class="line">                    &#123;name:&apos;小红&apos;,age:28&#125;,</div><div class="line">                    &#123;name:&apos;小红&apos;,age:28&#125;,</div><div class="line">                    &#123;name:&apos;小黑&apos;,age:38&#125;,</div><div class="line">                    &#123;name:&apos;小琴&apos;,age:48&#125;</div><div class="line">                ]</div><div class="line"></div><div class="line">                // 对象</div><div class="line">                $scope.obj = &#123;</div><div class="line">                    name:&apos;小明&apos;,</div><div class="line">                    age:35,</div><div class="line">                    hobby : &apos;吃饭&apos;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">            &#125;])</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h3 id="ng-repeat中所用到的索引"><a href="#ng-repeat中所用到的索引" class="headerlink" title="ng-repeat中所用到的索引"></a>ng-repeat中所用到的索引</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">    $index : 遍历过程中的索引</div><div class="line">    $first : 布尔类型的值 当前是否是第一项 是返回true 不是返回false</div><div class="line">    $last  : 布尔类型的值 当前是否是最后一项 是返回true 不是返回false</div><div class="line">    $middle : 布尔类型的值 第一项和最后一项返回false 其余返回true</div><div class="line">    $even : 偶数项返回true 否则返回false</div><div class="line">    $odd : 奇数项返回true 否则返回false</div><div class="line">    利用这些值在循环的过程中做各种判断 达到我们想要的目的</div><div class="line">    &lt;ul&gt;</div><div class="line">    &lt;li ng-repeat=&quot;item in person&quot; class=&quot;&#123;&#123;$first ? &apos;first&apos; : &apos;&apos;&#125;&#125; &#123;&#123; $last ? &apos;last&apos; : &apos;&apos;&#125;&#125;&quot;&gt;</div><div class="line">        &lt;p&gt;名字：&#123;&#123;item.name&#125;&#125;&lt;/p&gt;</div><div class="line">        &lt;p&gt;年龄：&#123;&#123;item.age&#125;&#125;&lt;/p&gt;</div><div class="line">        &lt;p&gt;索引：&#123;&#123;$index&#125;&#125;&lt;/p&gt;</div><div class="line">        &lt;p&gt;是否是第一项：&#123;&#123;$first&#125;&#125;&lt;/p&gt;</div><div class="line">        &lt;p&gt;是否是最后一项：&#123;&#123;$last&#125;&#125;&lt;/p&gt;</div><div class="line">        &lt;p&gt;是否是中间项：&#123;&#123;$middle&#125;&#125;&lt;/p&gt;</div><div class="line">        &lt;p&gt;是否偶数项：&#123;&#123;$even&#125;&#125;&lt;/p&gt;</div><div class="line">        &lt;p&gt;是否奇数项：&#123;&#123;$odd&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+<h3 id="遍历中不能有重复类型的值-基本数据类型"><a href="#遍历中不能有重复类型的值-基本数据类型" class="headerlink" title="遍历中不能有重复类型的值(基本数据类型)"></a>遍历中不能有重复类型的值(基本数据类型)</h3><p>在遍历的数据后面写上track by 一个唯一(不重复)的值  一般会写$index</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-repeat=&quot;item in data track by $index&quot;&gt;</div><div class="line">        &#123;&#123;item&#125;&#125;</div><div class="line">    &lt;/div&gt;    </div><div class="line">    &lt;hr /&gt;</div><div class="line">    &lt;div ng-repeat=&quot;(key,val) in data track by key&quot;&gt;</div><div class="line">        &#123;&#123;val&#125;&#125;</div><div class="line">    &lt;/div&gt;</div></pre></td></tr></table></figure>
+<h2 id="ng-class"><a href="#ng-class" class="headerlink" title="ng-class"></a>ng-class</h2><h3 id="操作类名"><a href="#操作类名" class="headerlink" title="操作类名"></a>操作类名</h3><p>1-指令的值以对象的形式存在</p>
+<p>2-对象的属性值转化为布尔值是true时,将当前的属性名作为类名添加到class属性中</p>
+<p>3-对象的属性值转化为布尔值是false时,将当前的属性名从class属性中删除掉</p>
+<p>4-属性值可以是数据模型,也可以是JS表达式        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.color&#123;</div><div class="line">	background: red;</div><div class="line">		&#125;</div><div class="line">-----------------------------------------</div><div class="line">&lt;div ng-class=&#123;color:true&#125;&gt; 你好么&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>注意：angular不推崇DOM操作,在当前例子中并没有直接操作类名的JS语句,  而是通过数据模型isGreen的值是true还是false来确定添加哪个颜色的类名,至于如何添加到class属性中,由angular替我们完成。  </p>
+<h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><p>页面中闪烁的问题</p>
+<h3 id="ng-bind"><a href="#ng-bind" class="headerlink" title="ng-bind"></a>ng-bind</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng-bind=&quot;变量&quot;</div></pre></td></tr></table></figure>
+<h3 id="ng-bind-template"><a href="#ng-bind-template" class="headerlink" title="ng-bind-template"></a>ng-bind-template</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng-bind-template=&quot; &#123;&#123; 变量1 &#125;&#125; &#123;&#123; 变量2 &#125;&#125;&quot;</div></pre></td></tr></table></figure>
+<h3 id="ng-cloak"><a href="#ng-cloak" class="headerlink" title="ng-cloak"></a>ng-cloak</h3><p>angular会隐藏有ng-cloak指令或样式的元素,在做完解析之后又会移除元素身上的ng-cloak样式和指令,从而解决表达式闪烁的问题</p>
+<p>但是！angular在页面的最后才被引用进来,所以不能很好的解决这个问题需要我们手动在页面顶部加上隐藏元素的样式    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">  .ng-cloak,[ng-cloak]&#123;display:none;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">-----------------------------------------</div><div class="line">        &lt;div class=&quot;ng-cloak&quot;&gt;</div><div class="line">            &#123;&#123;msg2&#125;&#125;</div><div class="line">        &lt;/div&gt;</div></pre></td></tr></table></figure>
+<h2 id="ng-non-bindable"><a href="#ng-non-bindable" class="headerlink" title="ng-non-bindable"></a>ng-non-bindable</h2><p>不让angular解析其中的代码</p>
+<h2 id="ng-show-ng-hide"><a href="#ng-show-ng-hide" class="headerlink" title="ng-show(ng-hide)"></a>ng-show(ng-hide)</h2><p>控制元素显示隐藏(通样式的方式 display:none),当值为true时 元素显示,当值为false时 元素隐藏</p>
+<h2 id="ng-if"><a href="#ng-if" class="headerlink" title="ng-if"></a>ng-if</h2><p>控制元素显示隐藏</p>
+<p>区别是ng-if是通过DOM节点的添加和删除使得元素显示和隐藏</p>
+<h2 id="ng-switch、ng-switch-when"><a href="#ng-switch、ng-switch-when" class="headerlink" title="ng-switch、ng-switch-when"></a>ng-switch、ng-switch-when</h2><p> ng-switch ng-switch-when 是一对指令类,似于JS中 switch case 语句, 匹配到哪项 哪项就显示 其他项就隐藏,常用于 做多个选项卡的显示和隐藏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app ng-init=&quot;showNum=1&quot;&gt;</div><div class="line">     &lt;div ng-switch=&quot;showNum&quot;&gt;</div><div class="line">         &lt;button ng-click=&quot;showNum=1&quot;&gt;显示1&lt;/button&gt;</div><div class="line">         &lt;button ng-click=&quot;showNum=2&quot;&gt;显示2&lt;/button&gt;</div><div class="line">         &lt;button ng-click=&quot;showNum=3&quot;&gt;显示3&lt;/button&gt;</div><div class="line">         &lt;div ng-switch-when=&quot;1&quot;&gt;1&lt;/div&gt;</div><div class="line">         &lt;div ng-switch-when=&quot;2&quot;&gt;2&lt;/div&gt;</div><div class="line">         &lt;div ng-switch-when=&quot;3&quot;&gt;3&lt;/div&gt;</div><div class="line">     &lt;/div&gt;</div><div class="line">     &lt;script src=&quot;node_modules/angular/angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line"> &lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="ng-options"><a href="#ng-options" class="headerlink" title="ng-options"></a>ng-options</h2><p>生成select下拉列表 需要配合ng-model指令使用 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">ng-options 用于生成下拉列表 需要和ng-model指令一起使用 否则报错</div><div class="line">&lt;select ng-options=&quot;item.value as item.name for item in balls&quot;&gt;&lt;/select&gt;</div><div class="line">item.name for for是固定语法 angular会将name字段对应的值 放在option标签内</div><div class="line">item.value as as是固定语法 angular会将value字段对应的值 放在option标签的value属性上</div><div class="line">--------------------------------------------------------------------------------</div><div class="line">  &lt;select ng-model=&quot;likeBall&quot; ng-options=&quot;item.value as item.name for item in balls&quot;&gt;&lt;/select&gt;</div><div class="line">        &#123;&#123;likeBall&#125;&#125;</div><div class="line">        &lt;script src=&quot;node_modules/angular/angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">        &lt;script&gt;</div><div class="line">            angular.module(&apos;myApp&apos;,[])</div><div class="line">                .controller(&apos;demoCtrl&apos;,[&apos;$scope&apos;,function($scope)&#123;</div><div class="line"></div><div class="line">                    // 给下拉列表设置默认值 和options标签value属性的值对应</div><div class="line">                    $scope.likeBall = &quot;001&quot;;</div><div class="line"></div><div class="line">                    // 下拉列表的数据源</div><div class="line">                    $scope.balls = [</div><div class="line">                        &#123;</div><div class="line">                            name:&apos;足球&apos;,</div><div class="line">                            value:&apos;001&apos;</div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            name:&apos;篮球&apos;,</div><div class="line">                            value:&apos;002&apos;</div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            name:&apos;橄榄球&apos;,</div><div class="line">                            value:&apos;003&apos;</div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            name:&apos;排球&apos;,</div><div class="line">                            value:&apos;004&apos;</div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            name:&apos;乒乓球&apos;,</div><div class="line">                            value:&apos;005&apos;</div><div class="line">                        &#125;</div><div class="line">             </div><div class="line">                    ];</div><div class="line"></div><div class="line">                &#125;])</div><div class="line">        &lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="事件指令"><a href="#事件指令" class="headerlink" title="事件指令"></a>事件指令</h2><h3 id="ng-click-1"><a href="#ng-click-1" class="headerlink" title="ng-click"></a>ng-click</h3><h3 id="ng-dblclick"><a href="#ng-dblclick" class="headerlink" title="ng-dblclick"></a>ng-dblclick</h3><h3 id="ng-blur"><a href="#ng-blur" class="headerlink" title="ng-blur"></a>ng-blur</h3><h3 id="ng-focus"><a href="#ng-focus" class="headerlink" title="ng-focus"></a>ng-focus</h3><h3 id="ng-change"><a href="#ng-change" class="headerlink" title="ng-change"></a>ng-change</h3><h2 id="其他指令"><a href="#其他指令" class="headerlink" title="其他指令"></a>其他指令</h2><h3 id="ng-href"><a href="#ng-href" class="headerlink" title="ng-href"></a>ng-href</h3><h3 id="ng-src"><a href="#ng-src" class="headerlink" title="ng-src"></a>ng-src</h3><h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><ul>
+<li>双大括号的形式称之为插值表达式</li>
+<li>在表达式中可以写ng中的变量</li>
+<li>可以显示字符串</li>
+<li>在表达式中可以进行计算</li>
+<li>可以在表达式中写三目运算符</li>
+<li>执行angular函数</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/01/Angular普通指令/" data-id="cj6xt5sgo00000wqfq0fth2jd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/01/axios/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vue请求数据
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/01/Angular控制器/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Angular控制器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">爱瞎搞的橙子</h1>
+    <h2 class="blog-subtitle">喜欢lol，喜欢代码O(∩_∩)O~~</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>24</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>43</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>20</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="/" target="_blank" title="没有啥">
+          没有啥
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2015 - 2017 小橙子<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/project" title="" class="menuItem">项目</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

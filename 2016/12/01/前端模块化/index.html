@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端模块化 | 爱瞎搞的橙子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端模块化模块化对js代码的管理，将指定内容的功能分为一个一个模块，这些模块在引用的时候被调用进来，具有复用性，并且代码分门别类，易于维护和管理 模块化的标准CommonJS 模块标准化CommonJS  主要用在Node.js当中   代表Node.js  适用于后端 AMD 模块化标准Async Module Definition  适用于前端开发， 代表  Require.js 所有的模块尽">
+<meta name="keywords" content="模块">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端模块化">
+<meta property="og:url" content="http://yoursite.com/2016/12/01/前端模块化/index.html">
+<meta property="og:site_name" content="爱瞎搞的橙子">
+<meta property="og:description" content="前端模块化模块化对js代码的管理，将指定内容的功能分为一个一个模块，这些模块在引用的时候被调用进来，具有复用性，并且代码分门别类，易于维护和管理 模块化的标准CommonJS 模块标准化CommonJS  主要用在Node.js当中   代表Node.js  适用于后端 AMD 模块化标准Async Module Definition  适用于前端开发， 代表  Require.js 所有的模块尽">
+<meta property="og:updated_time" content="2017-08-29T12:11:19.031Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端模块化">
+<meta name="twitter:description" content="前端模块化模块化对js代码的管理，将指定内容的功能分为一个一个模块，这些模块在引用的时候被调用进来，具有复用性，并且代码分门别类，易于维护和管理 模块化的标准CommonJS 模块标准化CommonJS  主要用在Node.js当中   代表Node.js  适用于后端 AMD 模块化标准Async Module Definition  适用于前端开发， 代表  Require.js 所有的模块尽">
+  
+    <link rel="alternate" href="/atom.xml" title="爱瞎搞的橙子" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>24</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>43</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>20</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-前端模块化" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/01/前端模块化/" class="article-date">
+  <time class="post-time" datetime="2016-11-30T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端模块化
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/模块/">模块</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前端模块化"><a href="#前端模块化" class="headerlink" title="前端模块化"></a>前端模块化</h1><h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><p>对js代码的管理，将指定内容的功能分为一个一个模块，这些模块在引用的时候被调用进来，具有复用性，并且代码分门别类，易于维护和管理</p>
+<h2 id="模块化的标准"><a href="#模块化的标准" class="headerlink" title="模块化的标准"></a>模块化的标准</h2><h3 id="CommonJS-模块标准化"><a href="#CommonJS-模块标准化" class="headerlink" title="CommonJS 模块标准化"></a>CommonJS 模块标准化</h3><p>CommonJS  主要用在Node.js当中   代表Node.js  适用于后端</p>
+<h3 id="AMD-模块化标准"><a href="#AMD-模块化标准" class="headerlink" title="AMD 模块化标准"></a>AMD 模块化标准</h3><p>Async Module Definition  适用于前端开发， 代表  Require.js</p>
+<p>所有的模块尽可能早的会被加载进来！！</p>
+<h4 id="Require-js"><a href="#Require-js" class="headerlink" title="Require.js"></a>Require.js</h4><blockquote>
+<p>它是帮我们实现前端模块化的工具，他遵循的标准AMD</p>
+</blockquote>
+<h5 id="定义模块"><a href="#定义模块" class="headerlink" title="定义模块"></a>定义模块</h5><p>requirejs提供了一个全局的函数，来定义模块，一个模块通常都会单独保存成一个文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//形式  define(funciton()&#123; /* 模块自己的代码 */&#125;)</span></div><div class="line"></div><div class="line">define([<span class="string">"./moduleC.js"</span>],<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"我是B中的模块"</span>)</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//当模块要提供内容给别人使用的时候，需要使用return语句将内容进行返回</span></div><div class="line">define([<span class="string">"./moduleB.js"</span>],<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"我是A中的模块"</span>);</div><div class="line"></div><div class="line">    <span class="keyword">var</span> obj = &#123;</div><div class="line">        <span class="attr">sayHello</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"我是调用的结果"</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//当模块依赖于别的模块的时候，需要给当前模块添加依赖项</span></div><div class="line"><span class="comment">//define(["依赖项", "依赖项"], function(依赖项的返回值)&#123; &#125;)</span></div></pre></td></tr></table></figure>
+<h5 id="引用模块"><a href="#引用模块" class="headerlink" title="引用模块"></a>引用模块</h5><p>requirejs提供了一个全局的函数。来引用模块</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//require(["模块的名称（不需要.js后缀）"])  新版本有.js后缀也没关系</span></div><div class="line"></div><div class="line"> <span class="built_in">require</span>([<span class="string">"./moduleA"</span>]);</div><div class="line"></div><div class="line"><span class="comment">//第二参数的函数，为 模块加载完毕之后的回调函数</span></div><div class="line"><span class="built_in">require</span>([<span class="string">"./moduleA"</span>],<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</div><div class="line"></div><div class="line">			<span class="comment">//如果引用的模块有产出内容，在引用的模块内通过return返回了东西</span></div><div class="line">            <span class="comment">//我们可以通过在回调函数中添加形参，来接收前面的模块的返回内容</span></div><div class="line">            <span class="comment">//形参和模块是一一对应的</span></div><div class="line"></div><div class="line"><span class="comment">//在某个js文件定义一个模块  具有返回值的模块</span></div><div class="line">define([<span class="string">"./moduleA"</span>],<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"我是A中的模块"</span>);</div><div class="line">    <span class="keyword">var</span> obj = &#123;</div><div class="line">        <span class="attr">sayHello</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"我是调用的结果"</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;);</div><div class="line">------------------------------------------------------------------------</div><div class="line"> 	 <span class="built_in">require</span>([<span class="string">"./moduleA"</span>], <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">        	obj.sayHello();</div><div class="line">        	<span class="built_in">console</span>.log(obj);</div><div class="line">         &#125;);</div></pre></td></tr></table></figure>
+<h5 id="data-main"><a href="#data-main" class="headerlink" title="data-main"></a>data-main</h5><p>在请求requirejs的script标签中添加一个data-main属性，指向一个js文件 </p>
+<p>在引用requirejs的script表里面加一个data-main, 当requirejs加载完毕之后，会请求加载data-main指向的文件，并执行里面的内容（这个文件的加载是异步的！！）</p>
+<p> data-main所指的文件是异步加载的，所以如果在下面有依赖于data-main文件中实现的功能的代码，那么，很可能出错</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.js里的代码</span></div><div class="line"><span class="keyword">var</span> input = <span class="built_in">document</span>.createElement(<span class="string">"input"</span>);</div><div class="line">div.id = <span class="string">"txt"</span>;</div><div class="line"><span class="built_in">document</span>.body.appendChild(input);</div><div class="line">----------------------------------------------------------</div><div class="line">	<span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"require.js"</span> <span class="attr">data-main</span>=<span class="string">"main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">  	&lt;script&gt;</div><div class="line">         <span class="built_in">document</span>.getElementById(<span class="string">"txt"</span>).value =  <span class="string">"123"</span>;</div><div class="line">    <span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h5 id="模块路径的研究"><a href="#模块路径的研究" class="headerlink" title="模块路径的研究"></a>模块路径的研究</h5><ol>
+<li>当直接使用require来引用一个模块的时候，那么模块的路径会以当前调用require方法的html页面为基础来查找</li>
+<li>如果使用data-main属性，那么路径的查找，会以这个data-main所指的文件为基础来查找！</li>
+<li>如果通过config方法指定了 baseUrl 那么所有的模块查找都会以baseUrl中设置的路径为基础（常用）</li>
+</ol>
+<p>注意： 在设置了baseUrl之后，文件会首先按照baseUrl作为基础去查找，如果找到了，就直接使用，如果没有找到，按照引用模块的文件本身作为基础再去查找！</p>
+<p>模块的应用路径可以写两种（都有效），一种按照baseUrl作为基础来写，另外一种就是按照当前文件路径来写        </p>
+<h5 id="require-config"><a href="#require-config" class="headerlink" title="require.config"></a>require.config</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//config方法可以用来对requirejs进行配置</span></div><div class="line">        <span class="comment">//传的参数是一个对象</span></div><div class="line">        <span class="built_in">require</span>.config(&#123;</div><div class="line">            <span class="comment">//如果使用baseUrl来设置了基本路径，那么所有的模块查找都会以该路径作为基础</span></div><div class="line">            <span class="comment">//如果按照baseUrl找文件找不到，那么requirejs还会以引用模块的代码所在文件为基础再查找一次</span></div><div class="line">            baseUrl: <span class="string">"/"</span>,</div><div class="line">            <span class="comment">//paths中可以为模块路径设置一个别名（id）</span></div><div class="line">            <span class="comment">//以后在使用模块的时候，直接用别名即可！</span></div><div class="line">            <span class="comment">//paths中只需要添加 特别常用的内容即可</span></div><div class="line">            paths: &#123;</div><div class="line">                <span class="comment">//属性名：别名（id）</span></div><div class="line">                <span class="comment">//属性值：别名代表的模块路径！！！</span></div><div class="line">                <span class="string">"a"</span>: <span class="string">"modules/a/b/c/moduleA"</span>,</div><div class="line">                <span class="string">"b"</span>: <span class="string">"modules/a/b/c/moduleB"</span>,</div><div class="line">                <span class="string">"c"</span>: <span class="string">"modules/a/b/c/moduleC"</span>,</div><div class="line">            &#125;</div><div class="line">          shim: &#123;</div><div class="line">            <span class="comment">//做第三方模块的加载配置 可以配置依赖项 也可以配置导出项（返回值）</span></div><div class="line">            <span class="string">"要配置的模块的别名id"</span>: &#123;</div><div class="line">                <span class="attr">deps</span>: [<span class="string">"模块的依赖项"</span>],</div><div class="line">                <span class="attr">exports</span>: <span class="string">"模块要返回的内容（是一个字符串，requirejs会在模块中找和字符串相同的全局变量，将其值作为当前模块的返回值！）"</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        <span class="built_in">require</span>([<span class="string">"a"</span>]);</div></pre></td></tr></table></figure>
+<h5 id="require-js引入第三方模块"><a href="#require-js引入第三方模块" class="headerlink" title="require.js引入第三方模块"></a>require.js引入第三方模块</h5><p>支持引入第三方模块  <code>\b define\b</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>([<span class="string">"jquery"</span>],<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log($(<span class="string">"body"</span>));</div><div class="line">        &#125;);</div></pre></td></tr></table></figure>
+<p>不支持第三方模块</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">shim: &#123;</div><div class="line">           <span class="comment">//要设置哪个模块</span></div><div class="line">           animate: &#123;</div><div class="line">               <span class="comment">//对象中包含这个第三方内容的配置信息</span></div><div class="line"></div><div class="line">               <span class="comment">//1、配置模块的输出项</span></div><div class="line">               <span class="comment">//exports就是用来设置这个模块的输出项的 ，就类似于给这个模块中添加了返回值！</span></div><div class="line">               <span class="comment">//这个属性值是一个字符串， require会自动去这个模块中找和字符串同名的全局变量</span></div><div class="line">               <span class="comment">//将这个全局变量设置为 模块的返回值</span></div><div class="line">               exports: <span class="string">"obj"</span></div><div class="line">           &#125;,</div><div class="line">           <span class="attr">bigger</span>: &#123;</div><div class="line">               <span class="comment">//配置当前模块的依赖项</span></div><div class="line">               deps: [<span class="string">"jquery"</span>]</div><div class="line">           &#125;</div></pre></td></tr></table></figure>
+<h3 id="CMD-模块化标准"><a href="#CMD-模块化标准" class="headerlink" title="CMD 模块化标准"></a>CMD 模块化标准</h3><p>Common Module Definition 适用于前端开发   代表  sea.js</p>
+<p>as lazy as possible<br>只有在需要的时候，才去加载！！</p>
+<p>require.js 没有明显的bug，      sea.js明显没有bug</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/01/前端模块化/" data-id="cj6w72nmy0000psqf3uho6png" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块/">模块</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/01/Angular介绍/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          angular
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/01/模块定义/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">模块定义</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">爱瞎搞的橙子</h1>
+    <h2 class="blog-subtitle">喜欢lol，喜欢代码O(∩_∩)O~~</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>24</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>43</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>20</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="/" target="_blank" title="没有啥">
+          没有啥
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2015 - 2017 小橙子<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/project" title="" class="menuItem">项目</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
