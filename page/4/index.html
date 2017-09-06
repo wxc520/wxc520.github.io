@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>爱瞎搞的橙子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端">
+<meta property="og:type" content="website">
+<meta property="og:title" content="爱瞎搞的橙子">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+<meta property="og:site_name" content="爱瞎搞的橙子">
+<meta property="og:description" content="前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="爱瞎搞的橙子">
+<meta name="twitter:description" content="前端">
+  
+    <link rel="alternate" href="/atom.xml" title="爱瞎搞的橙子" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>47</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>37</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>19</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main">
+  
+    <article id="post-const与let" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/01/const与let/" class="article-date">
+  <time class="post-time" datetime="2016-09-30T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">10月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/01/const与let/">变量声明</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ES6/">ES6</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h1><h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><h4 id="变量赋值"><a href="#变量赋值" class="headerlink" title="变量赋值"></a>变量赋值</h4><h5 id="ago"><a href="#ago" class="headerlink" title="ago"></a>ago</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">let</span> c = <span class="number">3</span>;</div></pre></td></tr></table></figure>
+<h5 id="now"><a href="#now" class="headerlink" title="now"></a>now</h5><p>1-从数组中提取值，按照对应位置，对变量赋值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">//1</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">//2</span></div></pre></td></tr></table></figure>
+<p>2-“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值,解构不成功，变量的值就等于undefined</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [foo, [[bar], baz]] = [<span class="number">1</span>, [[<span class="number">2</span>], <span class="number">3</span> ]];</div><div class="line">   foo <span class="comment">// 1</span></div><div class="line">   bar <span class="comment">// 2</span></div><div class="line">   baz <span class="comment">// 3</span></div><div class="line">--------------------------------------------------</div><div class="line"><span class="keyword">let</span> [x, , y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">   x <span class="comment">// 1</span></div><div class="line">   y <span class="comment">// 3</span></div><div class="line">--------------------------------------------------</div><div class="line"><span class="keyword">let</span> [, , third] = [<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>];</div><div class="line">   third <span class="comment">// "baz"</span></div><div class="line">--------------------------------------------------   </div><div class="line"><span class="keyword">let</span> [head, ...tail] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</div><div class="line">	head <span class="comment">// 1</span></div><div class="line">	tail <span class="comment">// [2, 3, 4]</span></div><div class="line">--------------------------------------------------    </div><div class="line"><span class="keyword">let</span> [x, y, ...z] = [<span class="string">'a'</span>];</div><div class="line">	x <span class="comment">// "a"</span></div><div class="line">	y <span class="comment">// undefined</span></div><div class="line">	z <span class="comment">// []</span></div></pre></td></tr></table></figure>
+<p>3-等号左边的模式，只匹配一部分的等号右边的数组。这种情况下，解构依然可以成功。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">	x <span class="comment">// 1</span></div><div class="line">	y <span class="comment">// 2</span></div><div class="line">--------------------------------------------------     </div><div class="line"> <span class="keyword">let</span> [a, [b], d] = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>];</div><div class="line">	a <span class="comment">// 1</span></div><div class="line">	b <span class="comment">// 2</span></div><div class="line">	d <span class="comment">// 4</span></div></pre></td></tr></table></figure>
+<h4 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> &#123;<span class="attr">foo</span>: baz&#125; = &#123;<span class="attr">foo</span>: <span class="string">'aaa'</span>,<span class="attr">bar</span>: <span class="string">'bbb'</span>&#125;;</div><div class="line">	baz <span class="comment">// "aaa"</span></div><div class="line">--------------------------------------------------  </div><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">	<span class="attr">first</span>: <span class="string">'hello'</span>,</div><div class="line">	<span class="attr">last</span>: <span class="string">'world'</span></div><div class="line">		&#125;;</div><div class="line">--------------------------------------------------  </div><div class="line"><span class="keyword">let</span> &#123;</div><div class="line">	<span class="attr">first</span>: f,</div><div class="line">	<span class="attr">last</span>: l</div><div class="line">		&#125; = obj;</div><div class="line">	f <span class="comment">// 'hello'</span></div><div class="line">	l <span class="comment">// 'world'</span></div></pre></td></tr></table></figure>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>申明变量   所声明的变量，只在let命令所在的代码块内有效。</p>
+<h4 id="1-局部声明"><a href="#1-局部声明" class="headerlink" title="1-局部声明"></a>1-局部声明</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="number">20</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">//20</span></div><div class="line"><span class="built_in">console</span>.log(a)  <span class="comment">//  报错</span></div></pre></td></tr></table></figure>
+<h4 id="2-不存在变量提升"><a href="#2-不存在变量提升" class="headerlink" title="2-不存在变量提升"></a>2-不存在变量提升</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(b);</div><div class="line"><span class="keyword">var</span> b = <span class="number">10</span>;   <span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(a);</div><div class="line"><span class="keyword">let</span> a = <span class="number">10</span>;   <span class="comment">//报错</span></div></pre></td></tr></table></figure>
+<h4 id="3-暂时性死区"><a href="#3-暂时性死区" class="headerlink" title="3-暂时性死区"></a>3-暂时性死区</h4><p>ES6明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> tmp = <span class="number">123</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">	tmp = <span class="string">'abc'</span>; <span class="comment">// 报错</span></div><div class="line">	<span class="keyword">let</span> tmp;</div><div class="line">	&#125;</div><div class="line">--------------------------------------------------</div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">  <span class="comment">// TDZ开始</span></div><div class="line">  tmp = <span class="string">'abc'</span>; </div><div class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// 报错</span></div><div class="line">  <span class="keyword">let</span> tmp; <span class="comment">// TDZ结束</span></div><div class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// undefined</span></div><div class="line"></div><div class="line">  tmp = <span class="number">123</span>;</div><div class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// 123</span></div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<h4 id="4-不允许重复声明"><a href="#4-不允许重复声明" class="headerlink" title="4-不允许重复声明"></a>4-不允许重复声明</h4><p>let不允许在相同作用域内，重复声明同一个变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line">fn();</div><div class="line">--------------------------------------------------</div><div class="line"><span class="comment">// 报错</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</div><div class="line"> <span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line"> <span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"> &#125;</div><div class="line"> fn1();</div></pre></td></tr></table></figure>
+<h4 id="5-不能在函数内部重新声明参数"><a href="#5-不能在函数内部重新声明参数" class="headerlink" title="5-不能在函数内部重新声明参数"></a>5-不能在函数内部重新声明参数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">   <span class="keyword">let</span> arg; <span class="comment">// 报错</span></div><div class="line"> &#125;</div><div class="line">--------------------------------------------------</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">   &#123;</div><div class="line">     <span class="keyword">let</span> arg; <span class="comment">// 不报错</span></div><div class="line">   &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>块级作用域，也不会自动提升全局对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> num  = <span class="number">3</span>; <span class="comment">//同一个块中不允许声明同名变量</span></div><div class="line">--------------------------------------------------</div><div class="line"> <span class="keyword">const</span> num = <span class="number">1</span>;</div><div class="line"> <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</div><div class="line">     <span class="keyword">const</span> num = <span class="number">2</span>;</div><div class="line">     <span class="built_in">console</span>.log(num); <span class="comment">//2</span></div><div class="line"> &#125;</div><div class="line">  <span class="built_in">console</span>.log(num);<span class="comment">//1      </span></div><div class="line">  <span class="keyword">const</span> num;  <span class="comment">//必须一次性完成初始化 = 声明 + 赋值</span></div><div class="line">  num = <span class="number">1</span>;</div><div class="line">--------------------------------------------------</div><div class="line"><span class="keyword">const</span> PI = <span class="number">3.14</span>; <span class="comment">//常量大写，单词间以_分割</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'足球的PI:'</span>,PI);</div><div class="line">   <span class="comment">//篮球的开发</span></div><div class="line">   <span class="comment">//PI = 3.1415926;  //不允许二次赋值</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'篮球的PI'</span>,PI);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/01/const与let/" data-id="cj70ey6w0000pysqfk07icric" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-promise" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/01/promise/" class="article-date">
+  <time class="post-time" datetime="2016-09-30T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">10月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/01/promise/">解决回调地狱（promise）</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ES6/">ES6</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="解决回调地狱"><a href="#解决回调地狱" class="headerlink" title="解决回调地狱"></a>解决回调地狱</h1><h2 id="多重ajax"><a href="#多重ajax" class="headerlink" title="多重ajax"></a>多重ajax</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">--------------------</div><div class="line">&lt;button&gt;发送一堆ajax&lt;/button&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sendMsg</span>(<span class="params">url, callback</span>) </span>&#123;</div><div class="line">        <span class="comment">//ajax</span></div><div class="line">        <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">        xhr.open(<span class="string">'get'</span>, url);</div><div class="line">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>) &#123;</div><div class="line">                <span class="comment">//响应回来，请求1.json</span></div><div class="line">                alert(xhr.responseText);</div><div class="line">                <span class="comment">//请求2.json</span></div><div class="line">                <span class="comment">//后续操作，2||3||4.json,该事宜会发生改变</span></div><div class="line">                callback(); <span class="comment">//你传递的后续要做的事情</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        xhr.send();</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// sendMsg('./1.json');</span></div><div class="line">        <span class="comment">// sendMsg('./2.json');</span></div><div class="line">        <span class="comment">// sendMsg('./3.json');</span></div><div class="line">        <span class="comment">// sendMsg('./4.json');</span></div><div class="line">        <span class="comment">// sendMsg('./1.json');</span></div><div class="line">        <span class="comment">// sendMsg('./2.json');</span></div><div class="line">        <span class="comment">// sendMsg('./3.json');</span></div><div class="line">        <span class="comment">// sendMsg('./4.json');</span></div><div class="line">        <span class="comment">// 理论上请求挨个出去，但是，响应回来的速度，不一定，此时就会出现响应顺序不一致的情况</span></div><div class="line"><span class="comment">//万恶的回调函数地狱,可维护性差</span></div><div class="line">        sendMsg(<span class="string">'./1.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            sendMsg(<span class="string">'./2.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                sendMsg(<span class="string">'./3.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                    sendMsg(<span class="string">'./1.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                        sendMsg(<span class="string">'./2.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                            sendMsg(<span class="string">'./3.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                                <span class="built_in">console</span>.log(<span class="string">'完成了'</span>);</div><div class="line">                            &#125;);</div><div class="line">                        &#125;);</div><div class="line">                    &#125;)</div><div class="line">                &#125;);</div><div class="line">            &#125;);</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><ul>
+<li>promise是一个容器，用来管理异步流程，执行的过程中，</li>
+<li>通过函数调用，记录住执行成功与否的状态，成功-&gt;then，失败-&gt;catch</li>
+<li>保证顺序执行的then回调函数中，记得return 一个promise对象</li>
+<li>promise三种状态： pendding(待发) 没有调用reject或者resolve的时候</li>
+<li>resolved(fulilled) 已解决已满足 调用了resolve后的状态</li>
+<li>rejected 已拒绝  调用reject函数后的状态</li>
+<li>一经改变，无法回退、也不可以暂停</li>
+</ul>
+<p>每一个new Promise中包含着要么成功，要么失败的后续标识<br>每一个promise对象都可以.then函数来获取成功后的操作<br>每一个promise对象也可以.catch函数来获取失败后的操作</p>
+<p> new Promise接受的参数是一个函数<br> 该函数的参数中，1:成功 2:失败<br> 成功(resolve)和失败(reject)也是函数</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">  &lt;button&gt;发送一堆ajax&lt;/button&gt;</div><div class="line">------------------------------------------------------------------------- </div><div class="line">function sendMsg(url, callback) &#123;</div><div class="line">        var p = new Promise(function(resolve,reject)&#123;</div><div class="line">                //包含整件事的执行</div><div class="line">                var xhr = new XMLHttpRequest();</div><div class="line">                xhr.open('get', url);</div><div class="line">                xhr.onreadystatechange = function() &#123;</div><div class="line">                    if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) &#123;    </div><div class="line">                        //成功后的操作</div><div class="line">                        alert(xhr.responseText);</div><div class="line">                        //调用成功函数，其实就是做一个标记，存储起来，未来该对象.then就能执行</div><div class="line">                        resolve('牛逼了');</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                xhr.send();</div><div class="line">        &#125;);</div><div class="line">        return p;//返回p对象外部then||catch</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    document.querySelector('button').onclick = function() &#123;</div><div class="line">            </div><div class="line">         sendMsg('./1.json')</div><div class="line">         .then(function(data)&#123;</div><div class="line">            //成功后的回调函数</div><div class="line">             // console.log('1.json请求完成，成功!!!',data);</div><div class="line">             return sendMsg('./2.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./3.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./4.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./1.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./2.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./3.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./4.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             console.log('结束了');</div><div class="line">         &#125;)</div><div class="line">         .catch(function()&#123; //一组promise对象，一个catch多个then</div><div class="line">             //失败的回调函数</div><div class="line">         &#125;);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/01/promise/" data-id="cj70ey6vr000kysqf6p941ewn" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-first" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/01/first/" class="article-date">
+  <time class="post-time" datetime="2015-05-31T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">6月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/01/first/">爱喝奶茶的橙子</a>
+    </h1>
+  
+
+        <div>
+          
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h1><ul>
+<li>hexo generate—&gt;md生成html页面</li>
+<li>tags—&gt;标签</li>
+<li>date—&gt;分档</li>
+<li>categories —&gt;分类</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/06/01/first/" data-id="cj70ey6vo000jysqfkzdo3sb0" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-检测数据的四种方案" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/01/检测数据的四种方案/" class="article-date">
+  <time class="post-time" datetime="2015-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/01/检测数据的四种方案/">检测数据的四种方案</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a>,<a class="article-category-link" href="/categories/JS/数据类型判断方法/">数据类型判断方法</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="检测数据的四种方案"><a href="#检测数据的四种方案" class="headerlink" title="检测数据的四种方案"></a>检测数据的四种方案</h1><p>在 ECMAScript 规范中，共定义了 7 种数据类型，分为 基本类型 和 引用类型 两大类，如下所示：</p>
+<p><strong>基本类型</strong>：String、Number、Boolean、Symbol、Undefined、Null</p>
+<p><strong>引用类型</strong>：Object</p>
+<p>基本类型也称为简单类型，由于其占据空间固定，是简单的数据段，为了便于提升变量查询速度，将其存储在栈中，即按值访问。</p>
+<p>引用类型也称为复杂类型，由于其值的大小会改变，所以不能将其存放在栈中，否则会降低变量查询速度，因此，其值存储在堆(heap)中，而存储在变量处的值，是一个指针，指向存储对象的内存处，即按址访问。引用类型除 Object 外，还包括 Function 、Array、RegExp、Date 等等。</p>
+<h2 id="1、typeof"><a href="#1、typeof" class="headerlink" title="1、typeof"></a>1、typeof</h2><p>返回的结果用该类型的字符串(全小写字母)形式表示，包括以下 7 种：number、boolean、symbol、string、object、undefined、function 等。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> <span class="string">''</span>; <span class="comment">// string 有效</span></div><div class="line"><span class="keyword">typeof</span> <span class="number">1</span>; <span class="comment">// number 有效</span></div><div class="line"><span class="keyword">typeof</span> <span class="built_in">Symbol</span>(); <span class="comment">// symbol 有效</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">true</span>; <span class="comment">//boolean 有效</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>; <span class="comment">//undefined 有效</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">null</span>; <span class="comment">//object 无效</span></div><div class="line"><span class="keyword">typeof</span> [] ; <span class="comment">//object 无效</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(); <span class="comment">// function 有效</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">//object 无效</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">RegExp</span>(); <span class="comment">//object 无效</span></div></pre></td></tr></table></figure>
+<ul>
+<li>对于基本类型，除 null 以外，均可以返回正确的结果。</li>
+<li>对于引用类型，除 function 以外，一律返回 object 类型。</li>
+<li>对于 null ，返回 object 类型。</li>
+<li>对于 function 返回  function 类型。</li>
+</ul>
+<h2 id="2、instanceof"><a href="#2、instanceof" class="headerlink" title="2、instanceof"></a>2、instanceof</h2><p>instanceof 是用来判断 A 是否为 B 的实例，表达式为：A instanceof B，如果 A 是 B 的实例，则返回 true,否则返回 false</p>
+<p>instanceof 检测的是原型</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 当 A 的 __proto__ 指向 B 的 prototype 时，就认为 A 就是 B 的实例</span></div><div class="line"><span class="keyword">instanceof</span> (A,B) = &#123;</div><div class="line">    <span class="keyword">var</span> L = A.__proto__;</div><div class="line">    <span class="keyword">var</span> R = B.prototype;</div><div class="line">    <span class="keyword">if</span>(L === R) &#123;</div><div class="line">        <span class="comment">//A的内部属性__proto__指向B的原型对象</span></div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Array</span>; <span class="comment">//true</span></div><div class="line">&#123;&#125; <span class="keyword">instanceof</span> <span class="built_in">Object</span>;<span class="comment">//true</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>() <span class="keyword">instanceof</span> <span class="built_in">Date</span>;<span class="comment">//true</span></div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="keyword">new</span> Person() <span class="keyword">instanceof</span> Person;</div><div class="line"> </div><div class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Object</span>; <span class="comment">//true</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>() <span class="keyword">instanceof</span> <span class="built_in">Object</span>;<span class="comment">//true</span></div><div class="line"><span class="keyword">new</span> Person <span class="keyword">instanceof</span> <span class="built_in">Object</span>;<span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h2 id="3、Array-isArray"><a href="#3、Array-isArray" class="headerlink" title="3、Array.isArray()"></a>3、Array.isArray()</h2><p>ECMAScript 5 新增方法  IE9+、 Firefox 4+、 Safari 5+、 Opera 10.5+和 Chrome</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(value))&#123;</div><div class="line">   <span class="comment">//对数组执行某些操作</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="4、constructor"><a href="#4、constructor" class="headerlink" title="4、constructor"></a>4、constructor</h2><p>当一个函数 F被定义时，JS引擎会为F添加 prototype 原型，然后再在 prototype上添加一个 constructor 属性，并让其指向 F 的引用</p>
+<p>当执行 var f = new F() 时，F 被当成了构造函数，f 是F的实例对象，此时 F 原型上的 constructor 传递到了 f 上，因此 f.constructor == F</p>
+<p>null 和 undefined 是无效的对象，因此是不会有 constructor 存在的，这两种类型的数据需要通过其他方式来判断。</p>
+<h2 id="5、toString"><a href="#5、toString" class="headerlink" title="5、toString"></a>5、toString</h2><p>toString 是 Object 原型对象上的方法，使用 call 来调用该方法会返回调用者的类型字符串，格式为 [object,xxx]，xxx 是调用者的数据类型，包括：String、Number、Boolean、Undefined、Null、Function、Date、Array、RegExp、Error、HTMLDocument 等， 基本上，所有的数据类型都可以通过这个方法获</p>
+<p><strong>必须通过 call 或 apply 来调用</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="string">''</span>) ;   <span class="comment">// [object String]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="number">1</span>) ;    <span class="comment">// [object Number]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">true</span>) ; <span class="comment">// [object Boolean]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">Symbol</span>()); <span class="comment">//[object Symbol]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">undefined</span>) ; <span class="comment">// [object Undefined]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">null</span>) ; <span class="comment">// [object Null]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Function</span>()) ; <span class="comment">// [object Function]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Date</span>()) ; <span class="comment">// [object Date]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call([]) ; <span class="comment">// [object Array]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">RegExp</span>()) ; <span class="comment">// [object RegExp]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Error</span>()) ; <span class="comment">// [object Error]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">document</span>) ; <span class="comment">// [object HTMLDocument]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">window</span>) ; <span class="comment">//[object global] window是全局对象 global 的引用</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/01/检测数据的四种方案/" data-id="cj73c4fcf00001gqfppgdz1z4" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-数组常用方法" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/01/数组常用方法/" class="article-date">
+  <time class="post-time" datetime="2015-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/01/数组常用方法/">数组常用方法</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a>,<a class="article-category-link" href="/categories/JS/数组/">数组</a>,<a class="article-category-link" href="/categories/JS/数组/数组常用的方法/">数组常用的方法</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数组常用方法"><a href="#数组常用方法" class="headerlink" title="数组常用方法"></a>数组常用方法</h1><h2 id="1、sort-compareFunction"><a href="#1、sort-compareFunction" class="headerlink" title="1、sort( [compareFunction] )"></a>1、sort( [compareFunction] )</h2><p>对数组做原地排序，并返回这个数组，默认按照字符串 UNICODE 的码位点排序</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fruit = [<span class="string">'cherries'</span>, <span class="string">'apples'</span>, <span class="string">'bananas'</span>];</div><div class="line">fruit.sort(); <span class="comment">// ['apples', 'bananas', 'cherries']</span></div><div class="line"> </div><div class="line"><span class="keyword">var</span> scores = [<span class="number">1</span>, <span class="number">10</span>, <span class="number">2</span>, <span class="number">21</span>];</div><div class="line">scores.sort(); <span class="comment">// [1, 10, 2, 21]</span></div></pre></td></tr></table></figure>
+<p>以给 sort 传递一个回调函数 compareFunction， 其接收两个参数 a 和 b，分别代表数组中<strong>待比较的两个元素</strong>，a 元素 排在 b 的前面 。</p>
+<p>回调函数需要返回一个表达式，用以标明 升序 或 降序 操作：</p>
+<ul>
+<li>return a - b ：如果表达式 a - b 为真，触发交换操作。也就是说， 当 a &gt; b 时，进行元素交换，让较小的元素 b 排在较大的元素 a 前面，即 升序操作。</li>
+<li>return b - a ：如果表达式 b - a 为真，触发交换操作。也就是说， 当 a &lt; b 时，进行元素交换，让较大的元素 b 排在较小的元素 a 前面，即 降序操作。　　</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> numbers = [<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">3</span>];</div><div class="line"> </div><div class="line"><span class="comment">// 回调参数 a,b 是数组要比较的两个元素，a 排在 b 的前面。</span></div><div class="line">numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="comment">// 当 a &gt; b 时触发交换操作，把较小的排在前面，即升序。</span></div><div class="line">    <span class="keyword">return</span> a - b;</div><div class="line">&#125;); <span class="comment">//[1,2,3,4,10]</span></div><div class="line"> </div><div class="line">numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="comment">// 当 a &lt; b 时触发交换操作，把较大的排在前面，即降序。</span></div><div class="line">    <span class="keyword">return</span> b - a;</div><div class="line">&#125;); <span class="comment">//[10,4,3,2,1]</span></div></pre></td></tr></table></figure>
+<h2 id="2、join-separator"><a href="#2、join-separator" class="headerlink" title="2、join( [separator] )"></a>2、join( [separator] )</h2><p>将数组中的所有元素连接成一个字符串。separtor 用于指定连接每个数组元素的分隔符。分隔符会被转成字符串类型；如果省略的话，默认为一个逗号。如果separtor 是一个空字符串，那么数组中的所有元素将被直接连接。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = [<span class="string">'Wind'</span>, <span class="string">'Rain'</span>, <span class="string">'Fire'</span>];</div><div class="line">data.join();      <span class="comment">//Wind,Rain,Fire</span></div><div class="line">data.join(<span class="string">', '</span>);  <span class="comment">//Wind, Rain, Fire</span></div><div class="line">data.join(<span class="string">' + '</span>); <span class="comment">//Wind + Rain + Fire</span></div><div class="line">data.join(<span class="string">''</span>);    <span class="comment">//WindRainFire</span></div></pre></td></tr></table></figure>
+<h2 id="3、concat-value1-…-valueN"><a href="#3、concat-value1-…-valueN" class="headerlink" title="3、concat( value1,…,valueN )"></a>3、concat( value1,…,valueN )</h2><p>oncat 方法将创建一个新的数组，然后将调用它的对象(this 指向的对象)中的元素以及所有参数中的数组类型的参数中的元素以及非数组类型的参数本身按照顺序放入这个新数组，并返回该数组， valueN 允许是数组或非数组值。在没有给 concat 传递参数的情况下，它只是复制当前数组并返回副本。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> alpha = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"> </div><div class="line">alpha.concat(<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>]); <span class="comment">//["a", "b", "c", 1, 2, 3]</span></div><div class="line"> </div><div class="line">alpha.concat(); <span class="comment">// ['a', 'b', 'c']</span></div></pre></td></tr></table></figure>
+<h2 id="4、push-element1-…-elementN-和-pop"><a href="#4、push-element1-…-elementN-和-pop" class="headerlink" title="4、push( element1,…,elementN )  和  pop( )"></a>4、push( element1,…,elementN )  和  pop( )</h2><p>push 添加一个或多个元素到数组的末尾，并返回数组新的长度；pop删除一个数组中的最后的一个元素，并且返回这个元素</p>
+<p>push 和 pop 并不会改变原来的元素位置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"> </div><div class="line">data.push(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>); <span class="comment">//6 -&gt;数组的长度  data-&gt;[1,2,3,4,5,6]</span></div><div class="line"> </div><div class="line">data.pop(); <span class="comment">//6 -&gt;出栈的元素 data-&gt;[1,2,3,4,5]</span></div></pre></td></tr></table></figure>
+<h2 id="5、unshift-element1-…-elementN-和-shift"><a href="#5、unshift-element1-…-elementN-和-shift" class="headerlink" title="5、unshift( element1,…,elementN )  和  shift( )"></a>5、unshift( element1,…,elementN )  和  shift( )</h2><p>unshift 添加一个或多个元素到数组的开头，并返回数组新的长度；shift 删除一个数组中的第一个元素，并且返回这个元素。</p>
+<p>unshift 和 shift 都会改变原来的元素位置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"> </div><div class="line">data.unshift(<span class="number">-1</span>,<span class="number">-2</span>,<span class="number">-3</span>); <span class="comment">//6-&gt;新数组的长度 data-&gt;[-1,-2,-3,1,2,3]</span></div><div class="line"> </div><div class="line">data.shift(); <span class="comment">// -1 -&gt;被移除的元素 data-&gt;[-2,-3,1,2,3]</span></div></pre></td></tr></table></figure>
+<p>如果把数组看成一个栈，push 和 pop 、unshift 和 shift 对数组的操作行为就符合 <strong>后进先出</strong> (LIFO) 规律 ；如果把数组看成一个队列，push 和 shift 、unshift 和 pop 对数组的操作行为就符合 <strong>先进先出 </strong>(FIFO) 规律。</p>
+<p>因此，可以使用数组来实现对应的数据结构：<strong>栈</strong> 和 <strong>队列</strong>。</p>
+<h2 id="6、slice-begin-end"><a href="#6、slice-begin-end" class="headerlink" title="6、slice( begin[,end] )"></a>6、slice( begin[,end] )</h2><p>slice 方法从begin 的索引位置开始提取数组元素，到 end 位置结束，但不包括 end 位置的元素，如果 end 被省略，则默认提取到数组的结尾，如果结束位置小于起始位置，则返回空数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"> </div><div class="line">data.slice(<span class="number">0</span>); <span class="comment">//[1,2,3] 提取的元素</span></div><div class="line">data.slice(<span class="number">1</span>,<span class="number">2</span>); <span class="comment">//[2] 提取的元素</span></div><div class="line">data.slice(<span class="number">2</span>,<span class="number">1</span>); <span class="comment">//[]</span></div></pre></td></tr></table></figure>
+<p>如果参数中有一个负数，则用数组长度加上该数来确定相应的位置。例如，在一个包含 5 项的数组上调用 slice(-2,-1) 与调用  slice(3,4) 得到的结果相同。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> t = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">t.slice(<span class="number">-2</span>,<span class="number">-1</span>); <span class="comment">// [4]</span></div><div class="line">t.slice(<span class="number">3</span>,<span class="number">4</span>);   <span class="comment">// [4]</span></div></pre></td></tr></table></figure>
+<p>slice方法会返回一个新的数组，由于数组是引用类型， 通常会通过 arr.slice(0) 来实现数组的 <strong>浅拷贝</strong>，但这只对 <strong>数组元素是基本类型 </strong>的情况有效。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//简单数组拷贝</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> cyarr = arr.slice(<span class="number">0</span>);  <span class="comment">//浅拷贝</span></div><div class="line">arr.splice(<span class="number">3</span>,<span class="number">1</span>); <span class="comment">//对原数组操作</span></div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(arr,cyarr); <span class="comment">//[1,2,3] , [1,2,3,4]  -&gt; 拷贝成功</span></div></pre></td></tr></table></figure>
+<p>如果是对象数组，数组元素作为指针指向对象内存，slice(0) 仅仅是拷贝了一份指针作为副本，而副本中的指针，指向的还是原来的对象，因此，对一个数组中的对象做操作，另一个数组中的对象也会同步变化。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//对象数组拷贝</span></div><div class="line"><span class="keyword">var</span> list = [&#123;<span class="attr">name</span>:<span class="string">'zhangsan'</span>&#125;];</div><div class="line"><span class="keyword">var</span> cylist = list.slice(<span class="number">0</span>); <span class="comment">//浅拷贝</span></div><div class="line">list[<span class="number">0</span>].name = <span class="string">'lisi'</span>; <span class="comment">//对原数组操作</span></div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(list,cylist); <span class="comment">// [&#123;name:'lisi'&#125;] , [&#123;name:'lisi'&#125;] -&gt; 拷贝失败</span></div></pre></td></tr></table></figure>
+<p>要实现数组的<strong>深拷贝</strong>，需要通过 JSON 的序列化和反序列化来实现，即： JSON.parse( JSON.stringify(arr) )</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//对象数组拷贝</span></div><div class="line"><span class="keyword">var</span> list = [&#123;<span class="attr">name</span>:<span class="string">'zhangsan'</span>&#125;];</div><div class="line"><span class="keyword">var</span> cylist = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(list)); <span class="comment">//深拷贝</span></div><div class="line">list[<span class="number">0</span>].name = <span class="string">'lisi'</span>; <span class="comment">//对原数组操作</span></div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(list,cylist); <span class="comment">// [&#123;name:'lisi'&#125;] , [&#123;name:'zhangsan'&#125;] -&gt; 拷贝成功</span></div></pre></td></tr></table></figure>
+<h2 id="7、splice-start-deleteCount-value1-…-valueN"><a href="#7、splice-start-deleteCount-value1-…-valueN" class="headerlink" title="7、splice( start, deleteCount[,value1,…,valueN] )"></a>7、splice( start, deleteCount[,value1,…,valueN] )</h2><p>splice方法从一个数组中移除一个或多个元素，如果必要，在所移除元素的位置上插入新元素，返回所移除的元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">data.splice(2,1);//[3]-&gt;被删除的元素 data-&gt;[1,2]</div><div class="line">data.splice(2,2,4,5); //[3]-&gt;被删除的元素 data-&gt;[1,2,4,5]</div><div class="line">data.splice(2,2,4,5,6); //[3]-&gt;被删除的元素 data-&gt;[1,2,4,5,6]</div></pre></td></tr></table></figure>
+<h2 id="indexOf-和-lastIndexOf"><a href="#indexOf-和-lastIndexOf" class="headerlink" title="indexOf 和 lastIndexOf"></a>indexOf 和 lastIndexOf</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/01/数组常用方法/" data-id="cj73e91q5000e1gqf47kxg7ir" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-数组的遍历" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/01/数组的遍历/" class="article-date">
+  <time class="post-time" datetime="2015-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/01/数组的遍历/">数组的遍历</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a>,<a class="article-category-link" href="/categories/JS/数组/">数组</a>,<a class="article-category-link" href="/categories/JS/数组/数组的遍历/">数组的遍历</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h1><h2 id="1、forEach-callback-thisArg"><a href="#1、forEach-callback-thisArg" class="headerlink" title="1、forEach( callback[,thisArg] )"></a>1、forEach( callback[,thisArg] )</h2><p>forEach 需要传递2个参数，第一个参数是回调函数，是必选参数，第二个参数是一个对象，用来改变callback中的this指向，是可选参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</div><div class="line">arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">v,i,r</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(v,i,r);</div><div class="line">&#125;)</div><div class="line">-&gt;</div><div class="line">a <span class="number">0</span> [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>]</div><div class="line">b <span class="number">1</span> [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>]</div><div class="line">c <span class="number">2</span> [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>]</div></pre></td></tr></table></figure>
+<p>callback 中传入了3个参数 v,i,r 分别表示当前元素、当前位置、数组对象。再看看使用 thisArg 的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">   print:function(a,b)&#123;</div><div class="line">       console.log(a,b);</div><div class="line">   &#125;</div><div class="line">&#125;;</div><div class="line">var arr = [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;];</div><div class="line">arr.forEach(function(v,i,a)&#123;</div><div class="line">   this.print(v,i);</div><div class="line">&#125;,obj);</div></pre></td></tr></table></figure>
+<p>不传 thisArgs 时，callback中的 this 默认指向 window 对象，当传递 thisArg 时，callback 中的 this 就指向了thisArg，因此这个参数的目的就是为了改变回调函数中的this指向。</p>
+<p>对于不支持 ES5 的浏览器，我们可以对 forEach 进行简单的扩展来兼容老的浏览器：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(!<span class="built_in">Array</span>.prototype.forEach)&#123;</div><div class="line">    <span class="built_in">Array</span>.prototype.forEach = <span class="function"><span class="keyword">function</span>(<span class="params">callback,thisArg</span>)</span>&#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++)&#123;</div><div class="line">            <span class="comment">//当thisArg为undefined时，JS引擎会将window作为其调用者</span></div><div class="line">            callback.call(thisArg,<span class="keyword">this</span>[i],i,<span class="keyword">this</span>.toString());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="2、filter-callback-thisArg"><a href="#2、filter-callback-thisArg" class="headerlink" title="2、filter( callback[,thisArg] )"></a>2、filter( callback[,thisArg] )</h2><p>filter 是<code>过滤</code>的意思，所以这个方法的作用就是返回一个匹配过滤条件的新数组，其接收两个参数 callback 和 thisArg, callback 也是回调函数，主要用于对元素进行条件匹配，thisArg 和 forEach 中的 thisArg 作用一样，在这里就不重复了，看下面示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"a"</span>,<span class="string">"c"</span>];</div><div class="line"><span class="keyword">var</span> newArr = arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</div><div class="line">     <span class="keyword">return</span> item === <span class="string">"a"</span>;</div><div class="line">&#125;);</div><div class="line">        </div><div class="line">newArr -&gt; [<span class="string">"a"</span>,<span class="string">"a"</span>]</div></pre></td></tr></table></figure>
+<p>没有filter的时候，要实现这个功能，我们事先要创建一个空的数组，把匹配到的元素再 push 进去，对filter的扩展：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(!<span class="built_in">Array</span>.prototype.filter) &#123;</div><div class="line">    <span class="built_in">Array</span>.prototype.filter = <span class="function"><span class="keyword">function</span> (<span class="params">callback, thisArg</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> temp = [];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</div><div class="line">           <span class="keyword">if</span>(callback.call(thisArg,<span class="keyword">this</span>[i]))&#123;</div><div class="line">               <span class="comment">//如果callback返回true,则该元素符合过滤条件，将元素压入temp中</span></div><div class="line">               temp.push(<span class="keyword">this</span>[i]);</div><div class="line">           &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> temp;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="3、map-callback-thisArg"><a href="#3、map-callback-thisArg" class="headerlink" title="3、map( callback[,thisArg] )"></a>3、map( callback[,thisArg] )</h2><p>map 的作用是对原数组进行加工处理后并将其作为一个新数组返回，该方法同样接收两个参数，callback 是回调函数用于对数组进行加工处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ar arr = [</div><div class="line">   &#123;<span class="attr">w</span>:<span class="number">10</span>,<span class="attr">h</span>:<span class="number">10</span>&#125;, <span class="comment">//定义长和宽</span></div><div class="line">   &#123;<span class="attr">w</span>:<span class="number">15</span>,<span class="attr">h</span>:<span class="number">20</span>&#125;,</div><div class="line">   &#123;<span class="attr">w</span>:<span class="number">12</span>,<span class="attr">h</span>:<span class="number">12</span>&#125;</div><div class="line">];</div><div class="line"><span class="keyword">var</span> newArr = arr.map(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</div><div class="line">   <span class="comment">//根据长宽计算出面积并赋值给新属性area</span></div><div class="line">   item.area = item.w * item.h;</div><div class="line">   <span class="keyword">return</span> item;</div><div class="line">&#125;);</div><div class="line">newArr[<span class="number">0</span>] - &gt; &#123;<span class="attr">w</span>: <span class="number">10</span>, <span class="attr">h</span>: <span class="number">10</span>, <span class="attr">area</span>: <span class="number">100</span>&#125;</div></pre></td></tr></table></figure>
+<p>map 进行兼容性扩展</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(!<span class="built_in">Array</span>.prototype.map) &#123;</div><div class="line">   <span class="built_in">Array</span>.prototype.map = <span class="function"><span class="keyword">function</span> (<span class="params">callback, thisArg</span>) </span>&#123;</div><div class="line">       <span class="keyword">var</span> temp = [];</div><div class="line">       <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</div><div class="line">           <span class="keyword">var</span> newItem = callback.call(thisArg,<span class="keyword">this</span>[i]);</div><div class="line">           temp.push(newItem); <span class="comment">//将callback返回的新元素压入temp中</span></div><div class="line">       &#125;</div><div class="line">       <span class="keyword">return</span> temp;</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="4、reduce-callback-initialValue"><a href="#4、reduce-callback-initialValue" class="headerlink" title="4、reduce ( callback[,initialValue] )"></a>4、reduce ( callback[,initialValue] )</h2><p>reduce 在这里有<code>减少</code>的意思，其作用是对数组进行<strong>归并操作</strong>，换句话说就是对数组每一个元素进行累加，最终返回所有元素之和。 回调函数 callback 接收4个参数：</p>
+<ul>
+<li>previousValue - 存放的是上一次callback返回的结果，其初始值默认为数组的第一个元素。</li>
+<li>currentValue - 是当前元素 。默认从数组的第二个元素开始。</li>
+<li>currentIndex - 是当前元素位置 。</li>
+<li>array - 是当前数组。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> newArr = arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">previousValue, currentValue, currentIndex, array</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(previousValue, currentValue,currentIndex);</div><div class="line">    <span class="keyword">return</span> previousValue + currentValue;</div><div class="line">&#125;);</div><div class="line"> </div><div class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">1</span></div><div class="line"><span class="number">3</span> <span class="number">3</span> <span class="number">2</span></div><div class="line"><span class="number">6</span> <span class="number">4</span> <span class="number">3</span></div><div class="line"> </div><div class="line">newArr -&gt; <span class="number">10</span></div></pre></td></tr></table></figure>
+<p>reduce 除过可以传递 callback 之外，还可以传递一个参数 initialValue ，作为数组累加的基数。当传了这个参数以后，callback 中的 previousValue 初始值就被置为 initialValue，reduce 也改为从数组的第一个元素开始遍历。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> newArr = arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">previousValue, currentValue, currentIndex, array</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(previousValue, currentValue,currentIndex);</div><div class="line">    <span class="keyword">return</span> previousValue + currentValue;</div><div class="line">&#125;,<span class="number">100</span>);</div><div class="line"> </div><div class="line"><span class="number">100</span> <span class="number">1</span> <span class="number">0</span></div><div class="line"><span class="number">101</span> <span class="number">2</span> <span class="number">1</span></div><div class="line"><span class="number">103</span> <span class="number">3</span> <span class="number">2</span></div><div class="line"><span class="number">106</span> <span class="number">4</span> <span class="number">3</span></div><div class="line"> </div><div class="line">newArr -&gt; <span class="number">110</span></div></pre></td></tr></table></figure>
+<p>从结果可以看出，reduce 最终返回的是： previousValue + 数组本身归并计算的结果。对 reduce 的 polyfill  实现如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(!<span class="built_in">Array</span>.prototype.reduce) &#123;</div><div class="line">   <span class="built_in">Array</span>.prototype.reduce = <span class="function"><span class="keyword">function</span> (<span class="params">callback, initialValue</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> previousValue = initialValue || <span class="keyword">this</span>[<span class="number">0</span>];<span class="comment">//如果不指定intialValue,则默认为数组的第一个元素</span></div><div class="line">        <span class="comment">//如果不指定initialValue，i从1开始遍历，否则就从0开始遍历</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = initialValue?<span class="number">0</span>:<span class="number">1</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</div><div class="line">            <span class="comment">//previousValue 累加每一次返回的结果</span></div><div class="line">            previousValue = callback(previousValue, <span class="keyword">this</span>[i],i,<span class="keyword">this</span>.toString());</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> previousValue;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="5、reduceRight-callback-initialValue"><a href="#5、reduceRight-callback-initialValue" class="headerlink" title="5、reduceRight ( callback[,initialValue] )"></a>5、reduceRight ( callback[,initialValue] )</h2><p>和 reduce 的作用完全相同，唯一的不同是，reduceRight 是从右至左遍历数组的元素。</p>
+<h2 id="6、some-callback-thisArg"><a href="#6、some-callback-thisArg" class="headerlink" title="6、some ( callback[,thisArg] )"></a>6、some ( callback[,thisArg] )</h2><p>some 是<code>某些、一些</code>的意思，其作用是对数组中的每一项执行回调函数，如果该函数对任一项返回 true，则停止遍历，并返回 true 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> result = arr.some( <span class="function"><span class="keyword">function</span>(<span class="params"> item, index, array </span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( item, index, array);</div><div class="line">    <span class="keyword">return</span> item &gt; <span class="number">2</span>;</div><div class="line">&#125;);</div><div class="line">-&gt;</div><div class="line"> <span class="number">1</span> <span class="number">0</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line"> <span class="number">2</span> <span class="number">1</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line"> <span class="number">3</span> <span class="number">2</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line"> </div><div class="line"> restule -&gt; <span class="literal">true</span></div></pre></td></tr></table></figure>
+<p>some 检测整个数组，只要当arr中有一个元素符合条件 item&gt;2 就停止检测和遍历，并返回 true，以表示检测到目标。这和我们在 for 循环中使用 break 语言的作用有点类似。 对于 some 的兼容性扩展如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(!<span class="built_in">Array</span>.prototype.some) &#123;</div><div class="line">   <span class="built_in">Array</span>.prototype.some = <span class="function"><span class="keyword">function</span> (<span class="params">callback, thisArg</span>) </span>&#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</div><div class="line">           <span class="keyword">if</span>(callback.call(thisArg,<span class="keyword">this</span>[i],i,<span class="keyword">this</span>.toString()))&#123;</div><div class="line"> </div><div class="line">               <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//检测到callback返回true,跳出循环，并返回true</span></div><div class="line">           &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//一个符合条件的都没有检测到，返回false</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="7、every-callback-thisArg"><a href="#7、every-callback-thisArg" class="headerlink" title="7、every (callback[,thisArg])"></a>7、every (callback[,thisArg])</h2><p>every 是<code>每一个</code>的意思，其作用是对数组中的每一项执行回调函数，如果该函数对每一项都返回 true，则返回 true 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> result = arr.every( <span class="function"><span class="keyword">function</span>(<span class="params"> item, index, array </span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( item, index, array );</div><div class="line">    <span class="keyword">return</span> item &lt; <span class="number">3</span>;</div><div class="line">&#125;);</div><div class="line"> </div><div class="line"> <span class="number">1</span> <span class="number">0</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line"> <span class="number">2</span> <span class="number">1</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line"> <span class="number">3</span> <span class="number">2</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div><div class="line"> </div><div class="line"> result -&gt; <span class="literal">false</span></div></pre></td></tr></table></figure>
+<p>当检测第3个元素时，item&lt;3 为 false，停止检测，并返回 false，这说明every在检测元素时，要求每一个元素都要符合条件 item&lt;3，如果有一个不符合就停止检测，并返回false。(你可以测试 item&lt;5 时的运行结果，返回值一定是 true ) 。</p>
+<p>那 every 到底有什么作用呢？ 当一个 for 循环使用了 break 语句后，我们想知道 for 循环是否正常的执行完时， 我们一般会通过检测for中的索引 i==arr.length 来判断，因此every 的作用就体现在这里。</p>
+<p>下面是对于 every 的兼容性扩展：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(!<span class="built_in">Array</span>.prototype.every) &#123;</div><div class="line">   <span class="built_in">Array</span>.prototype.every = <span class="function"><span class="keyword">function</span> (<span class="params">callback, thisArg</span>) </span>&#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</div><div class="line">           <span class="keyword">if</span>(!callback.call(thisArg,<span class="keyword">this</span>[i],i,<span class="keyword">this</span>.toString()))&#123;</div><div class="line"> </div><div class="line">               <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//检测到不符合条件的元素,跳出循环，并返回false</span></div><div class="line">           &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">//所有元素都符合条件，返回true</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/01/数组的遍历/" data-id="cj73h6wwq000m1gqfgeaoi0ot" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-正则" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/01/正则/" class="article-date">
+  <time class="post-time" datetime="2015-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/01/正则/">正则</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a>,<a class="article-category-link" href="/categories/JS/正则/">正则</a>,<a class="article-category-link" href="/categories/JS/正则/正则常用方法/">正则常用方法</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h1><h2 id="1、正则表达式结构"><a href="#1、正则表达式结构" class="headerlink" title="1、正则表达式结构"></a>1、正则表达式结构</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> expression = <span class="regexp">/ pattern /</span> flags ;</div></pre></td></tr></table></figure>
+<p>每个正则表达式都可带有一或多个标志（flags），用以标明正则表达式的行为，正则表达式支持下列 3 个标志：</p>
+<ul>
+<li>g： 表示全局（global）模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止；</li>
+<li>i ： 表示不区分大小写（case-insensitive）模式，即在确定匹配项时忽略模式与字符串的大小写；</li>
+<li>m：表示多行（multiline）模式，即在到达一行文本末尾时还会继续查找下一行中是否存在与模式匹配的项。</li>
+</ul>
+<p>如果多个标志同时使用时，则写成：gmi 。</p>
+<h3 id="正则表达式的创建"><a href="#正则表达式的创建" class="headerlink" title="正则表达式的创建"></a>正则表达式的创建</h3><h4 id="new-RegExp-expression"><a href="#new-RegExp-expression" class="headerlink" title="new RegExp(expression)"></a>new RegExp(expression)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> exp2 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(^\\s+)|(\\s+$)"</span>,<span class="string">"g"</span>);</div></pre></td></tr></table></figure>
+<h4 id="直接字面量"><a href="#直接字面量" class="headerlink" title="直接字面量"></a>直接字面量</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> exp1 = <span class="regexp">/(^\s+)|(\s+$)/g</span>;</div></pre></td></tr></table></figure>
+<p>模式中使用的所有<strong>元字符</strong>都必须转义。正则表达式中的元字符包括：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">( [ &#123; \ ^ $ | ) ? * + .] &#125;</div><div class="line"></div><div class="line">//匹配 .docx</div><div class="line">var exp = /\.docx/gi ;</div><div class="line"></div><div class="line">// 对 \. 再次转义</div><div class="line">var exp = new RegExp(&quot;\\.docx&quot;,&quot;gi&quot;);</div><div class="line"></div><div class="line">//匹配 \n</div><div class="line">var exp1 = /\\n/g; //对\n中的\转义</div><div class="line">var exp2 = new RegExp(&quot;\\\\n&quot;,&quot;g&quot;); // 对 \\n 再次转义</div></pre></td></tr></table></figure>
+<h2 id="2、-的区别"><a href="#2、-的区别" class="headerlink" title="2、()  []  {} 的区别"></a>2、()  []  {} 的区别</h2><p>() 的作用是提取匹配的字符串。表达式中有几个()就会得到几个相应的匹配字符串。比如 (\s+) 表示连续空格的字符串。</p>
+<p>[] 是定义匹配的字符范围。比如 [a-zA-Z0-9] 表示字符文本要匹配英文字符和数字。</p>
+<p>{} 一般用来表示匹配的长度，比如 \d{3} 表示匹配三个数字，\d{1,3} 表示匹配1~3个数字，\d{3,} 表示匹配3个以上数字。</p>
+<h2 id="3、-和"><a href="#3、-和" class="headerlink" title="3、^ 和 $"></a>3、^ 和 $</h2><p><code>^</code> 匹配一个字符串的开头，比如 (^a) 就是匹配以字母a开头的字符串</p>
+<p><code>$</code>匹配一个字符串的结尾,比如 (b<code>$</code>) 就是匹配以字母b结尾的字符串</p>
+<p><code>^</code> 还有另个一个作用就是取反，比如<code>[^xyz]</code> 表示匹配的字符串不包含xyz</p>
+<p><strong>注意问题：</strong></p>
+<ul>
+<li>如果<code>^</code>出现在<code>[ ]</code>中一般表示取反，而出现在其他地方则是匹配字符串的开头。</li>
+<li><code>^</code> 和 <code>$</code> 配合可以有效匹配完整字符串: /d+/.test(‘4xpt’) -&gt; true，而 /^\d+$/.test(‘4xpt’)-&gt;false </li>
+</ul>
+<h2 id="4、-d-s-w"><a href="#4、-d-s-w" class="headerlink" title="4、\d  \s  \w  ."></a>4、\d  \s  \w  .</h2><p>\d 匹配一个非负整数， 等价于 [0-9]</p>
+<p>\s 匹配一个空白字符</p>
+<p>\w 匹配一个英文字母或数字，等价于[0-9a-zA-Z]</p>
+<p>.   匹配除换行符以外的任意字符，等价于<code>[^\n]</code></p>
+<h2 id="5、"><a href="#5、" class="headerlink" title="5、\ + ?"></a>5、\ + ?</h2><p>* 表示匹配前面元素0次或多次，比如 (\s*) 就是匹配0个或多个空格</p>
+<ul>
+<li>表示匹配前面元素1次或多次，比如 (\d+) 就是匹配由至少1个整数组成的字符串</li>
+</ul>
+<p>? 表示匹配前面元素0次或1次，相当于{0,1} ，比如(\w?) 就是匹配最多由1个字母或数字组成的字符串 </p>
+<h2 id="6、-1-和-1"><a href="#6、-1-和-1" class="headerlink" title="6、$1 和 \1"></a>6、$1 和 \1</h2><p>$1-$9 存放着正则表达式中最近的9个正则表达式的提取的结果，这些结果按照子匹配的出现顺序依次排列。基本语法是：RegExp.$n ，这些属性是静态的，除了replace中的第二个参数可以省略 RegExp 之外，其他地方使用都要加上 RegExp 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用RegExp访问</span></div><div class="line"><span class="comment">//(\d+)-(\d+)-(\d+)/.test("2016-03-26")</span></div><div class="line">  </div><div class="line"><span class="built_in">RegExp</span>.$<span class="number">1</span>  <span class="comment">// 2016</span></div><div class="line"><span class="built_in">RegExp</span>.$<span class="number">2</span>  <span class="comment">// 03</span></div><div class="line"><span class="built_in">RegExp</span>.$<span class="number">3</span>  <span class="comment">// 26</span></div><div class="line"> </div><div class="line"><span class="comment">//在replace中使用</span></div><div class="line"><span class="string">"2016-03-26"</span>.replace(<span class="regexp">/(\d+)-(\d+)-(\d+)/</span>,<span class="string">"$1年$2月$3日"</span>) </div><div class="line"><span class="comment">// 2016年03月26日</span></div></pre></td></tr></table></figure>
+<p>\1 表示后向引用，是指在正则表达式中，从左往右数，第1个()中的内容，以此类推，\2表示第2个()，\0表示整个表达式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//匹配日期格式，表达式中的\1代表重复(\-|\/|.)</span></div><div class="line"><span class="keyword">var</span> rgx = <span class="regexp">/\d&#123;4&#125;(\-|\/|.)\d&#123;1,2&#125;\1\d&#123;1,2&#125;"/</span></div><div class="line"> </div><div class="line">rgx.test(<span class="string">"2016-03-26"</span>) <span class="comment">//true </span></div><div class="line"> </div><div class="line">rgx.test(<span class="string">"2016-03.26"</span>) <span class="comment">//false</span></div></pre></td></tr></table></figure>
+<p> <strong>两者的区别是：\n只能用在表达式中，而$n只能用在表达式之外的地方。 </strong></p>
+<h2 id="7、test-和-match"><a href="#7、test-和-match" class="headerlink" title="7、test 和 match"></a>7、test 和 match</h2><p>test则是用来检测字符串是否匹配某一个正则表达式，如果匹配就会返回true,反之则返回false</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/\d+/.test("123") ; //true</div><div class="line"> </div><div class="line">/\d+/.test("abc") ; //false</div></pre></td></tr></table></figure>
+<p>match是获取正则匹配到的结果，以数组的形式返回</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"186a619b28"</span>.match(<span class="regexp">/\d+/g</span>); <span class="comment">// ["186","619","28"]</span></div></pre></td></tr></table></figure>
+<h2 id="8、replace"><a href="#8、replace" class="headerlink" title="8、replace"></a>8、replace</h2><p>replace 本身是JavaScript字符串对象的一个方法，它允许接收两个参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">replace([RegExp|String],[String|Function])</div></pre></td></tr></table></figure>
+<p>第1个参数可以是一个普通的字符串或是一个正则表达式</p>
+<p>第2个参数可以是一个普通的字符串或是一个回调函数</p>
+<p>如果第1个参数是 RegExp，JS会先提取RegExp匹配出的结果，然后用第2个参数逐一替换匹配出的结果</p>
+<p>如果第2个参数是回调函数，每匹配到一个结果就回调一次，每次回调都会传递以下参数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">result: 本次匹配到的结果</div><div class="line"> </div><div class="line">$<span class="number">1</span>,...$<span class="number">9</span>: 正则表达式中有几个()，就会传递几个参数，$<span class="number">1</span>~$<span class="number">9</span>分别代表本次匹配中每个()提取的结果，最多<span class="number">9</span>个</div><div class="line"> </div><div class="line">offset:记录本次匹配的开始位置</div><div class="line"> </div><div class="line">source:接受匹配的原始字符串</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/01/正则/" data-id="cj73i754t000t1gqfuhmet7az" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-正则案例" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/01/正则案例/" class="article-date">
+  <time class="post-time" datetime="2015-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/01/正则案例/">正则案例</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a>,<a class="article-category-link" href="/categories/JS/正则/">正则</a>,<a class="article-category-link" href="/categories/JS/正则/正则案例/">正则案例</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="正则案例"><a href="#正则案例" class="headerlink" title="正则案例"></a>正则案例</h1><h2 id="实现字符串的-trim-函数，去除字符串两边的空格"><a href="#实现字符串的-trim-函数，去除字符串两边的空格" class="headerlink" title="实现字符串的 trim 函数，去除字符串两边的空格"></a>实现字符串的 trim 函数，去除字符串两边的空格</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span>.prototype.trim = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> </div><div class="line">    <span class="comment">//方式一：将匹配到的每一个结果都用""替换</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/(^\s+)|(\s+$)/g</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">""</span>;</div><div class="line">    &#125;);</div><div class="line"> </div><div class="line">    <span class="comment">//方式二：和方式一的原理相同</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/(^\s+)|(\s+$)/g</span>,<span class="string">''</span>);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ^\s+ 表示以空格开头的连续空白字符，\s+$ 表示以空格结尾的连续空白字符，加上() 就是将匹配到的结果提取出来，由于是 | 的关系，因此这个表达式最多会match到两个结果集，然后执行两次替换</span></div><div class="line"></div><div class="line"><span class="built_in">String</span>.prototype.trim = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * @param rs：匹配结果</div><div class="line">     * @param $1:第1个()提取结果</div><div class="line">     * @param $2:第2个()提取结果</div><div class="line">     * @param offset:匹配开始位置</div><div class="line">     * @param source：原始字符串</div><div class="line">     */</div><div class="line">    <span class="keyword">this</span>.replace(<span class="regexp">/(^\s+)|(\s+$)/g</span>,<span class="function"><span class="keyword">function</span>(<span class="params">rs,$<span class="number">1</span>,$<span class="number">2</span>,offset,source</span>)</span>&#123;</div><div class="line">        <span class="comment">//arguments中的每个元素对应一个参数</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</div><div class="line">    &#125;);</div><div class="line">&#125;;</div><div class="line"> </div><div class="line"><span class="string">" abcd "</span>.trim();</div><div class="line"> </div><div class="line">输出结果：</div><div class="line"> </div><div class="line">[<span class="string">" "</span>, <span class="string">" "</span>, <span class="literal">undefined</span>, <span class="number">0</span>, <span class="string">" abcd "</span>] <span class="comment">//第1次匹配结果</span></div><div class="line">[<span class="string">" "</span>, <span class="literal">undefined</span>, <span class="string">" "</span>, <span class="number">5</span>, <span class="string">" abcd "</span>] <span class="comment">//第2次匹配结果</span></div></pre></td></tr></table></figure>
+<h2 id="提取浏览器-url-中的参数名和参数值，生成一个key-value-的对象"><a href="#提取浏览器-url-中的参数名和参数值，生成一个key-value-的对象" class="headerlink" title="提取浏览器 url 中的参数名和参数值，生成一个key/value 的对象"></a>提取浏览器 url 中的参数名和参数值，生成一个key/value 的对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/([^&amp;=]+)=([^&amp;=]*)/gi 每次匹配到的都是一个完整key/value,形如 xxxx=xxx, 每当匹配到一个这样的结果时就执行回调，并传递匹配到的key和value，对应到$1和$2 。</div><div class="line"></div><div class="line">function getUrlParamObj()&#123;</div><div class="line">    var obj = &#123;&#125;;</div><div class="line">    //获取url的参数部分</div><div class="line">    var params = window.location.search.substr(1);</div><div class="line">    //[^&amp;=]+ 表示不含&amp;或=的连续字符，加上()就是提取对应字符串</div><div class="line">    params.replace(/([^&amp;=]+)=([^&amp;=]*)/gi,function(rs,$1,$2)&#123;</div><div class="line">        obj[$1] =  decodeURIComponent($2);</div><div class="line">    &#125;);</div><div class="line"> </div><div class="line">    return obj;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="在字符串指定位置插入新字符串"><a href="#在字符串指定位置插入新字符串" class="headerlink" title="在字符串指定位置插入新字符串"></a>在字符串指定位置插入新字符串</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 当offset=2时，正则表达式为：(^.&#123;3&#125;)  .表示除\n之外的任意字符，&#123;3&#125; 表示匹配前三个连续字符，加()就会将匹配到的结果提取出来，然后通过replace将匹配到的结果替换为新的字符串，形如：结果=结果+str</span></div><div class="line"></div><div class="line"><span class="built_in">String</span>.prototype.insetAt = <span class="function"><span class="keyword">function</span>(<span class="params">str,offset</span>)</span>&#123;</div><div class="line"> </div><div class="line">    offset = offset + <span class="number">1</span>;</div><div class="line">    <span class="comment">//使用RegExp()构造函数创建正则表达式</span></div><div class="line">    <span class="keyword">var</span> regx = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(^.&#123;"</span>+offset+<span class="string">"&#125;)"</span>);</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(regx,<span class="string">"$1"</span>+str);</div><div class="line">&#125;;</div><div class="line"> </div><div class="line"><span class="string">"abcd"</span>.insetAt(<span class="string">'xyz'</span>,<span class="number">2</span>); <span class="comment">//在c字符后插入xyz</span></div><div class="line">&gt;&gt; <span class="string">"abcxyzd"</span></div></pre></td></tr></table></figure>
+<h2 id="将手机号12988886666转化成129-6666"><a href="#将手机号12988886666转化成129-6666" class="headerlink" title="将手机号12988886666转化成129**6666"></a>将手机号12988886666转化成129<em>**</em>6666</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// (\d&#123;3&#125;\d&#123;4&#125;\d&#123;4&#125;) 可以匹配完整的手机号，并分别提取前3位、4-7位和8-11位，"$1****$3" 是将第2个匹配结果用****代替并组成新的字符串，然后替换完整的手机号。</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">telFormat</span>(<span class="params">tel</span>)</span>&#123;</div><div class="line"> </div><div class="line">    tel = <span class="built_in">String</span>(tel);</div><div class="line"> </div><div class="line">    <span class="comment">//方式一</span></div><div class="line">    <span class="keyword">return</span> tel.replace(<span class="regexp">/(\d&#123;3&#125;)(\d&#123;4&#125;)(\d&#123;4&#125;)/</span>,<span class="function"><span class="keyword">function</span> (<span class="params">rs,$<span class="number">1</span>,$<span class="number">2</span>,$<span class="number">3</span></span>)</span>&#123;</div><div class="line">       <span class="keyword">return</span> $<span class="number">1</span>+<span class="string">"****"</span>+$<span class="number">3</span></div><div class="line">    &#125;);</div><div class="line"> </div><div class="line">    <span class="comment">//方式二</span></div><div class="line">    <span class="keyword">return</span> tel.replace(<span class="regexp">/(\d&#123;3&#125;)(\d&#123;4&#125;)(\d&#123;4&#125;)/</span>,<span class="string">"$1****$3"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="实现HTML编码，将-lt-gt-“-amp-等字符进行转义，避免XSS攻击"><a href="#实现HTML编码，将-lt-gt-“-amp-等字符进行转义，避免XSS攻击" class="headerlink" title="实现HTML编码，将&lt; / &gt; “ &amp; ` 等字符进行转义，避免XSS攻击"></a>实现HTML编码，将&lt; / &gt; “ &amp; ` 等字符进行转义，避免XSS攻击</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">function htmlEncode(str) &#123;</div><div class="line">    //匹配&lt; / &gt; " &amp; `</div><div class="line">    return str.replace(/[&lt;&gt;"&amp;\/`]/g, function(rs) &#123;</div><div class="line">        switch (rs) &#123;</div><div class="line">            case "&lt;":</div><div class="line">                return "&lt;";</div><div class="line">            case "&gt;":</div><div class="line">                return "&gt;";</div><div class="line">            case "&amp;":</div><div class="line">                return "&amp;";</div><div class="line">            case "\"":</div><div class="line">                return """;</div><div class="line">            case "/": </div><div class="line">                return "/"</div><div class="line">            case "`":</div><div class="line">                return "'"</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/01/正则案例/" data-id="cj73ifyx500121gqff6hz5xzk" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-H5播放器" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/01/H5播放器/" class="article-date">
+  <time class="post-time" datetime="2015-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/01/H5播放器/">H5播放器</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/H5/">H5</a>,<a class="article-category-link" href="/categories/H5/H5播放器/">H5播放器</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="H5播放器"><a href="#H5播放器" class="headerlink" title="H5播放器"></a>H5播放器</h1><h2 id="Media-duration"><a href="#Media-duration" class="headerlink" title="Media.duration"></a>Media.duration</h2><p>视频的总时长</p>
+<h2 id="Media-pause"><a href="#Media-pause" class="headerlink" title="Media.pause()"></a>Media.pause()</h2><p>暂停</p>
+<h2 id="Media-play"><a href="#Media-play" class="headerlink" title="Media.play()"></a>Media.play()</h2><p>播放</p>
+<h2 id="Media-webkitRequestFullScreen"><a href="#Media-webkitRequestFullScreen" class="headerlink" title="Media.webkitRequestFullScreen()"></a>Media.webkitRequestFullScreen()</h2><p>全屏</p>
+<h2 id="Media-ontimeupdate"><a href="#Media-ontimeupdate" class="headerlink" title="Media.ontimeupdate"></a>Media.ontimeupdate</h2><p>视频播放触发事件</p>
+<h2 id="oninput"><a href="#oninput" class="headerlink" title="oninput"></a>oninput</h2><p>进度条触发事件</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/01/H5播放器/" data-id="cj76eepm20000m0qf6gretz14" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/H5/">H5</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-flex布局" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/01/flex布局/" class="article-date">
+  <time class="post-time" datetime="2015-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/01/flex布局/">flex布局</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/H5/">H5</a>,<a class="article-category-link" href="/categories/H5/flex布局/">flex布局</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h1><p>Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</p>
+<p>任何一个容器都可以指定为 Flex 布局。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Webkit 内核的浏览器，必须加上<code>-webkit</code>前缀。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">  <span class="attr">display</span>: -webkit-flex; <span class="comment">/* Safari */</span></div><div class="line">  display: flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意，设为 Flex 布局以后，子元素的<code>float</code>、<code>clear</code>和<code>vertical-align</code>属性将失效。</p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。</p>
+<h2 id="容器的属性"><a href="#容器的属性" class="headerlink" title="容器的属性"></a>容器的属性</h2><h3 id="flex-direction属性"><a href="#flex-direction属性" class="headerlink" title="flex-direction属性"></a>flex-direction属性</h3><p><code>flex-direction</code>属性决定主轴的方向（即项目的排列方向）</p>
+<ul>
+<li><code>row</code>（默认值）：主轴为水平方向，起点在左端。</li>
+<li><code>row-reverse</code>：主轴为水平方向，起点在右端。</li>
+<li><code>column</code>：主轴为垂直方向，起点在上沿。</li>
+<li><code>column-reverse</code>：主轴为垂直方向，起点在下沿。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  flex-direction: row | row-reverse | column | column-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="flex-wrap属性"><a href="#flex-wrap属性" class="headerlink" title="flex-wrap属性"></a>flex-wrap属性</h3><p>（1）<code>nowrap</code>（默认）：不换行</p>
+<p>（2）<code>wrap</code>：换行，第一行在上方。</p>
+<p>（3）<code>wrap-reverse</code>：换行，第一行在下方。</p>
+<p>默认情况下，项目都排在一条线（又称”轴线”）上。<code>flex-wrap</code>属性定义，如果一条轴线排不下，如何换行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">  flex-wrap: nowrap | wrap | wrap-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p><code>flex-flow</code>属性是<code>flex-direction</code>属性和<code>flex-wrap</code>属性的简写形式，默认值为<code>row nowrap</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="justify-content属性"><a href="#justify-content属性" class="headerlink" title="justify-content属性"></a>justify-content属性</h3><p><code>justify-content</code>属性定义了项目在主轴上的对齐方式。</p>
+<ul>
+<li><code>flex-start</code>（默认值）：左对齐</li>
+<li><code>flex-end</code>：右对齐</li>
+<li><code>center</code>： 居中</li>
+<li><code>space-between</code>：两端对齐，项目之间的间隔都相等。</li>
+<li><code>space-around</code>：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  justify-content: flex-start | flex-end | center | space-between | space-around;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="align-items属性"><a href="#align-items属性" class="headerlink" title="align-items属性"></a>align-items属性</h3><p><code>align-items</code>属性定义项目在交叉轴上如何对齐。</p>
+<ul>
+<li><code>flex-start</code>：交叉轴的起点对齐。</li>
+<li><code>flex-end</code>：交叉轴的终点对齐。</li>
+<li><code>center</code>：交叉轴的中点对齐。</li>
+<li><code>baseline</code>: 项目的第一行文字的基线对齐。</li>
+<li><code>stretch</code>（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  align-items: flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="align-content属性"><a href="#align-content属性" class="headerlink" title="align-content属性"></a>align-content属性</h3><p><code>align-content</code>属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
+<ul>
+<li><code>flex-start</code>：与交叉轴的起点对齐。</li>
+<li><code>flex-end</code>：与交叉轴的终点对齐。</li>
+<li><code>center</code>：与交叉轴的中点对齐。</li>
+<li><code>space-between</code>：与交叉轴两端对齐，轴线之间的间隔平均分布。</li>
+<li><code>space-around</code>：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li>
+<li><code>stretch</code>（默认值）：轴线占满整个交叉轴。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  align-content: flex-start | flex-end | center | space-between | space-around | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="项目的属性"><a href="#项目的属性" class="headerlink" title="项目的属性"></a>项目的属性</h2><h3 id="order属性"><a href="#order属性" class="headerlink" title="order属性"></a>order属性</h3><p><code>order</code>属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  order: &lt;integer&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="flex-grow属性"><a href="#flex-grow属性" class="headerlink" title="flex-grow属性"></a>flex-grow属性</h3><p><code>flex-grow</code>属性定义项目的放大比例，默认为<code>0</code>，即如果存在剩余空间，也不放大。</p>
+<p>如果所有项目的<code>flex-grow</code>属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的<code>flex-grow</code>属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-grow: &lt;number&gt;; /* default 0 */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="flex-shrink属性"><a href="#flex-shrink属性" class="headerlink" title="flex-shrink属性"></a>flex-shrink属性</h3><p><code>flex-shrink</code>属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p>
+<p>如果所有项目的<code>flex-shrink</code>属性都为1，当空间不足时，都将等比例缩小。如果一个项目的<code>flex-shrink</code>属性为0，其他项目都为1，则空间不足时，前者不缩小。</p>
+<p>负值对该属性无效。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex-shrink: &lt;number&gt;; /* default 1 */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="flex-basis属性"><a href="#flex-basis属性" class="headerlink" title="flex-basis属性"></a>flex-basis属性</h3><p><code>flex-basis</code>属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为<code>auto</code>，即项目的本来大小。</p>
+<p>它可以设为跟<code>width</code>或<code>height</code>属性一样的值（比如350px），则项目将占据固定空间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">.item &#123;</div><div class="line">  flex-basis: &lt;length&gt; | auto; /* default auto */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="flex属性"><a href="#flex属性" class="headerlink" title="flex属性"></a>flex属性</h3><p><code>flex</code>属性是<code>flex-grow</code>, <code>flex-shrink</code> 和 <code>flex-basis</code>的简写，默认值为<code>0 1 auto</code>。后两个属性可选。</p>
+<p>该属性有两个快捷值：<code>auto</code> (<code>1 1 auto</code>) 和 none (<code>0 0 auto</code>)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  flex: none | [ &lt;&apos;flex-grow&apos;&gt; &lt;&apos;flex-shrink&apos;&gt;? || &lt;&apos;flex-basis&apos;&gt; ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="align-self属性"><a href="#align-self属性" class="headerlink" title="align-self属性"></a>align-self属性</h3><p><code>align-self</code>属性允许单个项目有与其他项目不一样的对齐方式，可覆盖<code>align-items</code>属性。默认值为<code>auto</code>，表示继承父元素的<code>align-items</code>属性，如果没有父元素，则等同于<code>stretch</code>。</p>
+<p>该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item &#123;</div><div class="line">  align-self: auto | flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/01/flex布局/" data-id="cj76eepmc0001m0qf5ys4x435" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/H5/">H5</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; pre</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">next &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">爱瞎搞的橙子</h1>
+    <h2 class="blog-subtitle">喜欢lol，喜欢代码O(∩_∩)O~~</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>47</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>37</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>19</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="/" target="_blank" title="没有啥">
+          没有啥
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2015 - 2017 小橙子<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/project" title="" class="menuItem">项目</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

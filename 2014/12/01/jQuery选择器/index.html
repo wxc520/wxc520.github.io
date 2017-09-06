@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jQuery选择器 | 爱瞎搞的橙子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="jQuery选择器基本选择器   名称 用法 描述     ID选择器 $(“#id”); 获取指定ID的元素   类选择器 $(“.class”); 获取同一类class的元素   标签选择器 $(“div”); 获取同一类标签的所有元素   并集选择器 $(“div,p,li”); 使用逗号分隔，只要符合条件之一就可。   交集选择器 $(“div.redClass”); 获取class为re">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery选择器">
+<meta property="og:url" content="http://yoursite.com/2014/12/01/jQuery选择器/index.html">
+<meta property="og:site_name" content="爱瞎搞的橙子">
+<meta property="og:description" content="jQuery选择器基本选择器   名称 用法 描述     ID选择器 $(“#id”); 获取指定ID的元素   类选择器 $(“.class”); 获取同一类class的元素   标签选择器 $(“div”); 获取同一类标签的所有元素   并集选择器 $(“div,p,li”); 使用逗号分隔，只要符合条件之一就可。   交集选择器 $(“div.redClass”); 获取class为re">
+<meta property="og:updated_time" content="2017-09-05T16:33:52.960Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery选择器">
+<meta name="twitter:description" content="jQuery选择器基本选择器   名称 用法 描述     ID选择器 $(“#id”); 获取指定ID的元素   类选择器 $(“.class”); 获取同一类class的元素   标签选择器 $(“div”); 获取同一类标签的所有元素   并集选择器 $(“div,p,li”); 使用逗号分隔，只要符合条件之一就可。   交集选择器 $(“div.redClass”); 获取class为re">
+  
+    <link rel="alternate" href="/atom.xml" title="爱瞎搞的橙子" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>47</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>37</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>19</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-jQuery选择器" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/12/01/jQuery选择器/" class="article-date">
+  <time class="post-time" datetime="2014-11-30T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQuery选择器
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>,<a class="article-category-link" href="/categories/jQuery/jQuery选择器/">jQuery选择器</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器"></a>jQuery选择器</h1><h2 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>用法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID选择器</td>
+<td>$(“#id”);</td>
+<td style="text-align:left">获取指定ID的元素</td>
+</tr>
+<tr>
+<td>类选择器</td>
+<td>$(“.class”);</td>
+<td style="text-align:left">获取同一类class的元素</td>
+</tr>
+<tr>
+<td>标签选择器</td>
+<td>$(“div”);</td>
+<td style="text-align:left">获取同一类标签的所有元素</td>
+</tr>
+<tr>
+<td>并集选择器</td>
+<td>$(“div,p,li”);</td>
+<td style="text-align:left">使用逗号分隔，只要符合条件之一就可。</td>
+</tr>
+<tr>
+<td>交集选择器</td>
+<td>$(“div.redClass”);</td>
+<td style="text-align:left">获取class为redClass的div元素</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>总结：跟css的选择器用法一模一样。</p>
+</blockquote>
+<h2 id="层级选择器"><a href="#层级选择器" class="headerlink" title="层级选择器"></a>层级选择器</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>用法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>子代选择器</td>
+<td>$(“ul&gt;li”);</td>
+<td style="text-align:left">使用&gt;号，获取儿子层级的元素，注意，并不会获取孙子层级的元素</td>
+</tr>
+<tr>
+<td>后代选择器</td>
+<td>$(“ul li”);</td>
+<td style="text-align:left">使用空格，代表后代选择器，获取ul下的所有li元素，包括孙子等</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>跟CSS的选择器一模一样。</p>
+</blockquote>
+<h2 id="过滤选择器"><a href="#过滤选择器" class="headerlink" title="过滤选择器"></a>过滤选择器</h2><blockquote>
+<p>这类选择器都带冒号:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>用法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:eq（index）</td>
+<td>$(“li:eq(2)”).css(“color”, ”red”);</td>
+<td style="text-align:left">获取到的li元素中，选择索引号为2的元素，索引号index从0开始。</td>
+</tr>
+<tr>
+<td>:odd</td>
+<td>$(“li:odd”).css(“color”, ”red”);</td>
+<td style="text-align:left">获取到的li元素中，选择索引号为奇数的元素</td>
+</tr>
+<tr>
+<td>:even</td>
+<td>$(“li:even”).css(“color”, ”red”);</td>
+<td style="text-align:left">获取到的li元素中，选择索引号为偶数的元素</td>
+</tr>
+</tbody>
+</table>
+<h2 id="筛选选择器-方法"><a href="#筛选选择器-方法" class="headerlink" title="筛选选择器(方法)"></a>筛选选择器(方法)</h2><blockquote>
+<p>筛选选择器的功能与过滤选择器有点类似，但是用法不一样，筛选选择器主要是方法。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>用法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>children(selector)</td>
+<td>$(“ul”).children(“li”)</td>
+<td style="text-align:left">相当于$(“ul&gt;li”)，子类选择器</td>
+</tr>
+<tr>
+<td>find(selector)</td>
+<td>$(“ul”).find(“li”);</td>
+<td style="text-align:left">相当于$(“ul li”),后代选择器</td>
+</tr>
+<tr>
+<td>siblings(selector)</td>
+<td>$(“#first”).siblings(“li”);</td>
+<td style="text-align:left">查找兄弟节点，不包括自己本身。</td>
+</tr>
+<tr>
+<td>parent()</td>
+<td>$(“#first”).parent();</td>
+<td style="text-align:left">查找父亲</td>
+</tr>
+<tr>
+<td>eq(index)</td>
+<td>$(“li”).eq(2);</td>
+<td style="text-align:left">相当于$(“li:eq(2)”),index从0开始</td>
+</tr>
+<tr>
+<td>next()</td>
+<td>$(“li”).next()</td>
+<td style="text-align:left">找下一个兄弟</td>
+</tr>
+<tr>
+<td>prev()</td>
+<td>$(“li”).prev()</td>
+<td style="text-align:left">找上一次兄弟</td>
+</tr>
+</tbody>
+</table>
+<h2 id="“li”-index-获取索引"><a href="#“li”-index-获取索引" class="headerlink" title="$(“li”).index()获取索引"></a>$(“li”).index()获取索引</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/12/01/jQuery选择器/" data-id="cj797cgx90000hwqf5uaxqxng" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/01/本地存储/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          本地存储
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/01/DOM/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">DOM</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">爱瞎搞的橙子</h1>
+    <h2 class="blog-subtitle">喜欢lol，喜欢代码O(∩_∩)O~~</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>47</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>37</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>19</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="/" target="_blank" title="没有啥">
+          没有啥
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2015 - 2017 小橙子<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/project" title="" class="menuItem">项目</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

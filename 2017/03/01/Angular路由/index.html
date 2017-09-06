@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angular路由 | 爱瞎搞的橙子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Angular路由ngRouter语法123456789101112模块对象.config(function($routeProvider)&amp;#123;				// $routeProvider 配置路由的对象 想象成 保安大爷					$routeProvider.when(&apos;锚点值&apos;,&amp;#123;			templateUrl:&apos;&apos;		&amp;#125;)		&amp;lt;div ng-view&amp;gt;&amp;l">
+<meta name="keywords" content="Angular">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular路由">
+<meta property="og:url" content="http://yoursite.com/2017/03/01/Angular路由/index.html">
+<meta property="og:site_name" content="爱瞎搞的橙子">
+<meta property="og:description" content="Angular路由ngRouter语法123456789101112模块对象.config(function($routeProvider)&amp;#123;				// $routeProvider 配置路由的对象 想象成 保安大爷					$routeProvider.when(&apos;锚点值&apos;,&amp;#123;			templateUrl:&apos;&apos;		&amp;#125;)		&amp;lt;div ng-view&amp;gt;&amp;l">
+<meta property="og:updated_time" content="2017-09-02T08:48:24.327Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular路由">
+<meta name="twitter:description" content="Angular路由ngRouter语法123456789101112模块对象.config(function($routeProvider)&amp;#123;				// $routeProvider 配置路由的对象 想象成 保安大爷					$routeProvider.when(&apos;锚点值&apos;,&amp;#123;			templateUrl:&apos;&apos;		&amp;#125;)		&amp;lt;div ng-view&amp;gt;&amp;l">
+  
+    <link rel="alternate" href="/atom.xml" title="爱瞎搞的橙子" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>47</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>37</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>19</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-Angular路由" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/01/Angular路由/" class="article-date">
+  <time class="post-time" datetime="2017-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Angular路由
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/框架/">框架</a>,<a class="article-category-link" href="/categories/框架/Angular/">Angular</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Angular路由"><a href="#Angular路由" class="headerlink" title="Angular路由"></a>Angular路由</h1><h2 id="ngRouter"><a href="#ngRouter" class="headerlink" title="ngRouter"></a>ngRouter</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">模块对象.config(<span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</div><div class="line">		</div><div class="line">		<span class="comment">// $routeProvider 配置路由的对象 想象成 保安大爷</span></div><div class="line">			</div><div class="line">		$routeProvider.when(<span class="string">'锚点值'</span>,&#123;</div><div class="line">			<span class="attr">templateUrl</span>:<span class="string">''</span></div><div class="line">		&#125;)</div><div class="line"></div><div class="line">		&lt;div ng-view&gt;&lt;/div&gt;  </div><div class="line">		angular会在页面中查找拥有ng-view指令的元素 并且将获取过来的内容放到这个元素里面</div><div class="line"></div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> myApp = angular.module(<span class="string">'myApp'</span>,[<span class="string">'ngRoute'</span>]);</div><div class="line"></div><div class="line">myApp.config(<span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</div><div class="line">	$routeProvider</div><div class="line">		.when(<span class="string">'/index'</span>,&#123;</div><div class="line">			<span class="attr">templateUrl</span>:<span class="string">'./tpl/index.html'</span>,</div><div class="line">			<span class="comment">//template:'&lt;div&gt;首页&lt;/div&gt;',</span></div><div class="line">			controller:<span class="string">'indexCtrl'</span></div><div class="line">		&#125;)</div><div class="line">		.when(<span class="string">'/list'</span>,&#123;</div><div class="line">			<span class="attr">templateUrl</span>:<span class="string">'./tpl/list.html'</span>,</div><div class="line">			<span class="comment">//template:'&lt;div&gt;列表页&lt;/div&gt;',</span></div><div class="line">			controller:<span class="string">'listCtrl'</span></div><div class="line">		&#125;)</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line">myApp.controller(<span class="string">'indexCtrl'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">	$scope.msg = <span class="string">"我是首页的内容"</span>;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">myApp.controller(<span class="string">'listCtrl'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">	$scope.msg = <span class="string">"我是列表页的内容"</span>;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="路由传参"><a href="#路由传参" class="headerlink" title="路由传参"></a>路由传参</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">	&lt;li&gt;</div><div class="line">		&lt;a href="#!/article/1/我是第1篇文章"&gt;我是第1篇文章&lt;/a&gt;</div><div class="line">	&lt;/li&gt;</div><div class="line">	&lt;li&gt;</div><div class="line">		&lt;a href="#!/article/2/我是第2篇文章"&gt;我是第2篇文章&lt;/a&gt;</div><div class="line">	&lt;/li&gt;</div><div class="line">	&lt;li&gt;</div><div class="line">		&lt;a href="#!/article/3/&#123;a:1,b:2&#125;"&gt;我是第3篇文章&lt;/a&gt;  </div><div class="line">	&lt;/li&gt; 					// 跳转的页面写上实际参数</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">		/*</div><div class="line">			1.向被传参页面的路由中写 参数占位符</div><div class="line">			2.在跳转链接中将实际参数 写上</div><div class="line">			3.在被传参页面的控制器中获取 传递过来的参数</div><div class="line">		*/</div><div class="line"></div><div class="line">		var myApp = angular.module('myApp',['ngRoute']);</div><div class="line"></div><div class="line">		myApp.config(function($routeProvider)&#123;</div><div class="line"></div><div class="line">			$routeProvider</div><div class="line">				.when('/index',&#123;</div><div class="line">					templateUrl:'./tpl/index.html',</div><div class="line">					controller:'indexCtrl'</div><div class="line">				&#125;)</div><div class="line">				.when('/list',&#123;</div><div class="line">					templateUrl:'./tpl/list.html',</div><div class="line">					controller:'listCtrl'</div><div class="line">				&#125;)</div><div class="line">				.when('/article/:id/:title',&#123;    // 参数占位符</div><div class="line">					templateUrl:'./tpl/article.html',</div><div class="line">					controller:'articleCtrl'</div><div class="line">				&#125;)</div><div class="line"></div><div class="line">		&#125;)</div><div class="line"></div><div class="line">		myApp.controller('indexCtrl',function($scope)&#123;	</div><div class="line"></div><div class="line">		&#125;)</div><div class="line"></div><div class="line">		myApp.controller('listCtrl',function($scope)&#123;</div><div class="line"></div><div class="line">		&#125;)</div><div class="line"></div><div class="line">		myApp.controller('articleCtrl',function($scope,$routeParams)&#123;</div><div class="line"></div><div class="line">			// $routeParams 对象类型 里面存储的是 当前路由的参数</div><div class="line">			</div><div class="line">			// console.log($routeParams.id)</div><div class="line">			// console.log($routeParams['id'])</div><div class="line"></div><div class="line">			console.log( $routeParams )</div><div class="line">			$scope.id = $routeParams.id;</div><div class="line"></div><div class="line">		&#125;)</div></pre></td></tr></table></figure>
+<h2 id="ui-router"><a href="#ui-router" class="headerlink" title="ui-router"></a>ui-router</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line">body ng-app="myApp"&gt;</div><div class="line">    <span class="comment">&lt;!--</span></div><div class="line">        在A标签中可以直接以#!/的形式书写 但是不建议</div><div class="line">    --&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#!/index"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#!/list"</span>&gt;</span>列表页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!--</span></div><div class="line">        在ui-router中 提供了一个ui-sref指令</div><div class="line">        将路由的name值填在这里即可</div><div class="line">        ui-router会自动查找name至对应的锚点链接</div><div class="line">        并生成对应的链接地址</div><div class="line">    --&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">ui-sref</span>=<span class="string">"index"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">ui-sref</span>=<span class="string">"list"</span>&gt;</span>列表页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ui-view</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"node_modules/angular/angular.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"node_modules/angular-ui-router/angular-ui-router.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="comment">/*</span></div><div class="line">            路由模块的名字是ui.router 把这个名字作为主模块的依赖模块</div><div class="line">        */</div><div class="line">        angular.module(<span class="string">'myApp'</span>,[<span class="string">'ui.router'</span>])</div><div class="line"></div><div class="line">            <span class="comment">/*</span></div><div class="line">                ui-router中提供了一个$stateProvider对象,用来配置路由</div><div class="line"></div><div class="line">                state方法负责具体的配置 </div><div class="line"></div><div class="line">                参数以对象的形式存在</div><div class="line"></div><div class="line">                name:当前路由的名字(状态)</div><div class="line"></div><div class="line">                url:当前路由的url锚点值</div><div class="line"></div><div class="line">                template:当前路由的模板</div><div class="line"></div><div class="line">                这里也有templateUrl属性 和ngRoute中的意思一样</div><div class="line"></div><div class="line">             */</div><div class="line">            .config([<span class="string">'$stateProvider'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$stateProvider</span>)</span>&#123;</div><div class="line"></div><div class="line">                $stateProvider</div><div class="line">                    .state(&#123;</div><div class="line">                        <span class="attr">name</span>:<span class="string">'index'</span>,</div><div class="line">                        <span class="attr">url</span>:<span class="string">'/index'</span>,</div><div class="line">                        <span class="attr">template</span>:<span class="string">'&lt;div&gt;首页&lt;/div&gt;'</span></div><div class="line">                    &#125;)</div><div class="line">                    .state(&#123;</div><div class="line">                        <span class="attr">name</span>:<span class="string">'list'</span>,</div><div class="line">                        <span class="attr">url</span>:<span class="string">'/list'</span>,</div><div class="line">                        <span class="attr">template</span>:<span class="string">'&lt;div&gt;列表页&lt;/div&gt;'</span></div><div class="line">                    &#125;)</div><div class="line"></div><div class="line">            &#125;])</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="ui-router传参"><a href="#ui-router传参" class="headerlink" title="ui-router传参"></a>ui-router传参</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app="myApp"&gt;</div><div class="line">    </div><div class="line">    &lt;!--</div><div class="line">        在路由名字的后面加上一个小括号  -&gt; 类似于函数小括号</div><div class="line">        在小括号中写一个对象 并把参数写在对象中  -&gt; 类似于给函数传递了一个对象类型的值</div><div class="line">    --&gt;</div><div class="line"></div><div class="line">    &lt;a ui-sref="index"&gt;首页&lt;/a&gt;</div><div class="line">    &lt;a ui-sref="list(&#123;pagenumber:1,pagesize:10&#125;)"&gt;列表页&lt;/a&gt;</div><div class="line">    </div><div class="line">    &lt;div ui-view&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">    &lt;script src="node_modules/angular/angular.min.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;script src="node_modules/angular-ui-router/angular-ui-router.min.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        angular.module('myApp',['ui.router'])</div><div class="line"></div><div class="line">            .config(['$stateProvider',function($stateProvider)&#123;</div><div class="line"></div><div class="line">                $stateProvider</div><div class="line">                    .state(&#123;</div><div class="line">                        name:'index',</div><div class="line">                        url:'/index',</div><div class="line">                        template:'&lt;div&gt;首页&lt;/div&gt;'</div><div class="line">                    &#125;)</div><div class="line">                    .state(&#123;</div><div class="line">                        name:'list',</div><div class="line">                        // 路由配置中参数的配置和ngRoute一样</div><div class="line">                        url:'/list/:pagesize/:pagenumber',</div><div class="line">                        template:'&lt;div&gt;列表页&lt;/div&gt;',</div><div class="line">                        controller:'listCtrl'</div><div class="line">                    &#125;)</div><div class="line"></div><div class="line">            &#125;])</div><div class="line">            .controller('listCtrl',['$stateParams',function($stateParams)&#123;</div><div class="line"></div><div class="line">                /*</div><div class="line">                    在获取的参数的时候 ui-router提供了一个 $stateParams 对象</div><div class="line"></div><div class="line">                 */</div><div class="line"></div><div class="line">            &#125;])</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">    </div><div class="line">    </div><div class="line">    </div><div class="line">    angular.module("uiRouter", ["ui.router"])</div><div class="line">				.config(function ($stateProvider,$urlRouterProvider) &#123;</div><div class="line">					$stateProvider</div><div class="line">						.state(&#123;</div><div class="line">							url: "/index",</div><div class="line">							name: "index",</div><div class="line">							templateUrl: "indexTpl",</div><div class="line">							// controller: ""</div><div class="line">						&#125;)</div><div class="line">						.state(&#123;</div><div class="line">							url: "/list",</div><div class="line">							name: "list",</div><div class="line">							templateUrl: "listTpl",</div><div class="line">							// abstract:true,</div><div class="line">							// controller: "listCtrl"</div><div class="line"></div><div class="line">						&#125;)</div><div class="line">						.state(&#123;</div><div class="line">							url: "/article/:id",</div><div class="line">							name: "article",</div><div class="line">							// params:&#123;id:1&#125;,		 params可以传参</div><div class="line">							templateUrl: "articleTpl",</div><div class="line">							controller: "articleCtrl"</div><div class="line">						&#125;)</div><div class="line"></div><div class="line">						$urlRouterProvider.otherwise('article');</div><div class="line">				&#125;)</div><div class="line">					.controller("articleCtrl",["$scope","$stateParams",function($scope,$stateParams)&#123;</div><div class="line">							console.log($stateParams)</div><div class="line">						&#125;])</div><div class="line">		&lt;/script&gt;</div><div class="line">		&lt;script type="text/ng-template" id="indexTpl"&gt;</div><div class="line">			&lt;span&gt;我是首页&lt;/span&gt;</div><div class="line">		&lt;/script&gt;</div><div class="line">		&lt;script type="text/ng-template" id="listTpl"&gt;           templateUrl可以是模板id</div><div class="line">			 &lt;a ui-sref="article(&#123;id:2&#125;)"&gt;跳转详情&lt;/a&gt;    模板中可以传参</div><div class="line">			&lt;!-- 我是列表 --&gt;</div><div class="line">		&lt;/script&gt;</div><div class="line">		&lt;script type="text/ng-template" id="articleTpl"&gt;</div><div class="line">			 &lt;ul&gt;</div><div class="line">				&lt;li&gt;文章&lt;/li&gt;</div><div class="line">				&lt;li&gt;而已&lt;/li&gt;</div><div class="line">			&lt;/ul&gt; </div><div class="line">		&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h3 id="ui-router-多view用法"><a href="#ui-router-多view用法" class="headerlink" title="ui-router 多view用法"></a>ui-router 多view用法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">"myApp"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">ui-sref</span>=<span class="string">"index"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">ui-sref</span>=<span class="string">"list"</span>&gt;</span>列表页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="comment">&lt;!--</span></div><div class="line">        在ui-router中可以存在多个 ui-view</div><div class="line">        为了区分 可以给每个ui-view起一个不同的名字</div><div class="line">    --&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ui-view</span>=<span class="string">"view-a"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ui-view</span>=<span class="string">"view-b"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"node_modules/angular/angular.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"node_modules/angular-ui-router/angular-ui-router.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">        angular.module(<span class="string">'myApp'</span>,[<span class="string">'ui.router'</span>])</div><div class="line"></div><div class="line">            .config([<span class="string">'$stateProvider'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$stateProvider</span>)</span>&#123;</div><div class="line"></div><div class="line">                <span class="comment">/*</span></div><div class="line">                    当页面中有多个ui-view时,在路由配置中可以使用views属性配置</div><div class="line">                    views属性的值是对象的形式,属性名是view的名字,其值又是一个对象</div><div class="line">                    是当前view的具体配置 比如templateUrl controller等等</div><div class="line"></div><div class="line">                 */</div><div class="line"></div><div class="line">                $stateProvider</div><div class="line">                    .state(&#123;</div><div class="line">                        <span class="attr">name</span>:<span class="string">'index'</span>,</div><div class="line">                        <span class="attr">url</span>:<span class="string">'/index'</span>,</div><div class="line">                        <span class="attr">views</span>:&#123;</div><div class="line">                            <span class="string">'view-a'</span>:&#123;</div><div class="line">                                <span class="attr">template</span>:<span class="string">'&lt;div&gt;首页a&lt;/div&gt;'</span></div><div class="line">                            &#125;,</div><div class="line">                            <span class="string">'view-b'</span>:&#123;</div><div class="line">                                <span class="attr">template</span>:<span class="string">'&lt;div&gt;首页b&lt;/div&gt;'</span></div><div class="line">                            &#125;</div><div class="line">                        &#125;</div><div class="line">                    &#125;)</div><div class="line">                    .state(&#123;</div><div class="line">                        <span class="attr">name</span>:<span class="string">'list'</span>,</div><div class="line">                        <span class="attr">url</span>:<span class="string">'/list'</span>,</div><div class="line">                        <span class="attr">views</span>:&#123;</div><div class="line">                            <span class="string">'view-a'</span>:&#123;</div><div class="line">                                <span class="attr">template</span>:<span class="string">'&lt;div&gt;列表页A&lt;/div&gt;'</span></div><div class="line">                            &#125;,</div><div class="line">                            <span class="string">'view-b'</span>:&#123;</div><div class="line">                                <span class="attr">template</span>:<span class="string">'&lt;div&gt;列表页B&lt;/div&gt;'</span></div><div class="line">                            &#125;</div><div class="line">                        &#125;</div><div class="line">                    &#125;)</div><div class="line"></div><div class="line">            &#125;])</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="ui-router路由嵌套"><a href="#ui-router路由嵌套" class="headerlink" title="ui-router路由嵌套"></a>ui-router路由嵌套</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">"myApp"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- html入口文件的ui-view --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ui-view</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"node_modules/angular/angular.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"node_modules/angular-ui-router/angular-ui-router.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">        angular.module(<span class="string">'myApp'</span>,[<span class="string">'ui.router'</span>])</div><div class="line">            .config([<span class="string">'$stateProvider'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$stateProvider</span>)</span>&#123;</div><div class="line"></div><div class="line">                $stateProvider</div><div class="line">                    .state(&#123;</div><div class="line">                        <span class="attr">url</span>:<span class="string">'/tab'</span>,</div><div class="line">                        <span class="attr">name</span>:<span class="string">'tab'</span>,</div><div class="line">                         <span class="comment">// 此参数代表当前路由需要和其他路由配合使用</span></div><div class="line">                         <span class="comment">// 不能单独使用</span></div><div class="line">                         <span class="comment">// 当前模板会被插入到html入口文件中的ui-view指令所在标签</span></div><div class="line">                        abstract:<span class="literal">true</span>,</div><div class="line">                        <span class="attr">template</span>:<span class="string">'&lt;a ui-sref="tab.index"&gt;首页&lt;/a&gt;\</span></div><div class="line">                                  &lt;a ui-sref="tab.list"&gt;列表页&lt;/a&gt;\</div><div class="line">                                  &lt;a ui-sref="article"&gt;文章页&lt;/a&gt;\</div><div class="line">                                  &lt;div ui-view&gt;&lt;/div&gt;' <span class="comment">// tab模板中的ui-view 和当前路由配合使用的路由模板被插入到这里</span></div><div class="line">                    &#125;)</div><div class="line">                    .state(&#123;</div><div class="line">                        <span class="attr">url</span>:<span class="string">'/index'</span>,</div><div class="line">                         <span class="comment">// tab.index表示当前路由需要和tab路由配合使用</span></div><div class="line">                         <span class="comment">// 当前路由的模板被插入到tab模板中的ui-view指令所在标签</span></div><div class="line">                        name:<span class="string">'tab.index'</span>,</div><div class="line">                        <span class="attr">template</span>:<span class="string">'&lt;div&gt;首页&lt;/div&gt;'</span></div><div class="line">                    &#125;)</div><div class="line">                    .state(&#123;</div><div class="line">                        <span class="attr">url</span>:<span class="string">'/list'</span>,</div><div class="line">                        <span class="comment">// tab.list表示当前路由需要和tab路由配合使用</span></div><div class="line">                        <span class="comment">// 当前路由的模板被插入到tab模板中的ui-view指令所在标签</span></div><div class="line">                        name:<span class="string">'tab.list'</span>,</div><div class="line">                        <span class="attr">template</span>:<span class="string">'&lt;div&gt;列表页&lt;/div&gt;'</span></div><div class="line">                    &#125;)</div><div class="line">                    .state(&#123;</div><div class="line">                        <span class="attr">url</span>:<span class="string">'/article'</span>,</div><div class="line">                        <span class="comment">// 当前路由可以独立使用</span></div><div class="line">                        <span class="comment">// 模板被插入到html入口文件中的ui-view指令所在标签</span></div><div class="line">                        name:<span class="string">'article'</span>,</div><div class="line">                        <span class="attr">template</span>:<span class="string">'&lt;div&gt;列表页&lt;/div&gt;'</span></div><div class="line">                    &#125;)</div><div class="line"></div><div class="line">            &#125;])</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="ui-router-urlRouterProvider"><a href="#ui-router-urlRouterProvider" class="headerlink" title="ui-router $urlRouterProvider"></a>ui-router $urlRouterProvider</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">"myApp"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">ui-sref</span>=<span class="string">"index"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">ui-sref</span>=<span class="string">"list"</span>&gt;</span>列表页<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ui-view</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"node_modules/angular/angular.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"node_modules/angular-ui-router/angular-ui-router.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">        angular.module(<span class="string">'myApp'</span>,[<span class="string">'ui.router'</span>])</div><div class="line"></div><div class="line">            .config([<span class="string">'$stateProvider'</span>,<span class="string">'$urlRouterProvider'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$stateProvider,$urlRouterProvider</span>)</span>&#123;</div><div class="line"></div><div class="line">                $stateProvider</div><div class="line">                    .state(&#123;</div><div class="line">                        <span class="attr">name</span>:<span class="string">'index'</span>,</div><div class="line">                        <span class="attr">url</span>:<span class="string">'/index'</span>,</div><div class="line">                        <span class="attr">template</span>:<span class="string">'&lt;div&gt;首页&lt;/div&gt;'</span></div><div class="line">                    &#125;)</div><div class="line">                    .state(&#123;</div><div class="line">                        <span class="attr">name</span>:<span class="string">'list'</span>,</div><div class="line">                        <span class="attr">url</span>:<span class="string">'/list'</span>,</div><div class="line">                        <span class="attr">template</span>:<span class="string">'&lt;div&gt;列表页&lt;/div&gt;'</span></div><div class="line">                    &#125;)</div><div class="line"></div><div class="line">                <span class="comment">// 当以上路由都不能匹配的时候 跳转到index页面</span></div><div class="line">                $urlRouterProvider.otherwise(<span class="string">'index'</span>);</div><div class="line"></div><div class="line">            &#125;])</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/01/Angular路由/" data-id="cj70ey6v40008ysqfwshe7ck0" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/01/webpack跨域代理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          webpack跨域代理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/01/Angular的watch与apply/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Angular的watch与apply</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">爱瞎搞的橙子</h1>
+    <h2 class="blog-subtitle">喜欢lol，喜欢代码O(∩_∩)O~~</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>47</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>37</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>19</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="/" target="_blank" title="没有啥">
+          没有啥
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2015 - 2017 小橙子<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/project" title="" class="menuItem">项目</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

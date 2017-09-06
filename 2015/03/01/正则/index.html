@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>正则 | 爱瞎搞的橙子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="正则1、正则表达式结构1var expression = / pattern / flags ; 每个正则表达式都可带有一或多个标志（flags），用以标明正则表达式的行为，正则表达式支持下列 3 个标志：  g： 表示全局（global）模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止； i ： 表示不区分大小写（case-insensitive）模式，即在确定匹配项时忽略模式">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则">
+<meta property="og:url" content="http://yoursite.com/2015/03/01/正则/index.html">
+<meta property="og:site_name" content="爱瞎搞的橙子">
+<meta property="og:description" content="正则1、正则表达式结构1var expression = / pattern / flags ; 每个正则表达式都可带有一或多个标志（flags），用以标明正则表达式的行为，正则表达式支持下列 3 个标志：  g： 表示全局（global）模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止； i ： 表示不区分大小写（case-insensitive）模式，即在确定匹配项时忽略模式">
+<meta property="og:updated_time" content="2017-09-02T16:17:01.200Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则">
+<meta name="twitter:description" content="正则1、正则表达式结构1var expression = / pattern / flags ; 每个正则表达式都可带有一或多个标志（flags），用以标明正则表达式的行为，正则表达式支持下列 3 个标志：  g： 表示全局（global）模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止； i ： 表示不区分大小写（case-insensitive）模式，即在确定匹配项时忽略模式">
+  
+    <link rel="alternate" href="/atom.xml" title="爱瞎搞的橙子" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>47</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>37</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>19</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-正则" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/01/正则/" class="article-date">
+  <time class="post-time" datetime="2015-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      正则
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a>,<a class="article-category-link" href="/categories/JS/正则/">正则</a>,<a class="article-category-link" href="/categories/JS/正则/正则常用方法/">正则常用方法</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h1><h2 id="1、正则表达式结构"><a href="#1、正则表达式结构" class="headerlink" title="1、正则表达式结构"></a>1、正则表达式结构</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> expression = <span class="regexp">/ pattern /</span> flags ;</div></pre></td></tr></table></figure>
+<p>每个正则表达式都可带有一或多个标志（flags），用以标明正则表达式的行为，正则表达式支持下列 3 个标志：</p>
+<ul>
+<li>g： 表示全局（global）模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止；</li>
+<li>i ： 表示不区分大小写（case-insensitive）模式，即在确定匹配项时忽略模式与字符串的大小写；</li>
+<li>m：表示多行（multiline）模式，即在到达一行文本末尾时还会继续查找下一行中是否存在与模式匹配的项。</li>
+</ul>
+<p>如果多个标志同时使用时，则写成：gmi 。</p>
+<h3 id="正则表达式的创建"><a href="#正则表达式的创建" class="headerlink" title="正则表达式的创建"></a>正则表达式的创建</h3><h4 id="new-RegExp-expression"><a href="#new-RegExp-expression" class="headerlink" title="new RegExp(expression)"></a>new RegExp(expression)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> exp2 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(^\\s+)|(\\s+$)"</span>,<span class="string">"g"</span>);</div></pre></td></tr></table></figure>
+<h4 id="直接字面量"><a href="#直接字面量" class="headerlink" title="直接字面量"></a>直接字面量</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> exp1 = <span class="regexp">/(^\s+)|(\s+$)/g</span>;</div></pre></td></tr></table></figure>
+<p>模式中使用的所有<strong>元字符</strong>都必须转义。正则表达式中的元字符包括：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">( [ &#123; \ ^ $ | ) ? * + .] &#125;</div><div class="line"></div><div class="line">//匹配 .docx</div><div class="line">var exp = /\.docx/gi ;</div><div class="line"></div><div class="line">// 对 \. 再次转义</div><div class="line">var exp = new RegExp(&quot;\\.docx&quot;,&quot;gi&quot;);</div><div class="line"></div><div class="line">//匹配 \n</div><div class="line">var exp1 = /\\n/g; //对\n中的\转义</div><div class="line">var exp2 = new RegExp(&quot;\\\\n&quot;,&quot;g&quot;); // 对 \\n 再次转义</div></pre></td></tr></table></figure>
+<h2 id="2、-的区别"><a href="#2、-的区别" class="headerlink" title="2、()  []  {} 的区别"></a>2、()  []  {} 的区别</h2><p>() 的作用是提取匹配的字符串。表达式中有几个()就会得到几个相应的匹配字符串。比如 (\s+) 表示连续空格的字符串。</p>
+<p>[] 是定义匹配的字符范围。比如 [a-zA-Z0-9] 表示字符文本要匹配英文字符和数字。</p>
+<p>{} 一般用来表示匹配的长度，比如 \d{3} 表示匹配三个数字，\d{1,3} 表示匹配1~3个数字，\d{3,} 表示匹配3个以上数字。</p>
+<h2 id="3、-和"><a href="#3、-和" class="headerlink" title="3、^ 和 $"></a>3、^ 和 $</h2><p><code>^</code> 匹配一个字符串的开头，比如 (^a) 就是匹配以字母a开头的字符串</p>
+<p><code>$</code>匹配一个字符串的结尾,比如 (b<code>$</code>) 就是匹配以字母b结尾的字符串</p>
+<p><code>^</code> 还有另个一个作用就是取反，比如<code>[^xyz]</code> 表示匹配的字符串不包含xyz</p>
+<p><strong>注意问题：</strong></p>
+<ul>
+<li>如果<code>^</code>出现在<code>[ ]</code>中一般表示取反，而出现在其他地方则是匹配字符串的开头。</li>
+<li><code>^</code> 和 <code>$</code> 配合可以有效匹配完整字符串: /d+/.test(‘4xpt’) -&gt; true，而 /^\d+$/.test(‘4xpt’)-&gt;false </li>
+</ul>
+<h2 id="4、-d-s-w"><a href="#4、-d-s-w" class="headerlink" title="4、\d  \s  \w  ."></a>4、\d  \s  \w  .</h2><p>\d 匹配一个非负整数， 等价于 [0-9]</p>
+<p>\s 匹配一个空白字符</p>
+<p>\w 匹配一个英文字母或数字，等价于[0-9a-zA-Z]</p>
+<p>.   匹配除换行符以外的任意字符，等价于<code>[^\n]</code></p>
+<h2 id="5、"><a href="#5、" class="headerlink" title="5、\ + ?"></a>5、\ + ?</h2><p>* 表示匹配前面元素0次或多次，比如 (\s*) 就是匹配0个或多个空格</p>
+<ul>
+<li>表示匹配前面元素1次或多次，比如 (\d+) 就是匹配由至少1个整数组成的字符串</li>
+</ul>
+<p>? 表示匹配前面元素0次或1次，相当于{0,1} ，比如(\w?) 就是匹配最多由1个字母或数字组成的字符串 </p>
+<h2 id="6、-1-和-1"><a href="#6、-1-和-1" class="headerlink" title="6、$1 和 \1"></a>6、$1 和 \1</h2><p>$1-$9 存放着正则表达式中最近的9个正则表达式的提取的结果，这些结果按照子匹配的出现顺序依次排列。基本语法是：RegExp.$n ，这些属性是静态的，除了replace中的第二个参数可以省略 RegExp 之外，其他地方使用都要加上 RegExp 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用RegExp访问</span></div><div class="line"><span class="comment">//(\d+)-(\d+)-(\d+)/.test("2016-03-26")</span></div><div class="line">  </div><div class="line"><span class="built_in">RegExp</span>.$<span class="number">1</span>  <span class="comment">// 2016</span></div><div class="line"><span class="built_in">RegExp</span>.$<span class="number">2</span>  <span class="comment">// 03</span></div><div class="line"><span class="built_in">RegExp</span>.$<span class="number">3</span>  <span class="comment">// 26</span></div><div class="line"> </div><div class="line"><span class="comment">//在replace中使用</span></div><div class="line"><span class="string">"2016-03-26"</span>.replace(<span class="regexp">/(\d+)-(\d+)-(\d+)/</span>,<span class="string">"$1年$2月$3日"</span>) </div><div class="line"><span class="comment">// 2016年03月26日</span></div></pre></td></tr></table></figure>
+<p>\1 表示后向引用，是指在正则表达式中，从左往右数，第1个()中的内容，以此类推，\2表示第2个()，\0表示整个表达式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//匹配日期格式，表达式中的\1代表重复(\-|\/|.)</span></div><div class="line"><span class="keyword">var</span> rgx = <span class="regexp">/\d&#123;4&#125;(\-|\/|.)\d&#123;1,2&#125;\1\d&#123;1,2&#125;"/</span></div><div class="line"> </div><div class="line">rgx.test(<span class="string">"2016-03-26"</span>) <span class="comment">//true </span></div><div class="line"> </div><div class="line">rgx.test(<span class="string">"2016-03.26"</span>) <span class="comment">//false</span></div></pre></td></tr></table></figure>
+<p> <strong>两者的区别是：\n只能用在表达式中，而$n只能用在表达式之外的地方。 </strong></p>
+<h2 id="7、test-和-match"><a href="#7、test-和-match" class="headerlink" title="7、test 和 match"></a>7、test 和 match</h2><p>test则是用来检测字符串是否匹配某一个正则表达式，如果匹配就会返回true,反之则返回false</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/\d+/.test("123") ; //true</div><div class="line"> </div><div class="line">/\d+/.test("abc") ; //false</div></pre></td></tr></table></figure>
+<p>match是获取正则匹配到的结果，以数组的形式返回</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"186a619b28"</span>.match(<span class="regexp">/\d+/g</span>); <span class="comment">// ["186","619","28"]</span></div></pre></td></tr></table></figure>
+<h2 id="8、replace"><a href="#8、replace" class="headerlink" title="8、replace"></a>8、replace</h2><p>replace 本身是JavaScript字符串对象的一个方法，它允许接收两个参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">replace([RegExp|String],[String|Function])</div></pre></td></tr></table></figure>
+<p>第1个参数可以是一个普通的字符串或是一个正则表达式</p>
+<p>第2个参数可以是一个普通的字符串或是一个回调函数</p>
+<p>如果第1个参数是 RegExp，JS会先提取RegExp匹配出的结果，然后用第2个参数逐一替换匹配出的结果</p>
+<p>如果第2个参数是回调函数，每匹配到一个结果就回调一次，每次回调都会传递以下参数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">result: 本次匹配到的结果</div><div class="line"> </div><div class="line">$<span class="number">1</span>,...$<span class="number">9</span>: 正则表达式中有几个()，就会传递几个参数，$<span class="number">1</span>~$<span class="number">9</span>分别代表本次匹配中每个()提取的结果，最多<span class="number">9</span>个</div><div class="line"> </div><div class="line">offset:记录本次匹配的开始位置</div><div class="line"> </div><div class="line">source:接受匹配的原始字符串</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/01/正则/" data-id="cj73i754t000t1gqfuhmet7az" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/01/数组的遍历/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          数组的遍历
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/03/01/正则案例/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">正则案例</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">爱瞎搞的橙子</h1>
+    <h2 class="blog-subtitle">喜欢lol，喜欢代码O(∩_∩)O~~</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>47</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>37</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>19</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="/" target="_blank" title="没有啥">
+          没有啥
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2015 - 2017 小橙子<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/project" title="" class="menuItem">项目</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

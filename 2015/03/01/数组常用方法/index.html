@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数组常用方法 | 爱瞎搞的橙子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数组常用方法1、sort( [compareFunction] )对数组做原地排序，并返回这个数组，默认按照字符串 UNICODE 的码位点排序 12345var fruit = [&apos;cherries&apos;, &apos;apples&apos;, &apos;bananas&apos;];fruit.sort(); // [&apos;apples&apos;, &apos;bananas&apos;, &apos;cherries&apos;] var scores = [1, 10, 2, 2">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组常用方法">
+<meta property="og:url" content="http://yoursite.com/2015/03/01/数组常用方法/index.html">
+<meta property="og:site_name" content="爱瞎搞的橙子">
+<meta property="og:description" content="数组常用方法1、sort( [compareFunction] )对数组做原地排序，并返回这个数组，默认按照字符串 UNICODE 的码位点排序 12345var fruit = [&apos;cherries&apos;, &apos;apples&apos;, &apos;bananas&apos;];fruit.sort(); // [&apos;apples&apos;, &apos;bananas&apos;, &apos;cherries&apos;] var scores = [1, 10, 2, 2">
+<meta property="og:updated_time" content="2017-09-02T15:40:37.389Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组常用方法">
+<meta name="twitter:description" content="数组常用方法1、sort( [compareFunction] )对数组做原地排序，并返回这个数组，默认按照字符串 UNICODE 的码位点排序 12345var fruit = [&apos;cherries&apos;, &apos;apples&apos;, &apos;bananas&apos;];fruit.sort(); // [&apos;apples&apos;, &apos;bananas&apos;, &apos;cherries&apos;] var scores = [1, 10, 2, 2">
+  
+    <link rel="alternate" href="/atom.xml" title="爱瞎搞的橙子" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>47</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>37</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>19</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-数组常用方法" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/01/数组常用方法/" class="article-date">
+  <time class="post-time" datetime="2015-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数组常用方法
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a>,<a class="article-category-link" href="/categories/JS/数组/">数组</a>,<a class="article-category-link" href="/categories/JS/数组/数组常用的方法/">数组常用的方法</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数组常用方法"><a href="#数组常用方法" class="headerlink" title="数组常用方法"></a>数组常用方法</h1><h2 id="1、sort-compareFunction"><a href="#1、sort-compareFunction" class="headerlink" title="1、sort( [compareFunction] )"></a>1、sort( [compareFunction] )</h2><p>对数组做原地排序，并返回这个数组，默认按照字符串 UNICODE 的码位点排序</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fruit = [<span class="string">'cherries'</span>, <span class="string">'apples'</span>, <span class="string">'bananas'</span>];</div><div class="line">fruit.sort(); <span class="comment">// ['apples', 'bananas', 'cherries']</span></div><div class="line"> </div><div class="line"><span class="keyword">var</span> scores = [<span class="number">1</span>, <span class="number">10</span>, <span class="number">2</span>, <span class="number">21</span>];</div><div class="line">scores.sort(); <span class="comment">// [1, 10, 2, 21]</span></div></pre></td></tr></table></figure>
+<p>以给 sort 传递一个回调函数 compareFunction， 其接收两个参数 a 和 b，分别代表数组中<strong>待比较的两个元素</strong>，a 元素 排在 b 的前面 。</p>
+<p>回调函数需要返回一个表达式，用以标明 升序 或 降序 操作：</p>
+<ul>
+<li>return a - b ：如果表达式 a - b 为真，触发交换操作。也就是说， 当 a &gt; b 时，进行元素交换，让较小的元素 b 排在较大的元素 a 前面，即 升序操作。</li>
+<li>return b - a ：如果表达式 b - a 为真，触发交换操作。也就是说， 当 a &lt; b 时，进行元素交换，让较大的元素 b 排在较小的元素 a 前面，即 降序操作。　　</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> numbers = [<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">3</span>];</div><div class="line"> </div><div class="line"><span class="comment">// 回调参数 a,b 是数组要比较的两个元素，a 排在 b 的前面。</span></div><div class="line">numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="comment">// 当 a &gt; b 时触发交换操作，把较小的排在前面，即升序。</span></div><div class="line">    <span class="keyword">return</span> a - b;</div><div class="line">&#125;); <span class="comment">//[1,2,3,4,10]</span></div><div class="line"> </div><div class="line">numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="comment">// 当 a &lt; b 时触发交换操作，把较大的排在前面，即降序。</span></div><div class="line">    <span class="keyword">return</span> b - a;</div><div class="line">&#125;); <span class="comment">//[10,4,3,2,1]</span></div></pre></td></tr></table></figure>
+<h2 id="2、join-separator"><a href="#2、join-separator" class="headerlink" title="2、join( [separator] )"></a>2、join( [separator] )</h2><p>将数组中的所有元素连接成一个字符串。separtor 用于指定连接每个数组元素的分隔符。分隔符会被转成字符串类型；如果省略的话，默认为一个逗号。如果separtor 是一个空字符串，那么数组中的所有元素将被直接连接。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = [<span class="string">'Wind'</span>, <span class="string">'Rain'</span>, <span class="string">'Fire'</span>];</div><div class="line">data.join();      <span class="comment">//Wind,Rain,Fire</span></div><div class="line">data.join(<span class="string">', '</span>);  <span class="comment">//Wind, Rain, Fire</span></div><div class="line">data.join(<span class="string">' + '</span>); <span class="comment">//Wind + Rain + Fire</span></div><div class="line">data.join(<span class="string">''</span>);    <span class="comment">//WindRainFire</span></div></pre></td></tr></table></figure>
+<h2 id="3、concat-value1-…-valueN"><a href="#3、concat-value1-…-valueN" class="headerlink" title="3、concat( value1,…,valueN )"></a>3、concat( value1,…,valueN )</h2><p>oncat 方法将创建一个新的数组，然后将调用它的对象(this 指向的对象)中的元素以及所有参数中的数组类型的参数中的元素以及非数组类型的参数本身按照顺序放入这个新数组，并返回该数组， valueN 允许是数组或非数组值。在没有给 concat 传递参数的情况下，它只是复制当前数组并返回副本。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> alpha = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"> </div><div class="line">alpha.concat(<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>]); <span class="comment">//["a", "b", "c", 1, 2, 3]</span></div><div class="line"> </div><div class="line">alpha.concat(); <span class="comment">// ['a', 'b', 'c']</span></div></pre></td></tr></table></figure>
+<h2 id="4、push-element1-…-elementN-和-pop"><a href="#4、push-element1-…-elementN-和-pop" class="headerlink" title="4、push( element1,…,elementN )  和  pop( )"></a>4、push( element1,…,elementN )  和  pop( )</h2><p>push 添加一个或多个元素到数组的末尾，并返回数组新的长度；pop删除一个数组中的最后的一个元素，并且返回这个元素</p>
+<p>push 和 pop 并不会改变原来的元素位置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"> </div><div class="line">data.push(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>); <span class="comment">//6 -&gt;数组的长度  data-&gt;[1,2,3,4,5,6]</span></div><div class="line"> </div><div class="line">data.pop(); <span class="comment">//6 -&gt;出栈的元素 data-&gt;[1,2,3,4,5]</span></div></pre></td></tr></table></figure>
+<h2 id="5、unshift-element1-…-elementN-和-shift"><a href="#5、unshift-element1-…-elementN-和-shift" class="headerlink" title="5、unshift( element1,…,elementN )  和  shift( )"></a>5、unshift( element1,…,elementN )  和  shift( )</h2><p>unshift 添加一个或多个元素到数组的开头，并返回数组新的长度；shift 删除一个数组中的第一个元素，并且返回这个元素。</p>
+<p>unshift 和 shift 都会改变原来的元素位置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"> </div><div class="line">data.unshift(<span class="number">-1</span>,<span class="number">-2</span>,<span class="number">-3</span>); <span class="comment">//6-&gt;新数组的长度 data-&gt;[-1,-2,-3,1,2,3]</span></div><div class="line"> </div><div class="line">data.shift(); <span class="comment">// -1 -&gt;被移除的元素 data-&gt;[-2,-3,1,2,3]</span></div></pre></td></tr></table></figure>
+<p>如果把数组看成一个栈，push 和 pop 、unshift 和 shift 对数组的操作行为就符合 <strong>后进先出</strong> (LIFO) 规律 ；如果把数组看成一个队列，push 和 shift 、unshift 和 pop 对数组的操作行为就符合 <strong>先进先出 </strong>(FIFO) 规律。</p>
+<p>因此，可以使用数组来实现对应的数据结构：<strong>栈</strong> 和 <strong>队列</strong>。</p>
+<h2 id="6、slice-begin-end"><a href="#6、slice-begin-end" class="headerlink" title="6、slice( begin[,end] )"></a>6、slice( begin[,end] )</h2><p>slice 方法从begin 的索引位置开始提取数组元素，到 end 位置结束，但不包括 end 位置的元素，如果 end 被省略，则默认提取到数组的结尾，如果结束位置小于起始位置，则返回空数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"> </div><div class="line">data.slice(<span class="number">0</span>); <span class="comment">//[1,2,3] 提取的元素</span></div><div class="line">data.slice(<span class="number">1</span>,<span class="number">2</span>); <span class="comment">//[2] 提取的元素</span></div><div class="line">data.slice(<span class="number">2</span>,<span class="number">1</span>); <span class="comment">//[]</span></div></pre></td></tr></table></figure>
+<p>如果参数中有一个负数，则用数组长度加上该数来确定相应的位置。例如，在一个包含 5 项的数组上调用 slice(-2,-1) 与调用  slice(3,4) 得到的结果相同。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> t = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line">t.slice(<span class="number">-2</span>,<span class="number">-1</span>); <span class="comment">// [4]</span></div><div class="line">t.slice(<span class="number">3</span>,<span class="number">4</span>);   <span class="comment">// [4]</span></div></pre></td></tr></table></figure>
+<p>slice方法会返回一个新的数组，由于数组是引用类型， 通常会通过 arr.slice(0) 来实现数组的 <strong>浅拷贝</strong>，但这只对 <strong>数组元素是基本类型 </strong>的情况有效。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//简单数组拷贝</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> cyarr = arr.slice(<span class="number">0</span>);  <span class="comment">//浅拷贝</span></div><div class="line">arr.splice(<span class="number">3</span>,<span class="number">1</span>); <span class="comment">//对原数组操作</span></div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(arr,cyarr); <span class="comment">//[1,2,3] , [1,2,3,4]  -&gt; 拷贝成功</span></div></pre></td></tr></table></figure>
+<p>如果是对象数组，数组元素作为指针指向对象内存，slice(0) 仅仅是拷贝了一份指针作为副本，而副本中的指针，指向的还是原来的对象，因此，对一个数组中的对象做操作，另一个数组中的对象也会同步变化。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//对象数组拷贝</span></div><div class="line"><span class="keyword">var</span> list = [&#123;<span class="attr">name</span>:<span class="string">'zhangsan'</span>&#125;];</div><div class="line"><span class="keyword">var</span> cylist = list.slice(<span class="number">0</span>); <span class="comment">//浅拷贝</span></div><div class="line">list[<span class="number">0</span>].name = <span class="string">'lisi'</span>; <span class="comment">//对原数组操作</span></div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(list,cylist); <span class="comment">// [&#123;name:'lisi'&#125;] , [&#123;name:'lisi'&#125;] -&gt; 拷贝失败</span></div></pre></td></tr></table></figure>
+<p>要实现数组的<strong>深拷贝</strong>，需要通过 JSON 的序列化和反序列化来实现，即： JSON.parse( JSON.stringify(arr) )</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//对象数组拷贝</span></div><div class="line"><span class="keyword">var</span> list = [&#123;<span class="attr">name</span>:<span class="string">'zhangsan'</span>&#125;];</div><div class="line"><span class="keyword">var</span> cylist = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(list)); <span class="comment">//深拷贝</span></div><div class="line">list[<span class="number">0</span>].name = <span class="string">'lisi'</span>; <span class="comment">//对原数组操作</span></div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(list,cylist); <span class="comment">// [&#123;name:'lisi'&#125;] , [&#123;name:'zhangsan'&#125;] -&gt; 拷贝成功</span></div></pre></td></tr></table></figure>
+<h2 id="7、splice-start-deleteCount-value1-…-valueN"><a href="#7、splice-start-deleteCount-value1-…-valueN" class="headerlink" title="7、splice( start, deleteCount[,value1,…,valueN] )"></a>7、splice( start, deleteCount[,value1,…,valueN] )</h2><p>splice方法从一个数组中移除一个或多个元素，如果必要，在所移除元素的位置上插入新元素，返回所移除的元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">data.splice(2,1);//[3]-&gt;被删除的元素 data-&gt;[1,2]</div><div class="line">data.splice(2,2,4,5); //[3]-&gt;被删除的元素 data-&gt;[1,2,4,5]</div><div class="line">data.splice(2,2,4,5,6); //[3]-&gt;被删除的元素 data-&gt;[1,2,4,5,6]</div></pre></td></tr></table></figure>
+<h2 id="indexOf-和-lastIndexOf"><a href="#indexOf-和-lastIndexOf" class="headerlink" title="indexOf 和 lastIndexOf"></a>indexOf 和 lastIndexOf</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/01/数组常用方法/" data-id="cj73e91q5000e1gqf47kxg7ir" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/01/检测数据的四种方案/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          检测数据的四种方案
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/03/01/数组的遍历/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">数组的遍历</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">爱瞎搞的橙子</h1>
+    <h2 class="blog-subtitle">喜欢lol，喜欢代码O(∩_∩)O~~</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>47</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>37</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>19</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="/" target="_blank" title="没有啥">
+          没有啥
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2015 - 2017 小橙子<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/project" title="" class="menuItem">项目</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

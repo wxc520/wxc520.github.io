@@ -40,9 +40,9 @@
     <h2 class="author">小橙子</h2>
     <h3 class="description">前端</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>24</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>43</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>20</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>47</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>37</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>19</strong><br>标签</div></a>
     </div>
     <ul class="blog-link">
      
@@ -71,6 +71,704 @@
 </div>
 
         <section id="main">
+  
+    <article id="post-angular请求数据" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/01/angular请求数据/" class="article-date">
+  <time class="post-time" datetime="2017-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/01/angular请求数据/">Angular请求数据</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/框架/">框架</a>,<a class="article-category-link" href="/categories/框架/Angular/">Angular</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Angular请求数据"><a href="#Angular请求数据" class="headerlink" title="Angular请求数据"></a>Angular请求数据</h1><h2 id="http"><a href="#http" class="headerlink" title="$http"></a>$http</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>,[<span class="string">'ngSanitize'</span>])</div><div class="line"></div><div class="line">			.controller(<span class="string">'demoCtrl'</span>,[<span class="string">'$scope'</span>,<span class="string">'$http'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope,$http</span>)</span>&#123;</div><div class="line"></div><div class="line">				<span class="comment">/*$.ajax(&#123;</span></div><div class="line">					url:'',</div><div class="line">					type:'',</div><div class="line">					data:&#123;&#125;,</div><div class="line">					success:function()&#123;&#125;,</div><div class="line">					error:function()&#123;&#125;</div><div class="line">				&#125;)*/</div><div class="line"></div><div class="line">				<span class="comment">/*$http(&#123;</span></div><div class="line">					url:'./tpl/a.html',// 请求地址</div><div class="line">					method:'get', // 请求方式</div><div class="line">					// get请求需要传递的参数</div><div class="line">					params:&#123;</div><div class="line">						a:1,</div><div class="line">						b:2</div><div class="line">					&#125;,</div><div class="line">					// post请求需要传递的参数</div><div class="line">					data:&#123;</div><div class="line">						c:3,</div><div class="line">						d:4</div><div class="line">					&#125;</div><div class="line">				&#125;).then(function(res)&#123;</div><div class="line"></div><div class="line">					// 成功回调函数</div><div class="line">					console.log(res.data)</div><div class="line">					</div><div class="line">					</div><div class="line">				&#125;,function()&#123;</div><div class="line"></div><div class="line">					// 失败回调函数</div><div class="line"></div><div class="line">				&#125;);*/</div><div class="line"></div><div class="line">				<span class="comment">// 如果只有一个回调函数 代表成功</span></div><div class="line">				<span class="comment">/*$http.get('./tpl/a.html',&#123; params:&#123;a:1,b:2&#125; &#125;).then(function(res)&#123;</span></div><div class="line"></div><div class="line">					console.log(res.data)</div><div class="line"></div><div class="line">				&#125;)*/</div><div class="line"></div><div class="line">				$http.post(<span class="string">'./tpl/a.html'</span>,&#123; <span class="attr">c</span>:<span class="number">3</span>,<span class="attr">d</span>:<span class="number">4</span> &#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</div><div class="line"></div><div class="line">					$scope.msg = res.data;</div><div class="line"></div><div class="line">				&#125;);</div><div class="line"></div><div class="line">				</div><div class="line">			&#125;])</div></pre></td></tr></table></figure>
+<h2 id="配置白名单JSONP"><a href="#配置白名单JSONP" class="headerlink" title="配置白名单JSONP"></a>配置白名单JSONP</h2><p>由于angular认为跨域是不安全的所以必须配置白名单</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>, []).config(<span class="function"><span class="keyword">function</span>(<span class="params">$sceDelegateProvider</span>) </span>&#123;</div><div class="line">  $sceDelegateProvider.resourceUrlWhitelist([     <span class="comment">// 白名单</span></div><div class="line">    <span class="comment">// Allow same origin resource loads.</span></div><div class="line">    <span class="string">'self'</span>,</div><div class="line">    <span class="comment">// Allow loading from our assets domain.  Notice the difference between * and **.</span></div><div class="line">    <span class="string">'http://srv*.assets.example.com/**'</span>   <span class="comment">// 请求的地址</span></div><div class="line">  ]);</div><div class="line"></div><div class="line">  <span class="comment">// The blacklist overrides the whitelist so the open redirect here is blocked.</span></div><div class="line">  $sceDelegateProvider.resourceUrlBlacklist([</div><div class="line">    <span class="string">'http://myapp.example.com/clickThru**'</span>      <span class="comment">// 黑名单</span></div><div class="line">  ]);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="angular-API地址"><a href="#angular-API地址" class="headerlink" title="angular API地址"></a>angular API地址</h2><p><a href="https://docs.angularjs.org/api/ng/provider/$sceDelegateProvider#resourceUrlWhitelist" target="_blank" rel="external">angularJS</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/01/angular请求数据/" data-id="cj72tgbqq0000bkqfi6p35plo" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-Angular自定义过滤器" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/01/Angular自定义过滤器/" class="article-date">
+  <time class="post-time" datetime="2017-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/01/Angular自定义过滤器/">Angular自定义过滤器</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/框架/">框架</a>,<a class="article-category-link" href="/categories/框架/Angular/">Angular</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Angular自定义过滤器"><a href="#Angular自定义过滤器" class="headerlink" title="Angular自定义过滤器"></a>Angular自定义过滤器</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">模块对象.filter(<span class="string">'自定义过滤器名字'</span>,[<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">要处理的数据,滤过器参数<span class="number">1</span>,滤过器参数<span class="number">2</span>,...</span>)</span>&#123;</div><div class="line">        <span class="comment">// 具体处理数据的代码</span></div><div class="line">        <span class="keyword">return</span> 处理后的数据;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>电话号码以及首字母大写</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>,[])</div><div class="line"></div><div class="line">			.filter(<span class="string">'phoneStar'</span>,[<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">				<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</div><div class="line"></div><div class="line">					<span class="keyword">var</span> front = value.substr(<span class="number">0</span>,<span class="number">3</span>);</div><div class="line"></div><div class="line">					<span class="keyword">var</span> last = value.substr(<span class="number">7</span>);</div><div class="line"></div><div class="line">					<span class="comment">// 在处理完数据以后 一定要return出去</span></div><div class="line">					<span class="keyword">return</span> front + <span class="string">'****'</span> + last;</div><div class="line"></div><div class="line">				&#125;</div><div class="line"></div><div class="line">			&#125;])</div><div class="line"></div><div class="line">			.filter(<span class="string">'firstUpper'</span>,[<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">				<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">value,arg1,arg2,arg3</span>)</span>&#123;</div><div class="line"></div><div class="line">					<span class="built_in">console</span>.log(arg1,arg2,arg3);</div><div class="line"></div><div class="line">					<span class="keyword">return</span> value.substr(<span class="number">0</span>,<span class="number">1</span>).toUpperCase() + value.substr(<span class="number">1</span>)</div><div class="line"></div><div class="line">				&#125;</div><div class="line"></div><div class="line">			&#125;])</div><div class="line"></div><div class="line">			.controller(<span class="string">'demoCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line"></div><div class="line">				$scope.phone = <span class="string">"18598787657"</span>;</div><div class="line"></div><div class="line">				$scope.word = <span class="string">"angular"</span>;</div><div class="line">				</div><div class="line">			&#125;])</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/01/Angular自定义过滤器/" data-id="cj72v4606000bbkqf4utvi44w" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-Angular自定义指令" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/01/Angular自定义指令/" class="article-date">
+  <time class="post-time" datetime="2017-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/01/Angular自定义指令/">Angular自定义指令</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/框架/">框架</a>,<a class="article-category-link" href="/categories/框架/Angular/">Angular</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Angular自定义指令"><a href="#Angular自定义指令" class="headerlink" title="Angular自定义指令"></a>Angular自定义指令</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">模块对象.directive(<span class="string">'指令名称'</span>,[<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	</div><div class="line">	<span class="comment">// 固定语法</span></div><div class="line">	<span class="keyword">return</span> &#123;</div><div class="line">		<span class="comment">// angular提供的专门用来写DOM操作的地方</span></div><div class="line">		link : <span class="function"><span class="keyword">function</span>(<span class="params">scope,element,attributes</span>)</span>&#123;</div><div class="line">				</div><div class="line">			<span class="comment">// 形参的名字 是可以改的</span></div><div class="line">			<span class="comment">// element 指令所在的元素 jqLite对象</span></div><div class="line">			<span class="comment">// attributes 指令所在元素身上的 属性集合</span></div><div class="line"></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;])</div><div class="line"></div><div class="line">js - &gt; myDir</div><div class="line">html -&gt; my-dir</div><div class="line"></div><div class="line">指令在页面中没有被使用 那么指令将不会被执行		</div><div class="line">指令在页面中被使用了多少次 那么指令将会被调用多少次</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>,[])</div><div class="line"></div><div class="line">		.directive(<span class="string">'myDir'</span>,[<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">			<span class="keyword">return</span> &#123;</div><div class="line">                 </div><div class="line">				<span class="attr">link</span>:<span class="function"><span class="keyword">function</span>(<span class="params">scope,element,attributes</span>)</span>&#123;</div><div class="line">					element.css(<span class="string">'background'</span>,<span class="string">'red'</span>);</div><div class="line">					<span class="built_in">console</span>.log(attributes)</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;])</div><div class="line"></div><div class="line">		.controller(<span class="string">'demoCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">	</div><div class="line">		&#125;])</div></pre></td></tr></table></figure>
+<h2 id="angularjqLite"><a href="#angularjqLite" class="headerlink" title="angularjqLite"></a>angularjqLite</h2><h2 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$(<span class="string">'#div1'</span>)</div><div class="line"></div><div class="line">$(<span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>)).css()</div><div class="line"></div><div class="line">angular.element( 原生JS对象 )  把原生JS对象转换成JQLite对象  可以使用jq的方法</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>,[])</div><div class="line"></div><div class="line">	.controller(<span class="string">'demoCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line"></div><div class="line">		<span class="keyword">var</span> oDiv = angular.element( <span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>) );</div><div class="line"></div><div class="line">		<span class="built_in">console</span>.log(oDiv);</div><div class="line"></div><div class="line">		oDiv.css(&#123;</div><div class="line">			<span class="attr">background</span>:<span class="string">'green'</span></div><div class="line">		&#125;).addClass(<span class="string">'class1'</span>)</div><div class="line"></div><div class="line">		</div><div class="line">	&#125;])</div></pre></td></tr></table></figure>
+<p>指令的配置参数介绍</p>
+<ul>
+<li><p>restrict 自定义指令分类</p>
+<ul>
+<li>属性指令 A attribute</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>元素指令 E element</li>
+</ul>
+<ul>
+<li>样式指令 C class</li>
+</ul>
+<ul>
+<li>注释指令 M comment</li>
+</ul>
+<ul>
+<li><p>默认值是:’AE’</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 属性指令 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">my-dir</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 标签指令 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-dir</span>&gt;</span><span class="tag">&lt;/<span class="name">my-dir</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 类名指令 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"my-dir"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 注释指令 --&gt;</span></div><div class="line"><span class="comment">&lt;!-- directive:my-dir --&gt;</span>   通常配合 replace使用</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>template和templateUrl使用方法</p>
+<ul>
+<li>template 模板字符串</li>
+<li>templateUrl 定义angular模板</li>
+</ul>
+</li>
+<li><p>link函数的作用及参数说明</p>
+<ul>
+<li>作用：写DOM操作的地方</li>
+<li>有三个参数 scope element attributes</li>
+<li>scope:类似于$scope 作用范围不同 只针对当前指令生效</li>
+<li>element:当前指令所要操作的元素</li>
+<li>attributes:当前指令所在标签的属性结合 对象类型</li>
+</ul>
+</li>
+<li><p>replace的作用</p>
+<ul>
+<li>将当前指令所在的标签替换掉</li>
+<li>布尔类型的值 默认是是false 不替换</li>
+</ul>
+</li>
+<li><p>transclude的作用</p>
+<ul>
+<li>如果指令所在标签内部有内容 会将内容保存到ng-transclude中</li>
+<li>然后在模板内将ng-transclude保存的内容写在想要显示的位置即可</li>
+<li>默认值是false 不保存原有内容 也就是直接用模板内容替换原有内容</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>,[])</div><div class="line"></div><div class="line">			.directive(<span class="string">'myDir'</span>,[<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="keyword">return</span> &#123;                                      <span class="comment">// 有几个地方用到了指令，那么这个就会被调用几次</span></div><div class="line">                  scope:<span class="literal">true</span>,  <span class="comment">// 让每个指令所在的元素有单独的作用域</span></div><div class="line">                  transclude:<span class="literal">true</span>,<span class="comment">// 把指定所在标签内的内容保存    配合ng-transclude使用 配合一个标签放内容</span></div><div class="line">                  replace:<span class="literal">true</span>, <span class="comment">// 去掉指令所在的标签，保留模板内容，如果模板有多标签需要一个根标签包裹</span></div><div class="line">                  template:<span class="string">"&lt;span ng-transclude&gt;&lt;/span&gt;"</span></div><div class="line">					link:<span class="function"><span class="keyword">function</span>(<span class="params">scope,element,attributes</span>)</span>&#123;</div><div class="line">						element.css(<span class="string">'background'</span>,<span class="string">'red'</span>);</div><div class="line">						<span class="built_in">console</span>.log(attributes)</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;])</div><div class="line"></div><div class="line">			.controller(<span class="string">'demoCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">		</div><div class="line">			&#125;])</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/01/Angular自定义指令/" data-id="cj71vm5u10000t0qf3zfibp24" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-Angular控制器" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/01/Angular控制器/" class="article-date">
+  <time class="post-time" datetime="2017-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/01/Angular控制器/">Angular控制器</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/框架/">框架</a>,<a class="article-category-link" href="/categories/框架/Angular/">Angular</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Angular控制器"><a href="#Angular控制器" class="headerlink" title="Angular控制器"></a>Angular控制器</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">angular.module(&apos;模块名称&apos;,[&apos;要依赖的模块名字1&apos;,&apos;要依赖的模块名字2&apos;)，是用来创建模块的 如果没有依赖 第二个参数要写一个空数组</div><div class="line">模块对象.controller(&apos;控制器名称&apos;,function()&#123;&#125;) 是用来创建控制器的</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">		<span class="comment">/*</span></div><div class="line">			myApp变量 是创建模块返回的模块对象</div><div class="line"></div><div class="line">			myApp字符串 是创建的模块的名字</div><div class="line"></div><div class="line">			ng-app指令里面写的是 模块的名字</div><div class="line"></div><div class="line">		 */</div><div class="line"></div><div class="line"><span class="keyword">var</span> myApp = angular.module(<span class="string">'myApp'</span>,[])</div><div class="line">		myApp.controller(<span class="string">'demoCtrlA'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">		</div><div class="line">			<span class="comment">// $scope 名字不能改 是对象类型的</span></div><div class="line">			<span class="comment">// 专门用来向控制器控制的区域 暴露数据</span></div><div class="line">			</div><div class="line">			$scope.msg = <span class="string">'我是demoCtrlA里面的MSG'</span>;</div><div class="line">			$scope.val = <span class="string">"我是通过控制器赋的初始值"</span>;</div><div class="line">			$scope.clickFn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				alert(<span class="string">'就点你了,怎么地吧'</span>)</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line"></div><div class="line">		myApp.controller(<span class="string">'demoCtrlB'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">			$scope.msg = <span class="string">"我是demoCtrlB里面的MSG"</span>;</div><div class="line">		&#125;);</div></pre></td></tr></table></figure>
+<h2 id="模块化的依赖"><a href="#模块化的依赖" class="headerlink" title="模块化的依赖"></a>模块化的依赖</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">	</div><div class="line">	依赖的某一个模块就相当于 拥有了这个模块的功能</div><div class="line"></div><div class="line">	1.将被依赖的模块通过 script 标签引入</div><div class="line">	2.将被依赖的模块 名字 写在主模块的第二个参数中</div><div class="line"></div><div class="line"> */</div><div class="line"></div><div class="line">angular.module(<span class="string">'myApp'</span>,[<span class="string">'lunbotuModule'</span>]);</div></pre></td></tr></table></figure>
+<h2 id="模块第二个参数不写的区别"><a href="#模块第二个参数不写的区别" class="headerlink" title="模块第二个参数不写的区别"></a>模块第二个参数不写的区别</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">	加第二个参数 是 创建模块</div><div class="line">	不加第二个参数 是 获取模块</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="comment">// var myApp = angular.module('myApp',[]);</span></div><div class="line"></div><div class="line"><span class="comment">// console.log( myApp == angular.module('myApp') );</span></div><div class="line">angular.module(<span class="string">'myApp'</span>);</div></pre></td></tr></table></figure>
+<h2 id="面向对象的方式创建控制器"><a href="#面向对象的方式创建控制器" class="headerlink" title="面向对象的方式创建控制器"></a>面向对象的方式创建控制器</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app="myApp" ng-controller="demoCtrl as hello"&gt;</div><div class="line">    &lt;p&gt;&#123;&#123;hello.name&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;p&gt;&#123;&#123;age&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;script src="node_modules/angular/angular.min.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        angular.module('myApp', [])</div><div class="line"></div><div class="line">        /*</div><div class="line">            1.angular内部会帮我们new控制器处理函数</div><div class="line">            2.demoCtrl as hello 这个hello就是new出来的对象</div><div class="line">            3.在视图中我们就可以使用hello.属性的方式取到hello对象中的值</div><div class="line">            4.面向对象的方式和$scope可以同时使用</div><div class="line"></div><div class="line">         */</div><div class="line"></div><div class="line">            .controller('demoCtrl', ['$scope', function($scope) &#123;</div><div class="line"></div><div class="line">                this.name = '我是孙悟空';</div><div class="line"></div><div class="line">                $scope.age = '我今年500岁';</div><div class="line"></div><div class="line">            &#125;])</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/01/Angular控制器/" data-id="cj70ey6ul0002ysqfh53k8p84" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-Angular介绍" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/01/Angular介绍/" class="article-date">
+  <time class="post-time" datetime="2017-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/01/Angular介绍/">angular</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/框架/">框架</a>,<a class="article-category-link" href="/categories/框架/Angular/">Angular</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Angular介绍"><a href="#Angular介绍" class="headerlink" title="Angular介绍"></a>Angular介绍</h1><h2 id="SPA"><a href="#SPA" class="headerlink" title="SPA"></a>SPA</h2><h3 id="单页面的特点："><a href="#单页面的特点：" class="headerlink" title="单页面的特点："></a>单页面的特点：</h3><ol>
+<li>页面不发生传统的意义跳转，通过ajax局部刷新来打到视觉上的跳转</li>
+<li>整个网站只有一个页面，公共部分只加载一次，不会发生页面跳转白屏的现象</li>
+<li>锚点值与页面是一一对应的关系</li>
+</ol>
+<h2 id="框架与库："><a href="#框架与库：" class="headerlink" title="框架与库："></a>框架与库：</h2><ul>
+<li>无论是angular还是jQuery都是用原生JS封装的</li>
+<li>库: <ul>
+<li>对代码进行封装 调用封装的方法 简化操作<ul>
+<li>jquery 针对DOM操作</li>
+<li>requirejs js模块化</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>框架：<ul>
+<li>虽然也是调用封装的方法</li>
+<li>但是更多的框架会提供代码书写的规则</li>
+<li>我们要按照规则去写代码 框架会帮我们实现相应的功能</li>
+</ul>
+</li>
+<li>框架与库区别:<ul>
+<li>范围不同:库仅仅针对某一个方面,框架包含的范围比较广</li>
+<li>库只是调用封装好的方法,框架会提供代码书写规则</li>
+</ul>
+</li>
+</ul>
+<h2 id="Angular核心思想"><a href="#Angular核心思想" class="headerlink" title="Angular核心思想"></a>Angular核心思想</h2><ul>
+<li>write less do more</li>
+<li>其核心是通过指令扩展了HTML，通过表达式绑定数据到HTML。</li>
+<li>Angular不推崇DOM操作，也就是说在NG中几乎找不到任何的DOM操作</li>
+<li>一切操作以数据为中心，用数据驱动DOM</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/01/Angular介绍/" data-id="cj70ey6ua0000ysqfpac4jbqn" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-Angular常用过滤器" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/01/Angular常用过滤器/" class="article-date">
+  <time class="post-time" datetime="2017-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/01/Angular常用过滤器/">Angular常用过滤器</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/框架/">框架</a>,<a class="article-category-link" href="/categories/框架/Angular/">Angular</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Angular常用过滤器"><a href="#Angular常用过滤器" class="headerlink" title="Angular常用过滤器"></a>Angular常用过滤器</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; 数据 | 过滤器的名字:参数1:参数2 &#125;&#125;</div></pre></td></tr></table></figure>
+<h2 id="currency-货币过滤器"><a href="#currency-货币过滤器" class="headerlink" title="currency 货币过滤器"></a>currency 货币过滤器</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>货币过滤器<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; money | currency:'¥' &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="date-日期过滤器"><a href="#date-日期过滤器" class="headerlink" title="date 日期过滤器"></a>date 日期过滤器</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>日期过滤器<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> &#123;&#123; date | date:'yyyy年MM月dd日 HH时mm分ss秒' &#125;&#125; <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="filter-过滤器"><a href="#filter-过滤器" class="headerlink" title="filter 过滤器"></a>filter 过滤器</h2><blockquote>
+<p>可以按照某种规则对数据进行筛选</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">模糊匹配				</div><div class="line">在循环数据的过程中 去数据中的 [每一个字段中去查找] 看字段对应的值中 [是否包含] 过滤的关键字 如果包含 留下 如果不包含 过滤掉</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>filter 过滤器 模糊匹配<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">"item in persons | filter:'李四' "</span>&gt;</span></div><div class="line">			&#123;&#123; item.id &#125;&#125; &#123;&#123; item.name &#125;&#125; &#123;&#123; item.age &#125;&#125;</div><div class="line">		<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">精确匹配</div><div class="line">在循环数据的过程中 去数据中的 [指定的字段中去查找] 看字段对应的值中 [是否包含] 过滤的关键字 如果包含 留下 如果不包含 过滤掉</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>filter 过滤器 精确匹配<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">"item in persons | filter:&#123; name:'赵六' &#125; "</span>&gt;</span></div><div class="line">			&#123;&#123; item.id &#125;&#125; &#123;&#123; item.name &#125;&#125; &#123;&#123; item.age &#125;&#125;</div><div class="line">		<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="limitTo-限制过滤器"><a href="#limitTo-限制过滤器" class="headerlink" title="limitTo 限制过滤器"></a>limitTo 限制过滤器</h2><ul>
+<li>第一个参数:limit 限制的数量,可以为负数,从后往前开始限制 </li>
+<li>第二个参数:begin 从第几个开始限制</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>limitTo过滤器<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; word | limitTo:2:2&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">"item in persons | limitTo:2:1"</span>&gt;</span></div><div class="line">			&#123;&#123; item.id &#125;&#125; &#123;&#123; item.name &#125;&#125; &#123;&#123; item.age &#125;&#125;</div><div class="line">		<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="orderBy-排序过滤器"><a href="#orderBy-排序过滤器" class="headerlink" title="orderBy 排序过滤器"></a>orderBy 排序过滤器</h2><blockquote>
+<p>可以按照某一个字段进行排序 升序或者 降序</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>orderBy过滤器<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">"item in persons | orderBy:'-age' "</span>&gt;</span>   负号代表降序</div><div class="line">			&#123;&#123; item.id &#125;&#125; &#123;&#123; item.name &#125;&#125; &#123;&#123; item.age &#125;&#125;</div><div class="line">		<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="json-过滤器"><a href="#json-过滤器" class="headerlink" title="json 过滤器"></a>json 过滤器</h2><p>可以将数据以良好的格式显示在页面中，需要配合pre标签使用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span>json过滤器<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">pre</span>&gt;</span>&#123;&#123; persons | json:spacing&#125;&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="大小写过滤器"><a href="#大小写过滤器" class="headerlink" title="大小写过滤器"></a>大小写过滤器</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;&#123; msg | uppercase &#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="数字过滤器"><a href="#数字过滤器" class="headerlink" title="数字过滤器"></a>数字过滤器</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">	&#123;&#123; number | number:2 &#125;&#125; 参数代表小数点的个数</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="上面过滤器的参数"><a href="#上面过滤器的参数" class="headerlink" title="上面过滤器的参数"></a>上面过滤器的参数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>,[])</div><div class="line"></div><div class="line">			.controller(<span class="string">'demoCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line"></div><div class="line">				$scope.money = <span class="number">998.011</span>;</div><div class="line"></div><div class="line">				$scope.date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"></div><div class="line">				$scope.persons = [</div><div class="line">					&#123;</div><div class="line">						<span class="attr">id</span>:<span class="number">1</span>,</div><div class="line">						<span class="attr">name</span>:<span class="string">'张三'</span>,</div><div class="line">						<span class="attr">age</span>:<span class="number">20</span></div><div class="line">					&#125;,</div><div class="line">					&#123;</div><div class="line">						<span class="attr">id</span>:<span class="number">2</span>,</div><div class="line">						<span class="attr">name</span>:<span class="string">'李四'</span>,</div><div class="line">						<span class="attr">age</span>:<span class="number">30</span></div><div class="line">					&#125;,</div><div class="line">					&#123;</div><div class="line">						<span class="attr">id</span>:<span class="number">3</span>,</div><div class="line">						<span class="attr">name</span>:<span class="string">'王五'</span>,</div><div class="line">						<span class="attr">age</span>:<span class="number">10</span></div><div class="line">					&#125;,</div><div class="line">					&#123;</div><div class="line">						<span class="attr">id</span>:<span class="number">4</span>,</div><div class="line">						<span class="attr">name</span>:<span class="string">'赵六'</span>,</div><div class="line">						<span class="attr">age</span>:<span class="number">50</span></div><div class="line">					&#125;</div><div class="line">				]</div><div class="line"></div><div class="line">				$scope.word = <span class="string">'我爱祖国'</span>;</div><div class="line"></div><div class="line">				$scope.msg = <span class="string">'angular'</span>;</div><div class="line"></div><div class="line">				$scope.number = <span class="number">123477777777777755</span>;</div><div class="line">				</div><div class="line">			&#125;])</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/01/Angular常用过滤器/" data-id="cj72uxyol0007bkqfosemf1cl" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-Angular服务" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/01/Angular服务/" class="article-date">
+  <time class="post-time" datetime="2017-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/01/Angular服务/">Angular服务</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/框架/">框架</a>,<a class="article-category-link" href="/categories/框架/Angular/">Angular</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Angular服务"><a href="#Angular服务" class="headerlink" title="Angular服务"></a>Angular服务</h1><blockquote>
+<p>抽象公共代码的</p>
+</blockquote>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">服务的作用:是用来抽象公共代码的</div><div class="line"></div><div class="line">			模块对象.service(<span class="string">'服务名称'</span>,[<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;			</div><div class="line">				<span class="keyword">this</span>.name = <span class="string">'张三'</span>;</div><div class="line">				<span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">					alert(<span class="keyword">this</span>.name);</div><div class="line">				&#125;</div><div class="line">			&#125;])</div><div class="line"></div><div class="line">			是用来创建服务的</div><div class="line">			angular 会将服务的回掉函数当作构造器来<span class="keyword">new</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>,[])</div><div class="line"></div><div class="line">			.service(<span class="string">'myService'</span>,[<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="keyword">this</span>.name = <span class="string">'张三'</span>;</div><div class="line">				<span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;			</div><div class="line">					alert(<span class="keyword">this</span>.name);</div><div class="line">				&#125;</div><div class="line">			&#125;])</div><div class="line"></div><div class="line">			.controller(<span class="string">'demoCtrlA'</span>,[<span class="string">'$scope'</span>,<span class="string">'myService'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope,myService</span>)</span>&#123;</div><div class="line">				myService.name = <span class="string">'李四'</span>;				</div><div class="line">			&#125;])</div><div class="line"></div><div class="line">			.controller(<span class="string">'demoCtrlB'</span>,[<span class="string">'$scope'</span>,<span class="string">'myService'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope,myService</span>)</span>&#123;</div><div class="line">				myService.say();</div><div class="line">				</div><div class="line">			&#125;])</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/01/Angular服务/" data-id="cj70ey6zi004bysqftk117iw4" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-Angular普通指令" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/01/Angular普通指令/" class="article-date">
+  <time class="post-time" datetime="2017-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/01/Angular普通指令/">Angular普通指令</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/框架/">框架</a>,<a class="article-category-link" href="/categories/框架/Angular/">Angular</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Angular普通指令"><a href="#Angular普通指令" class="headerlink" title="Angular普通指令"></a>Angular普通指令</h1><h2 id="ng-app"><a href="#ng-app" class="headerlink" title="ng-app"></a>ng-app</h2><ul>
+<li>告诉angular它在页面中所要控制的范围</li>
+<li>页面加载完成angular会自动在页面中查找这个指令</li>
+<li>如果页面中没有这个指令,angular将不会启动</li>
+<li>告诉angular当前页面由哪一个模块来管理</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app=&quot;module&quot;&gt;</div></pre></td></tr></table></figure>
+<h2 id="ng-model"><a href="#ng-model" class="headerlink" title="ng-model"></a>ng-model</h2><p>实现双向数据绑定(获取表单元素中的值)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;&quot; value=&quot;11&quot; ng-model=&quot;val&quot;&gt;</div></pre></td></tr></table></figure>
+<h3 id="双向绑定原理"><a href="#双向绑定原理" class="headerlink" title="双向绑定原理"></a>双向绑定原理</h3><p>脏检查机制</p>
+<p>angular在页面加载完成之后会在页面中查找ng-agg指令，如果找到会在js中创建一个对象来存储页面中的数据，当html页面中文本框的值改变之后，angular会取到文本框的值然后赋给创建出对象里的变量，对象变量发生改变的时候，angular会在页面中找哪一个地方使用到了这个变量，找到之后将变量更新成最新的值，这个过程叫数据双向数据绑定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng-model=&quot;变量&quot;</div></pre></td></tr></table></figure>
+<h3 id="实现双向数据绑定的条件"><a href="#实现双向数据绑定的条件" class="headerlink" title="实现双向数据绑定的条件"></a>实现双向数据绑定的条件</h3><ul>
+<li>必须是表单元素</li>
+<li>在表单元素身上写 ng-model指令</li>
+</ul>
+<h2 id="ng-init"><a href="#ng-init" class="headerlink" title="ng-init"></a>ng-init</h2><p>初始化变量的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng-init=&quot;变量1=值1;变量2=值2&quot;</div></pre></td></tr></table></figure>
+<h2 id="ng-click"><a href="#ng-click" class="headerlink" title="ng-click"></a>ng-click</h2><p>点击事件(和原生JS中的onclick事件作用一样)</p>
+<h2 id="ng-repeat"><a href="#ng-repeat" class="headerlink" title="ng-repeat"></a>ng-repeat</h2><p>遍历数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app=&quot;myApp&quot; ng-controller=&quot;demoCtrl&quot;&gt;</div><div class="line">    &lt;h4&gt;遍历 一维数组&lt;/h4&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;!--</div><div class="line">            ng-repeat 遍历数据 类似于for in 循环</div><div class="line">            in 是固定写法</div><div class="line">            in 后面加上要遍历的数据</div><div class="line">            item 是遍历的当前项(item这个词可以随意写)</div><div class="line">            这个指令可以加在任何标签上</div><div class="line">        --&gt;</div><div class="line">        &lt;li ng-repeat=&quot;item in data&quot;&gt;</div><div class="line">            &#123;&#123;item&#125;&#125;</div><div class="line">        &lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;hr /&gt;</div><div class="line"></div><div class="line">    &lt;h4&gt;遍历 数组中混合对象&lt;/h4&gt;</div><div class="line">    &lt;p ng-repeat=&quot;item in person&quot;&gt;&#123;&#123;item.name&#125;&#125; &#123;&#123;item.age&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;hr /&gt;</div><div class="line"></div><div class="line">    &lt;h4&gt;遍历 对象&lt;/h4&gt;</div><div class="line">    &lt;!--</div><div class="line">        key代表对象的键值</div><div class="line">        val代表对象键值对应的值</div><div class="line">    --&gt;</div><div class="line">    &lt;div ng-repeat=&quot;(key,val) in obj&quot;&gt;</div><div class="line">        &#123;&#123;key&#125;&#125; &#123;&#123;val&#125;&#125;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">    &lt;script src=&quot;node_modules/angular/angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        angular.module(&apos;myApp&apos;,[])</div><div class="line">            .controller(&apos;demoCtrl&apos;,[&apos;$scope&apos;,function($scope)&#123;</div><div class="line"></div><div class="line">                // 一维数组</div><div class="line">                $scope.data = [&apos;小明&apos;,&apos;小红&apos;,&apos;小黑&apos;,&apos;小琴&apos;];</div><div class="line"></div><div class="line">                // 数组中混合对象(最常用的形式)</div><div class="line">                $scope.person = [</div><div class="line">                    &#123;name:&apos;小明&apos;,age:18&#125;,</div><div class="line">                    &#123;name:&apos;小红&apos;,age:28&#125;,</div><div class="line">                    &#123;name:&apos;小红&apos;,age:28&#125;,</div><div class="line">                    &#123;name:&apos;小黑&apos;,age:38&#125;,</div><div class="line">                    &#123;name:&apos;小琴&apos;,age:48&#125;</div><div class="line">                ]</div><div class="line"></div><div class="line">                // 对象</div><div class="line">                $scope.obj = &#123;</div><div class="line">                    name:&apos;小明&apos;,</div><div class="line">                    age:35,</div><div class="line">                    hobby : &apos;吃饭&apos;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">            &#125;])</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h3 id="ng-repeat中所用到的索引"><a href="#ng-repeat中所用到的索引" class="headerlink" title="ng-repeat中所用到的索引"></a>ng-repeat中所用到的索引</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">    $index : 遍历过程中的索引</div><div class="line">    $first : 布尔类型的值 当前是否是第一项 是返回true 不是返回false</div><div class="line">    $last  : 布尔类型的值 当前是否是最后一项 是返回true 不是返回false</div><div class="line">    $middle : 布尔类型的值 第一项和最后一项返回false 其余返回true</div><div class="line">    $even : 偶数项返回true 否则返回false</div><div class="line">    $odd : 奇数项返回true 否则返回false</div><div class="line">    利用这些值在循环的过程中做各种判断 达到我们想要的目的</div><div class="line">    &lt;ul&gt;</div><div class="line">    &lt;li ng-repeat=&quot;item in person&quot; class=&quot;&#123;&#123;$first ? &apos;first&apos; : &apos;&apos;&#125;&#125; &#123;&#123; $last ? &apos;last&apos; : &apos;&apos;&#125;&#125;&quot;&gt;</div><div class="line">        &lt;p&gt;名字：&#123;&#123;item.name&#125;&#125;&lt;/p&gt;</div><div class="line">        &lt;p&gt;年龄：&#123;&#123;item.age&#125;&#125;&lt;/p&gt;</div><div class="line">        &lt;p&gt;索引：&#123;&#123;$index&#125;&#125;&lt;/p&gt;</div><div class="line">        &lt;p&gt;是否是第一项：&#123;&#123;$first&#125;&#125;&lt;/p&gt;</div><div class="line">        &lt;p&gt;是否是最后一项：&#123;&#123;$last&#125;&#125;&lt;/p&gt;</div><div class="line">        &lt;p&gt;是否是中间项：&#123;&#123;$middle&#125;&#125;&lt;/p&gt;</div><div class="line">        &lt;p&gt;是否偶数项：&#123;&#123;$even&#125;&#125;&lt;/p&gt;</div><div class="line">        &lt;p&gt;是否奇数项：&#123;&#123;$odd&#125;&#125;&lt;/p&gt;</div><div class="line">    &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+<h3 id="遍历中不能有重复类型的值-基本数据类型"><a href="#遍历中不能有重复类型的值-基本数据类型" class="headerlink" title="遍历中不能有重复类型的值(基本数据类型)"></a>遍历中不能有重复类型的值(基本数据类型)</h3><p>在遍历的数据后面写上track by 一个唯一(不重复)的值  一般会写$index</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div ng-repeat=&quot;item in data track by $index&quot;&gt;</div><div class="line">        &#123;&#123;item&#125;&#125;</div><div class="line">    &lt;/div&gt;    </div><div class="line">    &lt;hr /&gt;</div><div class="line">    &lt;div ng-repeat=&quot;(key,val) in data track by key&quot;&gt;</div><div class="line">        &#123;&#123;val&#125;&#125;</div><div class="line">    &lt;/div&gt;</div></pre></td></tr></table></figure>
+<h2 id="ng-class"><a href="#ng-class" class="headerlink" title="ng-class"></a>ng-class</h2><h3 id="操作类名"><a href="#操作类名" class="headerlink" title="操作类名"></a>操作类名</h3><p>1-指令的值以对象的形式存在</p>
+<p>2-对象的属性值转化为布尔值是true时,将当前的属性名作为类名添加到class属性中</p>
+<p>3-对象的属性值转化为布尔值是false时,将当前的属性名从class属性中删除掉</p>
+<p>4-属性值可以是数据模型,也可以是JS表达式        </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.color&#123;</div><div class="line">	background: red;</div><div class="line">		&#125;</div><div class="line">-----------------------------------------</div><div class="line">&lt;div ng-class=&#123;color:true&#125;&gt; 你好么&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>注意：angular不推崇DOM操作,在当前例子中并没有直接操作类名的JS语句,  而是通过数据模型isGreen的值是true还是false来确定添加哪个颜色的类名,至于如何添加到class属性中,由angular替我们完成。  </p>
+<h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><p>页面中闪烁的问题</p>
+<h3 id="ng-bind"><a href="#ng-bind" class="headerlink" title="ng-bind"></a>ng-bind</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng-bind=&quot;变量&quot;</div></pre></td></tr></table></figure>
+<h3 id="ng-bind-template"><a href="#ng-bind-template" class="headerlink" title="ng-bind-template"></a>ng-bind-template</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng-bind-template=&quot; &#123;&#123; 变量1 &#125;&#125; &#123;&#123; 变量2 &#125;&#125;&quot;</div></pre></td></tr></table></figure>
+<h3 id="ng-cloak"><a href="#ng-cloak" class="headerlink" title="ng-cloak"></a>ng-cloak</h3><p>angular会隐藏有ng-cloak指令或样式的元素,在做完解析之后又会移除元素身上的ng-cloak样式和指令,从而解决表达式闪烁的问题</p>
+<p>但是！angular在页面的最后才被引用进来,所以不能很好的解决这个问题需要我们手动在页面顶部加上隐藏元素的样式    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">  .ng-cloak,[ng-cloak]&#123;display:none;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">-----------------------------------------</div><div class="line">        &lt;div class=&quot;ng-cloak&quot;&gt;</div><div class="line">            &#123;&#123;msg2&#125;&#125;</div><div class="line">        &lt;/div&gt;</div></pre></td></tr></table></figure>
+<h2 id="ng-non-bindable"><a href="#ng-non-bindable" class="headerlink" title="ng-non-bindable"></a>ng-non-bindable</h2><p>不让angular解析其中的代码</p>
+<h2 id="ng-show-ng-hide"><a href="#ng-show-ng-hide" class="headerlink" title="ng-show(ng-hide)"></a>ng-show(ng-hide)</h2><p>控制元素显示隐藏(通样式的方式 display:none),当值为true时 元素显示,当值为false时 元素隐藏</p>
+<h2 id="ng-if"><a href="#ng-if" class="headerlink" title="ng-if"></a>ng-if</h2><p>控制元素显示隐藏</p>
+<p>区别是ng-if是通过DOM节点的添加和删除使得元素显示和隐藏</p>
+<h2 id="ng-switch、ng-switch-when"><a href="#ng-switch、ng-switch-when" class="headerlink" title="ng-switch、ng-switch-when"></a>ng-switch、ng-switch-when</h2><p> ng-switch ng-switch-when 是一对指令类,似于JS中 switch case 语句, 匹配到哪项 哪项就显示 其他项就隐藏,常用于 做多个选项卡的显示和隐藏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;body ng-app ng-init=&quot;showNum=1&quot;&gt;</div><div class="line">     &lt;div ng-switch=&quot;showNum&quot;&gt;</div><div class="line">         &lt;button ng-click=&quot;showNum=1&quot;&gt;显示1&lt;/button&gt;</div><div class="line">         &lt;button ng-click=&quot;showNum=2&quot;&gt;显示2&lt;/button&gt;</div><div class="line">         &lt;button ng-click=&quot;showNum=3&quot;&gt;显示3&lt;/button&gt;</div><div class="line">         &lt;div ng-switch-when=&quot;1&quot;&gt;1&lt;/div&gt;</div><div class="line">         &lt;div ng-switch-when=&quot;2&quot;&gt;2&lt;/div&gt;</div><div class="line">         &lt;div ng-switch-when=&quot;3&quot;&gt;3&lt;/div&gt;</div><div class="line">     &lt;/div&gt;</div><div class="line">     &lt;script src=&quot;node_modules/angular/angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line"> &lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="ng-options"><a href="#ng-options" class="headerlink" title="ng-options"></a>ng-options</h2><p>生成select下拉列表 需要配合ng-model指令使用 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">ng-options 用于生成下拉列表 需要和ng-model指令一起使用 否则报错</div><div class="line">&lt;select ng-options=&quot;item.value as item.name for item in balls&quot;&gt;&lt;/select&gt;</div><div class="line">item.name for for是固定语法 angular会将name字段对应的值 放在option标签内</div><div class="line">item.value as as是固定语法 angular会将value字段对应的值 放在option标签的value属性上</div><div class="line">--------------------------------------------------------------------------------</div><div class="line">  &lt;select ng-model=&quot;likeBall&quot; ng-options=&quot;item.value as item.name for item in balls&quot;&gt;&lt;/select&gt;</div><div class="line">        &#123;&#123;likeBall&#125;&#125;</div><div class="line">        &lt;script src=&quot;node_modules/angular/angular.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">        &lt;script&gt;</div><div class="line">            angular.module(&apos;myApp&apos;,[])</div><div class="line">                .controller(&apos;demoCtrl&apos;,[&apos;$scope&apos;,function($scope)&#123;</div><div class="line"></div><div class="line">                    // 给下拉列表设置默认值 和options标签value属性的值对应</div><div class="line">                    $scope.likeBall = &quot;001&quot;;</div><div class="line"></div><div class="line">                    // 下拉列表的数据源</div><div class="line">                    $scope.balls = [</div><div class="line">                        &#123;</div><div class="line">                            name:&apos;足球&apos;,</div><div class="line">                            value:&apos;001&apos;</div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            name:&apos;篮球&apos;,</div><div class="line">                            value:&apos;002&apos;</div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            name:&apos;橄榄球&apos;,</div><div class="line">                            value:&apos;003&apos;</div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            name:&apos;排球&apos;,</div><div class="line">                            value:&apos;004&apos;</div><div class="line">                        &#125;,</div><div class="line">                        &#123;</div><div class="line">                            name:&apos;乒乓球&apos;,</div><div class="line">                            value:&apos;005&apos;</div><div class="line">                        &#125;</div><div class="line">             </div><div class="line">                    ];</div><div class="line"></div><div class="line">                &#125;])</div><div class="line">        &lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="ng-style"><a href="#ng-style" class="headerlink" title="ng-style"></a>ng-style</h2><p>添加样式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;span ng-style=<span class="string">"&#123;'width':'100px','height':'100px'&#125;"</span>&gt;&lt;/span&gt;</div><div class="line"></div><div class="line">&lt;span style=<span class="string">"width:100px;height:100px;"</span>&gt;&lt;/span&gt;</div><div class="line"></div><div class="line">	scope.style = &#123;</div><div class="line">					<span class="attr">background</span>:<span class="string">'skyblue'</span>,</div><div class="line">					<span class="attr">width</span>:<span class="string">'100px'</span>,</div><div class="line">					<span class="attr">height</span>:<span class="string">'100px'</span>,</div><div class="line">					<span class="attr">position</span>:<span class="string">'fixed'</span>,</div><div class="line">					<span class="attr">lineHeight</span>:<span class="string">'100px'</span>,</div><div class="line">					<span class="attr">fontSize</span>:<span class="string">'40px'</span>,</div><div class="line">					<span class="attr">textAlign</span>:<span class="string">'center'</span>,</div><div class="line">					<span class="attr">right</span>:<span class="string">'10px'</span>,</div><div class="line">					<span class="attr">bottom</span>:<span class="string">'10px'</span>,</div><div class="line">					<span class="attr">cursor</span>:<span class="string">'pointer'</span></div><div class="line">				&#125;;</div></pre></td></tr></table></figure>
+<h2 id="ng-bind-html"><a href="#ng-bind-html" class="headerlink" title="ng-bind-html"></a>ng-bind-html</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng-bind-html=&quot;变量&quot;  能够正常解析数据中的HTML标签</div></pre></td></tr></table></figure>
+<h2 id="事件指令"><a href="#事件指令" class="headerlink" title="事件指令"></a>事件指令</h2><h3 id="ng-click-1"><a href="#ng-click-1" class="headerlink" title="ng-click"></a>ng-click</h3><h3 id="ng-dblclick"><a href="#ng-dblclick" class="headerlink" title="ng-dblclick"></a>ng-dblclick</h3><h3 id="ng-blur"><a href="#ng-blur" class="headerlink" title="ng-blur"></a>ng-blur</h3><h3 id="ng-focus"><a href="#ng-focus" class="headerlink" title="ng-focus"></a>ng-focus</h3><h3 id="ng-change"><a href="#ng-change" class="headerlink" title="ng-change"></a>ng-change</h3><h2 id="其他指令"><a href="#其他指令" class="headerlink" title="其他指令"></a>其他指令</h2><h3 id="ng-href"><a href="#ng-href" class="headerlink" title="ng-href"></a>ng-href</h3><h3 id="ng-src"><a href="#ng-src" class="headerlink" title="ng-src"></a>ng-src</h3><h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><ul>
+<li>双大括号的形式称之为插值表达式</li>
+<li>在表达式中可以写ng中的变量</li>
+<li>可以显示字符串</li>
+<li>在表达式中可以进行计算</li>
+<li>可以在表达式中写三目运算符</li>
+<li>执行angular函数</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/01/Angular普通指令/" data-id="cj70ey6uz0006ysqfiqw1i55d" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+  
+    <article id="post-前端模块化" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/01/前端模块化/" class="article-date">
+  <time class="post-time" datetime="2016-11-30T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">12月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/01/前端模块化/">前端模块化</a>
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/模块/">模块</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前端模块化"><a href="#前端模块化" class="headerlink" title="前端模块化"></a>前端模块化</h1><h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><p>对js代码的管理，将指定内容的功能分为一个一个模块，这些模块在引用的时候被调用进来，具有复用性，并且代码分门别类，易于维护和管理</p>
+<h2 id="模块化的标准"><a href="#模块化的标准" class="headerlink" title="模块化的标准"></a>模块化的标准</h2><h3 id="CommonJS-模块标准化"><a href="#CommonJS-模块标准化" class="headerlink" title="CommonJS 模块标准化"></a>CommonJS 模块标准化</h3><p>CommonJS  主要用在Node.js当中   代表Node.js  适用于后端</p>
+<h3 id="AMD-模块化标准"><a href="#AMD-模块化标准" class="headerlink" title="AMD 模块化标准"></a>AMD 模块化标准</h3><p>Async Module Definition  适用于前端开发， 代表  Require.js</p>
+<p>所有的模块尽可能早的会被加载进来！！</p>
+<h4 id="Require-js"><a href="#Require-js" class="headerlink" title="Require.js"></a>Require.js</h4><blockquote>
+<p>它是帮我们实现前端模块化的工具，他遵循的标准AMD</p>
+</blockquote>
+<h5 id="定义模块"><a href="#定义模块" class="headerlink" title="定义模块"></a>定义模块</h5><p>requirejs提供了一个全局的函数，来定义模块，一个模块通常都会单独保存成一个文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//形式  define(funciton()&#123; /* 模块自己的代码 */&#125;)</span></div><div class="line"></div><div class="line">define([<span class="string">"./moduleC.js"</span>],<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"我是B中的模块"</span>)</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//当模块要提供内容给别人使用的时候，需要使用return语句将内容进行返回</span></div><div class="line">define([<span class="string">"./moduleB.js"</span>],<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"我是A中的模块"</span>);</div><div class="line"></div><div class="line">    <span class="keyword">var</span> obj = &#123;</div><div class="line">        <span class="attr">sayHello</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"我是调用的结果"</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//当模块依赖于别的模块的时候，需要给当前模块添加依赖项</span></div><div class="line"><span class="comment">//define(["依赖项", "依赖项"], function(依赖项的返回值)&#123; &#125;)</span></div></pre></td></tr></table></figure>
+<h5 id="引用模块"><a href="#引用模块" class="headerlink" title="引用模块"></a>引用模块</h5><p>requirejs提供了一个全局的函数。来引用模块</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//require(["模块的名称（不需要.js后缀）"])  新版本有.js后缀也没关系</span></div><div class="line"></div><div class="line"> <span class="built_in">require</span>([<span class="string">"./moduleA"</span>]);</div><div class="line"></div><div class="line"><span class="comment">//第二参数的函数，为 模块加载完毕之后的回调函数</span></div><div class="line"><span class="built_in">require</span>([<span class="string">"./moduleA"</span>],<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</div><div class="line"></div><div class="line">			<span class="comment">//如果引用的模块有产出内容，在引用的模块内通过return返回了东西</span></div><div class="line">            <span class="comment">//我们可以通过在回调函数中添加形参，来接收前面的模块的返回内容</span></div><div class="line">            <span class="comment">//形参和模块是一一对应的</span></div><div class="line"></div><div class="line"><span class="comment">//在某个js文件定义一个模块  具有返回值的模块</span></div><div class="line">define([<span class="string">"./moduleA"</span>],<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"我是A中的模块"</span>);</div><div class="line">    <span class="keyword">var</span> obj = &#123;</div><div class="line">        <span class="attr">sayHello</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"我是调用的结果"</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> obj;</div><div class="line">&#125;);</div><div class="line">------------------------------------------------------------------------</div><div class="line"> 	 <span class="built_in">require</span>([<span class="string">"./moduleA"</span>], <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">        	obj.sayHello();</div><div class="line">        	<span class="built_in">console</span>.log(obj);</div><div class="line">         &#125;);</div></pre></td></tr></table></figure>
+<h5 id="data-main"><a href="#data-main" class="headerlink" title="data-main"></a>data-main</h5><p>在请求requirejs的script标签中添加一个data-main属性，指向一个js文件 </p>
+<p>在引用requirejs的script表里面加一个data-main, 当requirejs加载完毕之后，会请求加载data-main指向的文件，并执行里面的内容（这个文件的加载是异步的！！）</p>
+<p> data-main所指的文件是异步加载的，所以如果在下面有依赖于data-main文件中实现的功能的代码，那么，很可能出错</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.js里的代码</span></div><div class="line"><span class="keyword">var</span> input = <span class="built_in">document</span>.createElement(<span class="string">"input"</span>);</div><div class="line">div.id = <span class="string">"txt"</span>;</div><div class="line"><span class="built_in">document</span>.body.appendChild(input);</div><div class="line">----------------------------------------------------------</div><div class="line">	<span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"require.js"</span> <span class="attr">data-main</span>=<span class="string">"main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">  	&lt;script&gt;</div><div class="line">         <span class="built_in">document</span>.getElementById(<span class="string">"txt"</span>).value =  <span class="string">"123"</span>;</div><div class="line">    <span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h5 id="模块路径的研究"><a href="#模块路径的研究" class="headerlink" title="模块路径的研究"></a>模块路径的研究</h5><ol>
+<li>当直接使用require来引用一个模块的时候，那么模块的路径会以当前调用require方法的html页面为基础来查找</li>
+<li>如果使用data-main属性，那么路径的查找，会以这个data-main所指的文件为基础来查找！</li>
+<li>如果通过config方法指定了 baseUrl 那么所有的模块查找都会以baseUrl中设置的路径为基础（常用）</li>
+</ol>
+<p>注意： 在设置了baseUrl之后，文件会首先按照baseUrl作为基础去查找，如果找到了，就直接使用，如果没有找到，按照引用模块的文件本身作为基础再去查找！</p>
+<p>模块的应用路径可以写两种（都有效），一种按照baseUrl作为基础来写，另外一种就是按照当前文件路径来写        </p>
+<h5 id="require-config"><a href="#require-config" class="headerlink" title="require.config"></a>require.config</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//config方法可以用来对requirejs进行配置</span></div><div class="line">        <span class="comment">//传的参数是一个对象</span></div><div class="line">        <span class="built_in">require</span>.config(&#123;</div><div class="line">            <span class="comment">//如果使用baseUrl来设置了基本路径，那么所有的模块查找都会以该路径作为基础</span></div><div class="line">            <span class="comment">//如果按照baseUrl找文件找不到，那么requirejs还会以引用模块的代码所在文件为基础再查找一次</span></div><div class="line">            baseUrl: <span class="string">"/"</span>,</div><div class="line">            <span class="comment">//paths中可以为模块路径设置一个别名（id）</span></div><div class="line">            <span class="comment">//以后在使用模块的时候，直接用别名即可！</span></div><div class="line">            <span class="comment">//paths中只需要添加 特别常用的内容即可</span></div><div class="line">            paths: &#123;</div><div class="line">                <span class="comment">//属性名：别名（id）</span></div><div class="line">                <span class="comment">//属性值：别名代表的模块路径！！！</span></div><div class="line">                <span class="string">"a"</span>: <span class="string">"modules/a/b/c/moduleA"</span>,</div><div class="line">                <span class="string">"b"</span>: <span class="string">"modules/a/b/c/moduleB"</span>,</div><div class="line">                <span class="string">"c"</span>: <span class="string">"modules/a/b/c/moduleC"</span>,</div><div class="line">            &#125;</div><div class="line">          shim: &#123;</div><div class="line">            <span class="comment">//做第三方模块的加载配置 可以配置依赖项 也可以配置导出项（返回值）</span></div><div class="line">            <span class="string">"要配置的模块的别名id"</span>: &#123;</div><div class="line">                <span class="attr">deps</span>: [<span class="string">"模块的依赖项"</span>],</div><div class="line">                <span class="attr">exports</span>: <span class="string">"模块要返回的内容（是一个字符串，requirejs会在模块中找和字符串相同的全局变量，将其值作为当前模块的返回值！）"</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        <span class="built_in">require</span>([<span class="string">"a"</span>]);</div></pre></td></tr></table></figure>
+<h5 id="require-js引入第三方模块"><a href="#require-js引入第三方模块" class="headerlink" title="require.js引入第三方模块"></a>require.js引入第三方模块</h5><p>支持引入第三方模块  <code>\b define\b</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>([<span class="string">"jquery"</span>],<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log($(<span class="string">"body"</span>));</div><div class="line">        &#125;);</div></pre></td></tr></table></figure>
+<p>不支持第三方模块</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">shim: &#123;</div><div class="line">           <span class="comment">//要设置哪个模块</span></div><div class="line">           animate: &#123;</div><div class="line">               <span class="comment">//对象中包含这个第三方内容的配置信息</span></div><div class="line"></div><div class="line">               <span class="comment">//1、配置模块的输出项</span></div><div class="line">               <span class="comment">//exports就是用来设置这个模块的输出项的 ，就类似于给这个模块中添加了返回值！</span></div><div class="line">               <span class="comment">//这个属性值是一个字符串， require会自动去这个模块中找和字符串同名的全局变量</span></div><div class="line">               <span class="comment">//将这个全局变量设置为 模块的返回值</span></div><div class="line">               exports: <span class="string">"obj"</span></div><div class="line">           &#125;,</div><div class="line">           <span class="attr">bigger</span>: &#123;</div><div class="line">               <span class="comment">//配置当前模块的依赖项</span></div><div class="line">               deps: [<span class="string">"jquery"</span>]</div><div class="line">           &#125;</div></pre></td></tr></table></figure>
+<h3 id="CMD-模块化标准"><a href="#CMD-模块化标准" class="headerlink" title="CMD 模块化标准"></a>CMD 模块化标准</h3><p>Common Module Definition 适用于前端开发   代表  sea.js</p>
+<p>as lazy as possible<br>只有在需要的时候，才去加载！！</p>
+<p>require.js 没有明显的bug，      sea.js明显没有bug</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/01/前端模块化/" data-id="cj70ey6xg001mysqfqj6whzcs" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块/">模块</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
   
     <article id="post-模块定义" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -141,7 +839,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/01/模块定义/" data-id="cj6uedu18000k40qf9n5mj0qo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/01/模块定义/" data-id="cj70ey6xn001uysqf2iptl5vh" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块化/">模块化</a></li></ul>
@@ -155,203 +853,10 @@
 
 
   
-    <article id="post-const与let" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/01/const与let/" class="article-date">
-  <time class="post-time" datetime="2016-09-30T16:00:00.000Z" itemprop="datePublished">
-    <span class="post-month">10月</span><br/>
-    <span class="post-day">01</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/01/const与let/">变量声明</a>
-    </h1>
-  
-
-        <div>
-          
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/ES6/">ES6</a>
-  </div>
-
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h1><h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><h4 id="变量赋值"><a href="#变量赋值" class="headerlink" title="变量赋值"></a>变量赋值</h4><h5 id="ago"><a href="#ago" class="headerlink" title="ago"></a>ago</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">let</span> c = <span class="number">3</span>;</div></pre></td></tr></table></figure>
-<h5 id="now"><a href="#now" class="headerlink" title="now"></a>now</h5><p>1-从数组中提取值，按照对应位置，对变量赋值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">//1</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">//2</span></div></pre></td></tr></table></figure>
-<p>2-“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值,解构不成功，变量的值就等于undefined</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [foo, [[bar], baz]] = [<span class="number">1</span>, [[<span class="number">2</span>], <span class="number">3</span> ]];</div><div class="line">   foo <span class="comment">// 1</span></div><div class="line">   bar <span class="comment">// 2</span></div><div class="line">   baz <span class="comment">// 3</span></div><div class="line">--------------------------------------------------</div><div class="line"><span class="keyword">let</span> [x, , y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">   x <span class="comment">// 1</span></div><div class="line">   y <span class="comment">// 3</span></div><div class="line">--------------------------------------------------</div><div class="line"><span class="keyword">let</span> [, , third] = [<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>];</div><div class="line">   third <span class="comment">// "baz"</span></div><div class="line">--------------------------------------------------   </div><div class="line"><span class="keyword">let</span> [head, ...tail] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</div><div class="line">	head <span class="comment">// 1</span></div><div class="line">	tail <span class="comment">// [2, 3, 4]</span></div><div class="line">--------------------------------------------------    </div><div class="line"><span class="keyword">let</span> [x, y, ...z] = [<span class="string">'a'</span>];</div><div class="line">	x <span class="comment">// "a"</span></div><div class="line">	y <span class="comment">// undefined</span></div><div class="line">	z <span class="comment">// []</span></div></pre></td></tr></table></figure>
-<p>3-等号左边的模式，只匹配一部分的等号右边的数组。这种情况下，解构依然可以成功。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">	x <span class="comment">// 1</span></div><div class="line">	y <span class="comment">// 2</span></div><div class="line">--------------------------------------------------     </div><div class="line"> <span class="keyword">let</span> [a, [b], d] = [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>];</div><div class="line">	a <span class="comment">// 1</span></div><div class="line">	b <span class="comment">// 2</span></div><div class="line">	d <span class="comment">// 4</span></div></pre></td></tr></table></figure>
-<h4 id="对象赋值"><a href="#对象赋值" class="headerlink" title="对象赋值"></a>对象赋值</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> &#123;<span class="attr">foo</span>: baz&#125; = &#123;<span class="attr">foo</span>: <span class="string">'aaa'</span>,<span class="attr">bar</span>: <span class="string">'bbb'</span>&#125;;</div><div class="line">	baz <span class="comment">// "aaa"</span></div><div class="line">--------------------------------------------------  </div><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">	<span class="attr">first</span>: <span class="string">'hello'</span>,</div><div class="line">	<span class="attr">last</span>: <span class="string">'world'</span></div><div class="line">		&#125;;</div><div class="line">--------------------------------------------------  </div><div class="line"><span class="keyword">let</span> &#123;</div><div class="line">	<span class="attr">first</span>: f,</div><div class="line">	<span class="attr">last</span>: l</div><div class="line">		&#125; = obj;</div><div class="line">	f <span class="comment">// 'hello'</span></div><div class="line">	l <span class="comment">// 'world'</span></div></pre></td></tr></table></figure>
-<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>申明变量   所声明的变量，只在let命令所在的代码块内有效。</p>
-<h4 id="1-局部声明"><a href="#1-局部声明" class="headerlink" title="1-局部声明"></a>1-局部声明</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="number">20</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(b);  <span class="comment">//20</span></div><div class="line"><span class="built_in">console</span>.log(a)  <span class="comment">//  报错</span></div></pre></td></tr></table></figure>
-<h4 id="2-不存在变量提升"><a href="#2-不存在变量提升" class="headerlink" title="2-不存在变量提升"></a>2-不存在变量提升</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(b);</div><div class="line"><span class="keyword">var</span> b = <span class="number">10</span>;   <span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(a);</div><div class="line"><span class="keyword">let</span> a = <span class="number">10</span>;   <span class="comment">//报错</span></div></pre></td></tr></table></figure>
-<h4 id="3-暂时性死区"><a href="#3-暂时性死区" class="headerlink" title="3-暂时性死区"></a>3-暂时性死区</h4><p>ES6明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> tmp = <span class="number">123</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">	tmp = <span class="string">'abc'</span>; <span class="comment">// 报错</span></div><div class="line">	<span class="keyword">let</span> tmp;</div><div class="line">	&#125;</div><div class="line">--------------------------------------------------</div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">  <span class="comment">// TDZ开始</span></div><div class="line">  tmp = <span class="string">'abc'</span>; </div><div class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// 报错</span></div><div class="line">  <span class="keyword">let</span> tmp; <span class="comment">// TDZ结束</span></div><div class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// undefined</span></div><div class="line"></div><div class="line">  tmp = <span class="number">123</span>;</div><div class="line">  <span class="built_in">console</span>.log(tmp); <span class="comment">// 123</span></div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-<h4 id="4-不允许重复声明"><a href="#4-不允许重复声明" class="headerlink" title="4-不允许重复声明"></a>4-不允许重复声明</h4><p>let不允许在相同作用域内，重复声明同一个变量。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line">fn();</div><div class="line">--------------------------------------------------</div><div class="line"><span class="comment">// 报错</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</div><div class="line"> <span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line"> <span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line"> &#125;</div><div class="line"> fn1();</div></pre></td></tr></table></figure>
-<h4 id="5-不能在函数内部重新声明参数"><a href="#5-不能在函数内部重新声明参数" class="headerlink" title="5-不能在函数内部重新声明参数"></a>5-不能在函数内部重新声明参数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">   <span class="keyword">let</span> arg; <span class="comment">// 报错</span></div><div class="line"> &#125;</div><div class="line">--------------------------------------------------</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">arg</span>) </span>&#123;</div><div class="line">   &#123;</div><div class="line">     <span class="keyword">let</span> arg; <span class="comment">// 不报错</span></div><div class="line">   &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>块级作用域，也不会自动提升全局对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> num  = <span class="number">3</span>; <span class="comment">//同一个块中不允许声明同名变量</span></div><div class="line">--------------------------------------------------</div><div class="line"> <span class="keyword">const</span> num = <span class="number">1</span>;</div><div class="line"> <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</div><div class="line">     <span class="keyword">const</span> num = <span class="number">2</span>;</div><div class="line">     <span class="built_in">console</span>.log(num); <span class="comment">//2</span></div><div class="line"> &#125;</div><div class="line">  <span class="built_in">console</span>.log(num);<span class="comment">//1      </span></div><div class="line">  <span class="keyword">const</span> num;  <span class="comment">//必须一次性完成初始化 = 声明 + 赋值</span></div><div class="line">  num = <span class="number">1</span>;</div><div class="line">--------------------------------------------------</div><div class="line"><span class="keyword">const</span> PI = <span class="number">3.14</span>; <span class="comment">//常量大写，单词间以_分割</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'足球的PI:'</span>,PI);</div><div class="line">   <span class="comment">//篮球的开发</span></div><div class="line">   <span class="comment">//PI = 3.1415926;  //不允许二次赋值</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'篮球的PI'</span>,PI);</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/01/const与let/" data-id="cj6uddwml000desqfwsrv4zqt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-promise" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/01/promise/" class="article-date">
-  <time class="post-time" datetime="2016-09-30T16:00:00.000Z" itemprop="datePublished">
-    <span class="post-month">10月</span><br/>
-    <span class="post-day">01</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/01/promise/">解决回调地狱（promise）</a>
-    </h1>
-  
-
-        <div>
-          
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/ES6/">ES6</a>
-  </div>
-
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="解决回调地狱"><a href="#解决回调地狱" class="headerlink" title="解决回调地狱"></a>解决回调地狱</h1><h2 id="多重ajax"><a href="#多重ajax" class="headerlink" title="多重ajax"></a>多重ajax</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">--------------------</div><div class="line">&lt;button&gt;发送一堆ajax&lt;/button&gt;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sendMsg</span>(<span class="params">url, callback</span>) </span>&#123;</div><div class="line">        <span class="comment">//ajax</span></div><div class="line">        <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">        xhr.open(<span class="string">'get'</span>, url);</div><div class="line">        xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span> &amp;&amp; xhr.status === <span class="number">200</span>) &#123;</div><div class="line">                <span class="comment">//响应回来，请求1.json</span></div><div class="line">                alert(xhr.responseText);</div><div class="line">                <span class="comment">//请求2.json</span></div><div class="line">                <span class="comment">//后续操作，2||3||4.json,该事宜会发生改变</span></div><div class="line">                callback(); <span class="comment">//你传递的后续要做的事情</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        xhr.send();</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// sendMsg('./1.json');</span></div><div class="line">        <span class="comment">// sendMsg('./2.json');</span></div><div class="line">        <span class="comment">// sendMsg('./3.json');</span></div><div class="line">        <span class="comment">// sendMsg('./4.json');</span></div><div class="line">        <span class="comment">// sendMsg('./1.json');</span></div><div class="line">        <span class="comment">// sendMsg('./2.json');</span></div><div class="line">        <span class="comment">// sendMsg('./3.json');</span></div><div class="line">        <span class="comment">// sendMsg('./4.json');</span></div><div class="line">        <span class="comment">// 理论上请求挨个出去，但是，响应回来的速度，不一定，此时就会出现响应顺序不一致的情况</span></div><div class="line"><span class="comment">//万恶的回调函数地狱,可维护性差</span></div><div class="line">        sendMsg(<span class="string">'./1.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            sendMsg(<span class="string">'./2.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                sendMsg(<span class="string">'./3.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                    sendMsg(<span class="string">'./1.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                        sendMsg(<span class="string">'./2.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                            sendMsg(<span class="string">'./3.json'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                                <span class="built_in">console</span>.log(<span class="string">'完成了'</span>);</div><div class="line">                            &#125;);</div><div class="line">                        &#125;);</div><div class="line">                    &#125;)</div><div class="line">                &#125;);</div><div class="line">            &#125;);</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><ul>
-<li>promise是一个容器，用来管理异步流程，执行的过程中，</li>
-<li>通过函数调用，记录住执行成功与否的状态，成功-&gt;then，失败-&gt;catch</li>
-<li>保证顺序执行的then回调函数中，记得return 一个promise对象</li>
-<li>promise三种状态： pendding(待发) 没有调用reject或者resolve的时候</li>
-<li>resolved(fulilled) 已解决已满足 调用了resolve后的状态</li>
-<li>rejected 已拒绝  调用reject函数后的状态</li>
-<li>一经改变，无法回退、也不可以暂停</li>
-</ul>
-<p>每一个new Promise中包含着要么成功，要么失败的后续标识<br>每一个promise对象都可以.then函数来获取成功后的操作<br>每一个promise对象也可以.catch函数来获取失败后的操作</p>
-<p> new Promise接受的参数是一个函数<br> 该函数的参数中，1:成功 2:失败<br> 成功(resolve)和失败(reject)也是函数</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">  &lt;button&gt;发送一堆ajax&lt;/button&gt;</div><div class="line">------------------------------------------------------------------------- </div><div class="line">function sendMsg(url, callback) &#123;</div><div class="line">        var p = new Promise(function(resolve,reject)&#123;</div><div class="line">                //包含整件事的执行</div><div class="line">                var xhr = new XMLHttpRequest();</div><div class="line">                xhr.open('get', url);</div><div class="line">                xhr.onreadystatechange = function() &#123;</div><div class="line">                    if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) &#123;    </div><div class="line">                        //成功后的操作</div><div class="line">                        alert(xhr.responseText);</div><div class="line">                        //调用成功函数，其实就是做一个标记，存储起来，未来该对象.then就能执行</div><div class="line">                        resolve('牛逼了');</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                xhr.send();</div><div class="line">        &#125;);</div><div class="line">        return p;//返回p对象外部then||catch</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    document.querySelector('button').onclick = function() &#123;</div><div class="line">            </div><div class="line">         sendMsg('./1.json')</div><div class="line">         .then(function(data)&#123;</div><div class="line">            //成功后的回调函数</div><div class="line">             // console.log('1.json请求完成，成功!!!',data);</div><div class="line">             return sendMsg('./2.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./3.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./4.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./1.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./2.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./3.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             return sendMsg('./4.json');  </div><div class="line">         &#125;)</div><div class="line">         .then(function(data)&#123;</div><div class="line">             console.log('结束了');</div><div class="line">         &#125;)</div><div class="line">         .catch(function()&#123; //一组promise对象，一个catch多个then</div><div class="line">             //失败的回调函数</div><div class="line">         &#125;);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/01/promise/" data-id="cj6udiiik0000bcqf9bz7bsd7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-first" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/06/01/first/" class="article-date">
-  <time class="post-time" datetime="2015-05-31T16:00:00.000Z" itemprop="datePublished">
-    <span class="post-month">6月</span><br/>
-    <span class="post-day">01</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/01/first/">爱喝奶茶的橙子</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h1><ul>
-<li>hexo generate—&gt;md生成html页面</li>
-<li>tags—&gt;标签</li>
-<li>date—&gt;分档</li>
-<li>categories —&gt;分类</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/06/01/first/" data-id="cj6tlegax0000isqfenewx0li" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; pre</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; pre</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">next &raquo;</a>
   </nav>
 </section>
         
@@ -396,9 +901,9 @@
     <h2 class="author">小橙子</h2>
     <h3 class="description">前端</h3>
     <div class="count-box">
-      <a href="/archives"><div><strong>24</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>43</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>20</strong><br>标签</div></a>
+      <a href="/archives"><div><strong>47</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>37</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>19</strong><br>标签</div></a>
     </div>
 
 

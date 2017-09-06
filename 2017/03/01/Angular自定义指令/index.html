@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angular自定义指令 | 爱瞎搞的橙子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Angular自定义指令语法123456789101112131415161718192021模块对象.directive(&apos;指令名称&apos;,[function()&amp;#123;		// 固定语法	return &amp;#123;		// angular提供的专门用来写DOM操作的地方		link : function(scope,element,attributes)&amp;#123;							// 形参的名">
+<meta name="keywords" content="Angular">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular自定义指令">
+<meta property="og:url" content="http://yoursite.com/2017/03/01/Angular自定义指令/index.html">
+<meta property="og:site_name" content="爱瞎搞的橙子">
+<meta property="og:description" content="Angular自定义指令语法123456789101112131415161718192021模块对象.directive(&apos;指令名称&apos;,[function()&amp;#123;		// 固定语法	return &amp;#123;		// angular提供的专门用来写DOM操作的地方		link : function(scope,element,attributes)&amp;#123;							// 形参的名">
+<meta property="og:updated_time" content="2017-09-01T12:50:33.936Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular自定义指令">
+<meta name="twitter:description" content="Angular自定义指令语法123456789101112131415161718192021模块对象.directive(&apos;指令名称&apos;,[function()&amp;#123;		// 固定语法	return &amp;#123;		// angular提供的专门用来写DOM操作的地方		link : function(scope,element,attributes)&amp;#123;							// 形参的名">
+  
+    <link rel="alternate" href="/atom.xml" title="爱瞎搞的橙子" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <div class="widget-wrap mobile-header">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>47</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>37</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>19</strong><br>标签</div></a>
+    </div>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+        <section id="main"><article id="post-Angular自定义指令" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/01/Angular自定义指令/" class="article-date">
+  <time class="post-time" datetime="2017-02-28T16:00:00.000Z" itemprop="datePublished">
+    <span class="post-month">3月</span><br/>
+    <span class="post-day">01</span>
+  </time>
+</a>
+   
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Angular自定义指令
+    </h1>
+  
+
+        <div>
+          
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/框架/">框架</a>,<a class="article-category-link" href="/categories/框架/Angular/">Angular</a>
+  </div>
+
+          
+              
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Angular自定义指令"><a href="#Angular自定义指令" class="headerlink" title="Angular自定义指令"></a>Angular自定义指令</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">模块对象.directive(<span class="string">'指令名称'</span>,[<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	</div><div class="line">	<span class="comment">// 固定语法</span></div><div class="line">	<span class="keyword">return</span> &#123;</div><div class="line">		<span class="comment">// angular提供的专门用来写DOM操作的地方</span></div><div class="line">		link : <span class="function"><span class="keyword">function</span>(<span class="params">scope,element,attributes</span>)</span>&#123;</div><div class="line">				</div><div class="line">			<span class="comment">// 形参的名字 是可以改的</span></div><div class="line">			<span class="comment">// element 指令所在的元素 jqLite对象</span></div><div class="line">			<span class="comment">// attributes 指令所在元素身上的 属性集合</span></div><div class="line"></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;])</div><div class="line"></div><div class="line">js - &gt; myDir</div><div class="line">html -&gt; my-dir</div><div class="line"></div><div class="line">指令在页面中没有被使用 那么指令将不会被执行		</div><div class="line">指令在页面中被使用了多少次 那么指令将会被调用多少次</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>,[])</div><div class="line"></div><div class="line">		.directive(<span class="string">'myDir'</span>,[<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">			<span class="keyword">return</span> &#123;</div><div class="line">                 </div><div class="line">				<span class="attr">link</span>:<span class="function"><span class="keyword">function</span>(<span class="params">scope,element,attributes</span>)</span>&#123;</div><div class="line">					element.css(<span class="string">'background'</span>,<span class="string">'red'</span>);</div><div class="line">					<span class="built_in">console</span>.log(attributes)</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;])</div><div class="line"></div><div class="line">		.controller(<span class="string">'demoCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">	</div><div class="line">		&#125;])</div></pre></td></tr></table></figure>
+<h2 id="angularjqLite"><a href="#angularjqLite" class="headerlink" title="angularjqLite"></a>angularjqLite</h2><h2 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$(<span class="string">'#div1'</span>)</div><div class="line"></div><div class="line">$(<span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>)).css()</div><div class="line"></div><div class="line">angular.element( 原生JS对象 )  把原生JS对象转换成JQLite对象  可以使用jq的方法</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>,[])</div><div class="line"></div><div class="line">	.controller(<span class="string">'demoCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line"></div><div class="line">		<span class="keyword">var</span> oDiv = angular.element( <span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>) );</div><div class="line"></div><div class="line">		<span class="built_in">console</span>.log(oDiv);</div><div class="line"></div><div class="line">		oDiv.css(&#123;</div><div class="line">			<span class="attr">background</span>:<span class="string">'green'</span></div><div class="line">		&#125;).addClass(<span class="string">'class1'</span>)</div><div class="line"></div><div class="line">		</div><div class="line">	&#125;])</div></pre></td></tr></table></figure>
+<p>指令的配置参数介绍</p>
+<ul>
+<li><p>restrict 自定义指令分类</p>
+<ul>
+<li>属性指令 A attribute</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>元素指令 E element</li>
+</ul>
+<ul>
+<li>样式指令 C class</li>
+</ul>
+<ul>
+<li>注释指令 M comment</li>
+</ul>
+<ul>
+<li><p>默认值是:’AE’</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 属性指令 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">my-dir</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 标签指令 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-dir</span>&gt;</span><span class="tag">&lt;/<span class="name">my-dir</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 类名指令 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"my-dir"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 注释指令 --&gt;</span></div><div class="line"><span class="comment">&lt;!-- directive:my-dir --&gt;</span>   通常配合 replace使用</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>template和templateUrl使用方法</p>
+<ul>
+<li>template 模板字符串</li>
+<li>templateUrl 定义angular模板</li>
+</ul>
+</li>
+<li><p>link函数的作用及参数说明</p>
+<ul>
+<li>作用：写DOM操作的地方</li>
+<li>有三个参数 scope element attributes</li>
+<li>scope:类似于$scope 作用范围不同 只针对当前指令生效</li>
+<li>element:当前指令所要操作的元素</li>
+<li>attributes:当前指令所在标签的属性结合 对象类型</li>
+</ul>
+</li>
+<li><p>replace的作用</p>
+<ul>
+<li>将当前指令所在的标签替换掉</li>
+<li>布尔类型的值 默认是是false 不替换</li>
+</ul>
+</li>
+<li><p>transclude的作用</p>
+<ul>
+<li>如果指令所在标签内部有内容 会将内容保存到ng-transclude中</li>
+<li>然后在模板内将ng-transclude保存的内容写在想要显示的位置即可</li>
+<li>默认值是false 不保存原有内容 也就是直接用模板内容替换原有内容</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>,[])</div><div class="line"></div><div class="line">			.directive(<span class="string">'myDir'</span>,[<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="keyword">return</span> &#123;                                      <span class="comment">// 有几个地方用到了指令，那么这个就会被调用几次</span></div><div class="line">                  scope:<span class="literal">true</span>,  <span class="comment">// 让每个指令所在的元素有单独的作用域</span></div><div class="line">                  transclude:<span class="literal">true</span>,<span class="comment">// 把指定所在标签内的内容保存    配合ng-transclude使用 配合一个标签放内容</span></div><div class="line">                  replace:<span class="literal">true</span>, <span class="comment">// 去掉指令所在的标签，保留模板内容，如果模板有多标签需要一个根标签包裹</span></div><div class="line">                  template:<span class="string">"&lt;span ng-transclude&gt;&lt;/span&gt;"</span></div><div class="line">					link:<span class="function"><span class="keyword">function</span>(<span class="params">scope,element,attributes</span>)</span>&#123;</div><div class="line">						element.css(<span class="string">'background'</span>,<span class="string">'red'</span>);</div><div class="line">						<span class="built_in">console</span>.log(attributes)</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">			&#125;])</div><div class="line"></div><div class="line">			.controller(<span class="string">'demoCtrl'</span>,[<span class="string">'$scope'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>)</span>&#123;</div><div class="line">		</div><div class="line">			&#125;])</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/01/Angular自定义指令/" data-id="cj71vm5u10000t0qf3zfibp24" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/01/Angular自定义过滤器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Angular自定义过滤器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/01/Angular控制器/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Angular控制器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <h1 class="blog-title">爱瞎搞的橙子</h1>
+    <h2 class="blog-subtitle">喜欢lol，喜欢代码O(∩_∩)O~~</h2>
+    <ul class="blog-link">
+     
+          <a href="/" title="Home">
+            <li>主页</li>
+          </a>
+        
+          <a href="/archives" title="Archives">
+            <li>归档</li>
+          </a>
+        
+          <a href="/categories" title="Categories">
+            <li>分类</li>
+          </a>
+        
+          <a href="/tags" title="Tags">
+            <li>标签</li>
+          </a>
+        
+          <a href="/project" title="Project">
+            <li>项目</li>
+          </a>
+        
+    </ul>
+  </div>
+</div>
+
+  
+    <div class="widget-wrap">
+  <h3 class="widget-title"></h3>
+  <div class="widget">
+    <img class="avatar" src="http://www.wangmingdaquan.cc/tx38/70.jpg">
+    <h2 class="author">小橙子</h2>
+    <h3 class="description">前端</h3>
+    <div class="count-box">
+      <a href="/archives"><div><strong>47</strong><br>文章</div></a>
+      <a href="/categories"><div><strong>37</strong><br>分类</div></a>
+      <a href="/tags"><div><strong>19</strong><br>标签</div></a>
+    </div>
+
+
+
+    <div class="social-link">
+      
+        <a class="hvr-bounce-in" href="/" target="_blank" title="没有啥">
+          没有啥
+        </a>
+      
+    </div>
+
+    <div class="friend-link">
+      <h2>友情链接</h2>
+      
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy;2015 - 2017 小橙子<br>
+      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
+      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
+      
+    </div>
+    
+  </div>
+</footer>
+    </div>
+    
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
+<script>
+new WOW().init();
+</script>   
+
+
+  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
+  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
+  <script src="/plugin/galmenu/GalMenu.js"></script>
+  <div class="GalMenu GalDropDown">
+      <div class="circle" id="gal">
+        <div class="ring">
+          
+            <a href="/" title="" class="menuItem">首页</a>
+          
+            <a href="/tags" title="" class="menuItem">标签</a>
+          
+            <a href="/categories" title="" class="menuItem">分类</a>
+          
+            <a href="/archives" title="" class="menuItem">归档</a>
+          
+            <a href="/project" title="" class="menuItem">项目</a>
+          
+            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
+          
+        </div>
+        
+          <audio id="audio" src="#"></audio>
+        
+      </div> 
+</div>
+<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
+  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
+    for (var i = 0,
+    l = items.length; i < l; i++) {
+      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
+      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
+    }</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('body').GalMenu({
+      'menu': 'GalDropDown'
+    })
+  });
+</script>
+
+  <section class="hidden-xs"> 
+  <ul class="cb-slideshow"> 
+    <li><span>苟利</span></li> 
+    <li><span>国家</span></li> 
+    <li><span>生死以</span></li> 
+    <li><span>岂能</span></li> 
+    <li><span>祸福</span></li> 
+    <li><span>趋避之</span></li> 
+  </ul>
+</section>
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
